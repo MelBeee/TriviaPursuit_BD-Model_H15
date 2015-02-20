@@ -1,4 +1,22 @@
 À faire
 ______________________________
 
-- Toute :) 
+Introduction
+ -détails
+Objectifs
+ -presenter des solutions
+
+Définitions utilisés
+
+Présentation du système
+ 
+ - diagramme de package
+solutions
+ -sol 1 description + échéancier (1 joueur)
+ -sol 2 description + échéancier (2 à 4 joueurs)
+- Conclusion : 
+Recommendation ->
+on implémente quoi?
+
+- Annexe 3(optionel):
+Prototype de l,application
