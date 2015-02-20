@@ -3,38 +3,48 @@
   <ownedCommentsInternal>
     <comment Id="a31ab6fa-6dbd-46f0-9b00-4fd7d89bbbaa">
       <elementDefinition Id="933f7b19-cf26-4b44-86b6-319e1728c5bd" />
+      <body>- Affiche un message avec le nom du gagnant</body>
+      <annotatedElements>
+        <useCaseMoniker Id="eab3ae31-7288-47f9-8ff7-35836ddfa70b" LastKnownName="Fin de partie" />
+      </annotatedElements>
     </comment>
     <comment Id="972c94ca-89b9-47f2-bdd5-480467dfb4c6">
       <elementDefinition Id="a59925ae-200c-4394-9a5e-7aad7651a2dd" />
+      <body>- Compte le nombre de bonne réponse par catégorie par joueur
+- Si 30 questions répondu pour un meme joueur, fin de partie
+- Si moins de 30 questions répondu pour un même joueur, le même joueur retourne la roue</body>
+      <annotatedElements>
+        <useCaseMoniker Id="5e7e6ea8-37a4-44fa-b15d-37c5c62ac82f" LastKnownName="Analyse de fin de partie" />
+      </annotatedElements>
     </comment>
     <comment Id="3574c0dd-0635-4ba9-ab82-82aee30910ce">
       <elementDefinition Id="1d115284-d565-41dd-9e86-26f49a7d0120" />
+      <body>- Traitement de la reponse
+- Si la question est bien répondu  on passe à l'analyse de la fin de partie
+- Si la question est mal répondu on passe au prochain joueur
+</body>
+      <annotatedElements>
+        <useCaseMoniker Id="38fb0c94-9846-41bb-b9f1-cedeef9b0711" LastKnownName="Répondre à la question" />
+      </annotatedElements>
     </comment>
     <comment Id="8e8c5514-7fa2-4512-8a96-472e26f492d5">
       <elementDefinition Id="b27158c8-b7ad-471f-9182-299aac3a8eef" />
       <body>- Déterminer le nombre de joueurs 
 - Déterminer l'ordre des joueurs</body>
+      <annotatedElements>
+        <useCaseMoniker Id="518e2299-e727-42b3-891c-bf635474479a" LastKnownName="Commencer la partie" />
+      </annotatedElements>
     </comment>
     <comment Id="f7743d0b-d203-444b-adb1-f1617ac5f717">
       <elementDefinition Id="e0318902-9c51-4418-8354-0e20749b0e92" />
-      <body>- Aléatoirer une question
-- </body>
+      <body>- Aléatoirer une catégorie
+- Si catégorie blanc, le joueur doit décider lui même sa catégorie
+- Aléatoirer une question</body>
+      <annotatedElements>
+        <useCaseMoniker Id="7194b2cd-4bda-4c49-9599-f1ef8379bcc3" LastKnownName="Tourner la roue" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="a9e01ef3-c549-4208-b9dc-5b6f9c1a6627">
-      <profileInstance Id="379031f9-923b-45f9-9950-818a9082712a" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="7a74bac1-3f50-46ff-93ea-50b10957c455">
-      <profileInstance Id="bc355213-6936-4221-9a7b-564f2a5641d4" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="d4f19137-f7bf-4ce0-adfa-7961863d18ff" name="Joueurs" isAbstract="false" isLeaf="false">
@@ -111,5 +121,19 @@
   </packagedElements>
   <package Id="91994774-26c8-490f-b9cf-25071650ce5e" name="TriviaPursuit">
     <elementDefinition Id="ef70c049-1e51-4236-a499-6d89f57f3f29" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a9e01ef3-c549-4208-b9dc-5b6f9c1a6627">
+        <profileInstance Id="379031f9-923b-45f9-9950-818a9082712a" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7a74bac1-3f50-46ff-93ea-50b10957c455">
+        <profileInstance Id="bc355213-6936-4221-9a7b-564f2a5641d4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>
