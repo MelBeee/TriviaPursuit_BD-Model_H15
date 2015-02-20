@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A90B3BC1-4CF8-F06B-B6E9-9F62A55C3E97" name="Catégories">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:17:59 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NomCatégorie" id="516F8814-C1D0-8243-24D0-F08FE791E12B">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:18:29 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="61DD9E7D-8B97-B9B1-3B9F-FCA66D700E57" name="Catégories_PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:18:29 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="516F8814-C1D0-8243-24D0-F08FE791E12B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

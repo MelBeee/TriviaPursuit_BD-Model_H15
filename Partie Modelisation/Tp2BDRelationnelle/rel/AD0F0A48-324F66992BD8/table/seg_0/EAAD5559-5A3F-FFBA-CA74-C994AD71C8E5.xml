@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EAAD5559-5A3F-FFBA-CA74-C994AD71C8E5" name="Questions">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:11:07 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDQuestion" id="A6457D04-2D71-9E58-26C7-8B0F8CC4AE14">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:12:38 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Description" id="04E0FCEC-85D3-F88B-C40A-1D6EC15ED4E9">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:14:10 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Choix 1" id="302394D8-BEF3-BB4F-E526-9FA5D40D2FFB">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:14:39 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Choix 2" id="64154EC0-A50C-D1C1-36A2-1C3EACFDE433">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:14:49 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Choix 3" id="537512EC-9B2B-F805-F133-BB6F4376850F">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:14:57 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Réponse" id="7895D74D-DE98-8BBC-DD7E-98FB23AD85A7">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:15:30 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomCatégorie" id="F93D11BC-1AD5-930E-D184-01284B859B6C">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:16:48 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<delegate>516F8814-C1D0-8243-24D0-F08FE791E12B</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B49A4EE-6C8F-7967-F04E-970347B83D0C" referredColumn="516F8814-C1D0-8243-24D0-F08FE791E12B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="941188BC-D50C-D51C-4812-D09936520D85" name="Questions_PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:12:38 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6457D04-2D71-9E58-26C7-8B0F8CC4AE14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ACCBFCF4-FD9E-7DFC-06ED-03E24A2D98BB" name="Questions_Catégories_FK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:20:37 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F93D11BC-1AD5-930E-D184-01284B859B6C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

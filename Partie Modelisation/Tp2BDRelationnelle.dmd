@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Tp2BDRelationnelle" id="64943C4D-0EC4-856A-F69D-1516EE51CD0C" version="3.5">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 16:57:17 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>64943C4D-0EC4-856A-F69D-1516EE51CD0C</designId>
+</OSDM_Design>

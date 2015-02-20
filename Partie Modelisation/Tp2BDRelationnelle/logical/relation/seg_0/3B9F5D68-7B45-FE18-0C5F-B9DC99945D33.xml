@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="QuestionRéussie_Questions_FK" directorySegmentName="seg_0" id="3B9F5D68-7B45-FE18-0C5F-B9DC99945D33">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>421C8E7E-B738-3E00-5771-0B44F56C38E0</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<sourcePk>A0101E8C-946F-B8BD-AA35-D8BF1DA8E49A</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>484D5847-A806-5F23-65FB-7FF135410A54</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CA7B9D94-1EEC-863E-D2AA-20C7D25705C1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

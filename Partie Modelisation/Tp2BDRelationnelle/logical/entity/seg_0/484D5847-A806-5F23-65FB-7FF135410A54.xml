@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="484D5847-A806-5F23-65FB-7FF135410A54" name="Questions">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>EAAD5559-5A3F-FFBA-CA74-C994AD71C8E5</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDQuestion" id="E083BBB0-90DE-5C59-B6FA-65A6E3C9CDC0">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>A6457D04-2D71-9E58-26C7-8B0F8CC4AE14</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="Description" id="B41AF8D9-C0C5-606C-5C2F-9E02E2F44B25">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>04E0FCEC-85D3-F88B-C40A-1D6EC15ED4E9</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+</Attribute>
+<Attribute name="Choix 1" id="255B7A35-B00B-5F2C-3777-B164ADC4CC39">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>302394D8-BEF3-BB4F-E526-9FA5D40D2FFB</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+</Attribute>
+<Attribute name="Choix 2" id="0B735F50-9219-9B3A-7F5E-A89B2330D999">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>64154EC0-A50C-D1C1-36A2-1C3EACFDE433</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+</Attribute>
+<Attribute name="Choix 3" id="4FD35FBB-8671-0138-E1CC-3ACE9E20E82B">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>537512EC-9B2B-F805-F133-BB6F4376850F</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+</Attribute>
+<Attribute name="Réponse" id="D828EFAA-434D-052F-572A-BAB445F405FE">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>7895D74D-DE98-8BBC-DD7E-98FB23AD85A7</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+</Attribute>
+<Attribute name="NomCatégorie" id="1B80EFE4-0396-00ED-ADE8-33F41F3152FC">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>D56BBE5A-383F-F848-0FBB-8D503FD0F6FD</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<referedAttribute>0A9780A2-E062-2294-223C-E1E768939A19</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A0101E8C-946F-B8BD-AA35-D8BF1DA8E49A" name="Questions PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>941188BC-D50C-D51C-4812-D09936520D85</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E083BBB0-90DE-5C59-B6FA-65A6E3C9CDC0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

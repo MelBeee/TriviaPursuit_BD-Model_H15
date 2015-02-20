@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CA7B9D94-1EEC-863E-D2AA-20C7D25705C1" name="QuestionRéussie">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>7686E3C3-16EC-A7DE-1334-B8CC13184C34</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NomJoueur" id="4B8DDAD0-880C-7CD2-A0E1-3F41CFF627B5">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>1071B0F4-F938-B217-193F-33FB40746264</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<referedAttribute>F85514E8-4DAA-3AB8-A12B-5CB4C4BFCAD5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+</Attribute>
+<Attribute name="IDQuestion" id="FFEE7479-8A94-D649-E445-B32A944ED3AE">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>3B9F5D68-7B45-FE18-0C5F-B9DC99945D33</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<referedAttribute>E083BBB0-90DE-5C59-B6FA-65A6E3C9CDC0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6677A2FF-85BE-02CC-724D-7153F06F7DFB" name="QuestionRéussie PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>F6FFD3DC-E4DA-0163-188F-62C27F933B6F</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4B8DDAD0-880C-7CD2-A0E1-3F41CFF627B5</attributeRef>
+<attributeRef>FFEE7479-8A94-D649-E445-B32A944ED3AE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

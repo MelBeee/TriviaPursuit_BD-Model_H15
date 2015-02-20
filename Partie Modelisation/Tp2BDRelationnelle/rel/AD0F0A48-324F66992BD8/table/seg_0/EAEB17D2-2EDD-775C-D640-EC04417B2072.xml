@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EAEB17D2-2EDD-775C-D640-EC04417B2072" name="Scores">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:21:27 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NomJoueur" id="2907EE4B-5327-6EA6-6D44-BD766D0C5C52">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:23:15 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<delegate>3BA39E5D-DA2A-5712-A8B8-20A1F0C3D876</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F6D38C38-AD57-7936-DB07-1105E0FB4348" referredColumn="3BA39E5D-DA2A-5712-A8B8-20A1F0C3D876"/>
+</associations>
+</Column>
+<Column name="Catégorie" id="1F0E22D5-8DB8-D45E-410F-B88D0FCF154B">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:23:53 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<delegate>516F8814-C1D0-8243-24D0-F08FE791E12B</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C9B1031-6A7D-FB19-FBDA-282E7B3860A1" referredColumn="516F8814-C1D0-8243-24D0-F08FE791E12B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2DAE76EB-61AD-2C6D-FADA-9C43246D7B81" name="Scores_PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:23:15 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2907EE4B-5327-6EA6-6D44-BD766D0C5C52"/>
+<colUsage columnID="1F0E22D5-8DB8-D45E-410F-B88D0FCF154B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FEDBD2A1-0997-D835-A307-6F625D10E62F" name="Scores_Catégories_FK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:24:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F0E22D5-8DB8-D45E-410F-B88D0FCF154B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D106257F-D19B-5360-5990-643D8707271C" name="Scores_Joueurs_FK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:28:24 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2907EE4B-5327-6EA6-6D44-BD766D0C5C52"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

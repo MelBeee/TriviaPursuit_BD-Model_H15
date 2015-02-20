@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B9FC8ADB-0771-807C-9646-168D941DC3AB" name="Catégories">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>A90B3BC1-4CF8-F06B-B6E9-9F62A55C3E97</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NomCatégorie" id="0A9780A2-E062-2294-223C-E1E768939A19">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>516F8814-C1D0-8243-24D0-F08FE791E12B</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="177EF88B-E39B-63E1-40B1-492089F6A753" name="Catégories PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:38:43 UTC</createdTime>
+<generatorID>61DD9E7D-8B97-B9B1-3B9F-FCA66D700E57</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<engineerTo>
+<item key="AD0F0A48-4F1B-C0D8-1E34-324F66992BD8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0A9780A2-E062-2294-223C-E1E768939A19</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

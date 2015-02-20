@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FD01E9FA-C01A-16F6-A392-D4CBB13F749A" name="Joueurs">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:06:38 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NomJoueur" id="3BA39E5D-DA2A-5712-A8B8-20A1F0C3D876">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:07:40 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="13E7C43A-17E4-05FB-8178-FF6EAF9DB6F2" name="Joueurs_PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:07:40 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3BA39E5D-DA2A-5712-A8B8-20A1F0C3D876"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="A90B3BC1-4CF8-F06B-B6E9-9F62A55C3E97" name="Catégories" seqName="seg_0"/>
+   <object objectType="Table" objectID="FD01E9FA-C01A-16F6-A392-D4CBB13F749A" name="Joueurs" seqName="seg_0"/>
+   <object objectType="Table" objectID="7686E3C3-16EC-A7DE-1334-B8CC13184C34" name="QuestionRéussie" seqName="seg_0"/>
+   <object objectType="Table" objectID="EAAD5559-5A3F-FFBA-CA74-C994AD71C8E5" name="Questions" seqName="seg_0"/>
+   <object objectType="Table" objectID="EAEB17D2-2EDD-775C-D640-EC04417B2072" name="Scores" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="F6D38C38-AD57-7936-DB07-1105E0FB4348" name="Scores_Joueurs_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="FDB62C18-6B4C-5726-D79E-406BB35CFDB3" name="QuestionRéussie_Joueurs_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="421C8E7E-B738-3E00-5771-0B44F56C38E0" name="QuestionRéussie_Questions_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="1B49A4EE-6C8F-7967-F04E-970347B83D0C" name="Questions_Catégories_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="4C9B1031-6A7D-FB19-FBDA-282E7B3860A1" name="Scores_Catégories_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="ef70c049-1e51-4236-a499-6d89f57f3f29"
+  name="TriviaPursuit" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="933f7b19-cf26-4b44-86b6-319e1728c5bd" />
+    <comment
+      Id="a59925ae-200c-4394-9a5e-7aad7651a2dd" />
+    <comment
+      Id="1d115284-d565-41dd-9e86-26f49a7d0120" />
+    <comment
+      Id="b27158c8-b7ad-471f-9182-299aac3a8eef">
+      <body>- Déterminer le nombre de joueurs 
+- Déterminer l'ordre des joueurs</body>
+    </comment>
+    <comment
+      Id="e0318902-9c51-4418-8354-0e20749b0e92">
+      <body>- Aléatoirer une question
+- </body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="143c7f17-2c27-4805-bf31-48828b171b39"
+        name="Joueurs"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="564b3c7c-dc33-44b4-8513-2e1d458203f6"
+            isDerived="false"
+            sourceEndRoleName="Joueurs"
+            targetEndRoleName="Commencer la partie"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ac1a499e-6255-47fe-b792-167de789b383"
+              LastKnownName="Commencer la partie"
+              LastKnownLocation="TriviaPursuit.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="254ce411-8957-47e4-9d1c-a2d9434f1f0f"
+                  name="Joueurs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="51e165cb-1f28-4334-aa76-b78fa214e80d"
+                  name="Commencer la partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ac1a499e-6255-47fe-b792-167de789b383"
+        name="Commencer la partie"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="6ab7f63f-5c0c-4ba4-a53b-9559259d38df">
+            <useCaseMoniker
+              Id="0c20d6e0-293d-4aa5-9069-d8b907fa79c2"
+              LastKnownName="Tourner la roue"
+              LastKnownLocation="TriviaPursuit.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0c20d6e0-293d-4aa5-9069-d8b907fa79c2"
+        name="Tourner la roue"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="0f1eabe8-f858-4d45-a9b5-8e4c6358b7fc">
+            <useCaseMoniker
+              Id="027d4cb2-2c26-4a1f-a1ed-bae6356cf67c"
+              LastKnownName="Répondre à la question"
+              LastKnownLocation="TriviaPursuit.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="027d4cb2-2c26-4a1f-a1ed-bae6356cf67c"
+        name="Répondre à la question"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="0b701b95-7d07-4c4a-bf4b-b2aa2bfd36ae">
+            <useCaseMoniker
+              Id="24533ac9-9c85-4d02-9a0f-86882906f27c"
+              LastKnownName="Analyse de fin de partie"
+              LastKnownLocation="TriviaPursuit.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="24533ac9-9c85-4d02-9a0f-86882906f27c"
+        name="Analyse de fin de partie"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="82ed0fd4-d740-4f5f-a3ee-e00edaed76fa">
+            <useCaseMoniker
+              Id="1509c122-46eb-431a-a944-1b03c4d23eba"
+              LastKnownName="Fin de partie"
+              LastKnownLocation="TriviaPursuit.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1509c122-46eb-431a-a944-1b03c4d23eba"
+        name="Fin de partie"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

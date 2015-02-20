@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1B49A4EE-6C8F-7967-F04E-970347B83D0C" name="Questions_Catégories_FK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:20:37 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<containerWithKeyObject>EAAD5559-5A3F-FFBA-CA74-C994AD71C8E5</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>ACCBFCF4-FD9E-7DFC-06ED-03E24A2D98BB</localFKIndex>
+<keyObject>61DD9E7D-8B97-B9B1-3B9F-FCA66D700E57</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

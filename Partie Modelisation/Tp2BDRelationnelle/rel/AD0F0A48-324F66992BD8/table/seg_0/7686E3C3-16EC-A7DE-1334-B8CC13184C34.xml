@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7686E3C3-16EC-A7DE-1334-B8CC13184C34" name="QuestionRéussie">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 16:58:10 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NomJoueur" id="615C4AB1-AF66-A994-A46A-00A39DF9C69A">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:06:34 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<delegate>3BA39E5D-DA2A-5712-A8B8-20A1F0C3D876</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FDB62C18-6B4C-5726-D79E-406BB35CFDB3" referredColumn="3BA39E5D-DA2A-5712-A8B8-20A1F0C3D876"/>
+</associations>
+</Column>
+<Column name="IDQuestion" id="E32B0883-6BA5-A5E6-4E00-C7E49F420BD0">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:06:34 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<delegate>A6457D04-2D71-9E58-26C7-8B0F8CC4AE14</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="421C8E7E-B738-3E00-5771-0B44F56C38E0" referredColumn="A6457D04-2D71-9E58-26C7-8B0F8CC4AE14"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F6FFD3DC-E4DA-0163-188F-62C27F933B6F" name="QuestionRéussie_PK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:06:34 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="615C4AB1-AF66-A994-A46A-00A39DF9C69A"/>
+<colUsage columnID="E32B0883-6BA5-A5E6-4E00-C7E49F420BD0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A4B625E8-437C-BCC2-8C61-EB4D5847AB38" name="QuestionRéussie_Joueurs_FK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:10:54 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="615C4AB1-AF66-A994-A46A-00A39DF9C69A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D9720C6-C98B-844E-A40B-47FA7D6DD4A4" name="QuestionRéussie_Questions_FK">
+<createdBy>201356187</createdBy>
+<createdTime>2015-02-20 17:13:41 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>Tp2BDRelationnelle</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E32B0883-6BA5-A5E6-4E00-C7E49F420BD0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
