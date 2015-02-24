@@ -21,5 +21,10 @@ namespace TriviaPursuit
       {
 
       }
+
+      private void Menu_Load(object sender, EventArgs e)
+      {
+
+      }
    }
 }

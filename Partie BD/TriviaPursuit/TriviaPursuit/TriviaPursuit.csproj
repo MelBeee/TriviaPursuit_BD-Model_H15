@@ -50,11 +50,17 @@
     <Compile Include="FormAjoutDeQuestions.Designer.cs">
       <DependentUpon>FormAjoutDeQuestions.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCategorie.cs">
+    <Compile Include="FormAPropos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCategorie.Designer.cs">
-      <DependentUpon>FormCategorie.cs</DependentUpon>
+    <Compile Include="FormAPropos.Designer.cs">
+      <DependentUpon>FormAPropos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJeu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJeu.Designer.cs">
+      <DependentUpon>FormJeu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormFinDePartie.cs">
       <SubType>Form</SubType>
@@ -68,6 +74,18 @@
     <Compile Include="FormQuestion.Designer.cs">
       <DependentUpon>FormQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStatistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatistiques.Designer.cs">
+      <DependentUpon>FormStatistiques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSupressionQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupressionQuestion.Designer.cs">
+      <DependentUpon>FormSupressionQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +94,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAjoutDeQuestions.resx">
+      <DependentUpon>FormAjoutDeQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAPropos.resx">
+      <DependentUpon>FormAPropos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStatistiques.resx">
+      <DependentUpon>FormStatistiques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupressionQuestion.resx">
+      <DependentUpon>FormSupressionQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

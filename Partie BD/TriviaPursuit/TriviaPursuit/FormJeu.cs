@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TriviaPursuit
 {
-   public partial class FormAjoutDeQuestions : Form
+   public partial class FormJeu : Form
    {
-      public FormAjoutDeQuestions()
+      public FormJeu()
       {
          InitializeComponent();
-      }
-
-      private void label1_Click(object sender, EventArgs e)
-      {
-
       }
    }
 }

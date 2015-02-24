@@ -1,6 +1,6 @@
 ﻿namespace TriviaPursuit
 {
-   partial class FormCategorie
+   partial class FormJeu
    {
       /// <summary>
       /// Required designer variable.
