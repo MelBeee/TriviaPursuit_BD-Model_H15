@@ -40,7 +40,7 @@
          // 
          this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
          this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-         this.pictureBox1.Location = new System.Drawing.Point(113, 12);
+         this.pictureBox1.Location = new System.Drawing.Point(84, 12);
          this.pictureBox1.Name = "pictureBox1";
          this.pictureBox1.Size = new System.Drawing.Size(122, 91);
          this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -50,18 +50,18 @@
          // label1
          // 
          this.label1.AutoSize = true;
-         this.label1.Font = new System.Drawing.Font("Segoe Script", 14.25F);
-         this.label1.Location = new System.Drawing.Point(84, 106);
+         this.label1.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.Location = new System.Drawing.Point(74, 106);
          this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(181, 30);
+         this.label1.Size = new System.Drawing.Size(142, 29);
          this.label1.TabIndex = 7;
          this.label1.Text = "Trivia Diamond";
          this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
          // 
          // label2
          // 
-         this.label2.Font = new System.Drawing.Font("Segoe Script", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label2.Location = new System.Drawing.Point(38, 139);
+         this.label2.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label2.Location = new System.Drawing.Point(9, 139);
          this.label2.Name = "label2";
          this.label2.Size = new System.Drawing.Size(273, 88);
          this.label2.TabIndex = 8;
@@ -71,8 +71,8 @@
          // 
          // label3
          // 
-         this.label3.Font = new System.Drawing.Font("Segoe Script", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label3.Location = new System.Drawing.Point(61, 228);
+         this.label3.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label3.Location = new System.Drawing.Point(32, 228);
          this.label3.Name = "label3";
          this.label3.Size = new System.Drawing.Size(227, 43);
          this.label3.TabIndex = 9;
@@ -84,7 +84,7 @@
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(40)))));
-         this.ClientSize = new System.Drawing.Size(345, 281);
+         this.ClientSize = new System.Drawing.Size(289, 281);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.label1);

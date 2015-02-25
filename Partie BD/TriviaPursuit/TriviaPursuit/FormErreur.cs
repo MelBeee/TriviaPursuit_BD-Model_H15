@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TriviaPursuit
 {
-   public partial class FormFinDePartie : Form
+   public partial class FormErreur : Form
    {
-      public FormFinDePartie()
+      public FormErreur()
       {
          InitializeComponent();
       }
