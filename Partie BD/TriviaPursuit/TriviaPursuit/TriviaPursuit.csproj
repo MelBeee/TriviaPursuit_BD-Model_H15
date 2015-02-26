@@ -147,6 +147,21 @@
   <ItemGroup>
     <None Include="Resources\LogoTrivial Diamond.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-large-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart-line-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export-outline.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
