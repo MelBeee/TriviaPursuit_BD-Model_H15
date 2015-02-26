@@ -198,5 +198,14 @@ namespace TriviaPursuit.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Typing {
+            get {
+                return ResourceManager.GetStream("Typing", resourceCulture);
+            }
+        }
     }
 }

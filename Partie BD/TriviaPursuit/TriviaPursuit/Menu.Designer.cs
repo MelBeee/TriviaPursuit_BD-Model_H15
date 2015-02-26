@@ -63,9 +63,9 @@
          this.BTN_StartGame.Text = "Commencer\r\nune partie";
          this.BTN_StartGame.TextAlign = System.Drawing.ContentAlignment.TopCenter;
          this.BTN_StartGame.Click += new System.EventHandler(this.BTN_StartGame_Click);
-         this.BTN_StartGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
-         this.BTN_StartGame.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
-         this.BTN_StartGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
+         this.BTN_StartGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BTN_CommencerPartie_MouseDown);
+         this.BTN_StartGame.MouseLeave += new System.EventHandler(this.BTN_CommencerPartie_MouseLeave);
+         this.BTN_StartGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BTN_CommencerPartie_MouseMove);
          // 
          // BTN_QuitGame
          // 

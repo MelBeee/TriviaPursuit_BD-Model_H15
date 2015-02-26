@@ -21,5 +21,15 @@ namespace TriviaPursuit
       {
          this.Close();
       }
+
+      private void FormAjoutQuestion_Load(object sender, EventArgs e)
+      {
+
+      }
+
+      private void BTN_Ajouter_Click(object sender, EventArgs e)
+      {
+
+      }
    }
 }
