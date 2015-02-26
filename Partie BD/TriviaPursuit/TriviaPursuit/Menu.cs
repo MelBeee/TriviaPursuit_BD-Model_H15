@@ -26,5 +26,20 @@ namespace TriviaPursuit
       {
 
       }
+
+      private void label1_MouseMove(object sender, MouseEventArgs e)
+      {
+         label1.ForeColor = Color.Black;
+      }
+
+      private void label1_MouseLeave(object sender, EventArgs e)
+      {
+         label1.ForeColor = Color.White;
+      }
+
+      private void label1_MouseDown(object sender, MouseEventArgs e)
+      {
+         label1.ForeColor = Color.Gray;
+      }
    }
 }

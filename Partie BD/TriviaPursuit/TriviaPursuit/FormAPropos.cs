@@ -16,5 +16,15 @@ namespace TriviaPursuit
       {
          InitializeComponent();
       }
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void FormAPropos_Load(object sender, EventArgs e)
+      {
+
+      }
    }
 }

@@ -1,13 +1,13 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="B9FC8ADB-0771-807C-9646-168D941DC3AB" name="Catégories" seqName="seg_0"/>
    <object objectType="Entity" objectID="3CF7D53D-6058-E2DF-6E9D-469BB7CF931B" name="Joueurs" seqName="seg_0"/>
-   <object objectType="Entity" objectID="CA7B9D94-1EEC-863E-D2AA-20C7D25705C1" name="QuestionRéussie" seqName="seg_0"/>
    <object objectType="Entity" objectID="484D5847-A806-5F23-65FB-7FF135410A54" name="Questions" seqName="seg_0"/>
    <object objectType="Entity" objectID="B8CA9EAD-F744-19DB-584F-6D6D2CE2F74E" name="Scores" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B9FC8ADB-0771-807C-9646-168D941DC3AB" name="Catégories" seqName="seg_0"/>
+   <object objectType="Entity" objectID="CA7B9D94-1EEC-863E-D2AA-20C7D25705C1" name="QuestionRéussie" seqName="seg_0"/>
    <object objectType="Relation" objectID="1071B0F4-F938-B217-193F-33FB40746264" name="QuestionRéussie_Joueurs_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="3B4E36E6-33CC-43DE-B8DF-AE28479381B8" name="Scores_Joueurs_FK" seqName="seg_0"/>
    <object objectType="Relation" objectID="3B9F5D68-7B45-FE18-0C5F-B9DC99945D33" name="QuestionRéussie_Questions_FK" seqName="seg_0"/>
    <object objectType="Relation" objectID="D56BBE5A-383F-F848-0FBB-8D503FD0F6FD" name="Questions_Catégories_FK" seqName="seg_0"/>
    <object objectType="Relation" objectID="F89C4F2C-A2D5-E7D0-D422-8001A626569E" name="Scores_Catégories_FK" seqName="seg_0"/>
-   <object objectType="Relation" objectID="3B4E36E6-33CC-43DE-B8DF-AE28479381B8" name="Scores_Joueurs_FK" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>
