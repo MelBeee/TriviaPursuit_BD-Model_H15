@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace TriviaPursuit
 {
-   public partial class FormStatistiques : Form
+   public partial class FormAjoutQuestion : Form
    {
-      public FormStatistiques()
+      public FormAjoutQuestion()
       {
          InitializeComponent();
       }
 
-      private void button1_Click(object sender, EventArgs e)
+      private void BTN_Annuler_Click(object sender, EventArgs e)
       {
          this.Close();
       }

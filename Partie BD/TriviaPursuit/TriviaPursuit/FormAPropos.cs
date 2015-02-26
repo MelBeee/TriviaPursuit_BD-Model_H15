@@ -21,5 +21,12 @@ namespace TriviaPursuit
       {
          this.Close();
       }
+
+      private void pictureBox1_Click(object sender, EventArgs e)
+      {
+         var player = new System.Media.SoundPlayer();
+         player.Stream = Properties.Resources.ChienQuiJappe;
+         player.Play();
+      }
    }
 }

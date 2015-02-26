@@ -57,9 +57,7 @@ namespace TriviaPursuit
 
       private void BTN_APropos_Click(object sender, EventArgs e)
       {
-         FormAPropos form = new FormAPropos();
-
-         form.ShowDialog();
+         APropos();
       }
 
       private void BTN_AddQuestion_MouseDown(object sender, MouseEventArgs e)
@@ -132,27 +130,27 @@ namespace TriviaPursuit
 
       private void BTN_QuitGame_Click(object sender, EventArgs e)
       {
-         this.Close();
+         Quitter();
       }
 
       private void BTN_AddQuestion_Click(object sender, EventArgs e)
       {
-
+         AddQuestion();
       }
 
       private void BTN_StartGame_Click(object sender, EventArgs e)
       {
-
+         StartGame();
       }
 
       private void BTN_DeleteQuestion_Click(object sender, EventArgs e)
       {
-
+         DeleteQuestion();
       }
 
       private void BTN_Stats_Click(object sender, EventArgs e)
       {
-
+         Stats();
       }
 
       private void PB_Logo_Click(object sender, EventArgs e)
@@ -161,5 +159,78 @@ namespace TriviaPursuit
          player.Stream = Properties.Resources.ChienQuiJappe;
          player.Play();
       }
+
+      private void PB_AddQuestion_Click(object sender, EventArgs e)
+      {
+         AddQuestion();
+      }
+
+      private void PB_APropos_Click(object sender, EventArgs e)
+      {
+         APropos();
+      }
+
+      private void PB_QuitGame_Click(object sender, EventArgs e)
+      {
+         Quitter();
+      }
+
+      private void PB_Stats_Click(object sender, EventArgs e)
+      {
+         Stats();
+      }
+
+      private void PB_DeleteQuestion_Click(object sender, EventArgs e)
+      {
+         DeleteQuestion();
+      }
+
+      private void DeleteQuestion()
+      {
+
+      }
+
+      private void AddQuestion()
+      {
+         FormAjoutQuestion form = new FormAjoutQuestion();
+
+         if (form.ShowDialog() == DialogResult.Abort)
+            this.Close();
+      }
+
+      private void StartGame()
+      {
+
+      }
+
+      private void APropos()
+      {
+         FormAPropos form = new FormAPropos();
+
+         form.Show();
+      }
+
+      private void Quitter()
+      {
+         this.Close();
+      }
+
+      private void Stats()
+      {
+         FormStatistiques form = new FormStatistiques();
+
+         form.Show();
+      }
+
+
+      /*
+         FormErreur form = new FormErreur();
+
+         if(form.ShowDialog() == DialogResult.Abort)
+         {
+            this.Close();
+         }
+       */
+
    }
 }

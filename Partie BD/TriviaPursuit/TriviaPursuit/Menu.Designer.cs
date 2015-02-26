@@ -53,12 +53,12 @@
          // 
          this.BTN_StartGame.AutoSize = true;
          this.BTN_StartGame.BackColor = System.Drawing.Color.Transparent;
-         this.BTN_StartGame.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.BTN_StartGame.Font = new System.Drawing.Font("Buxton Sketch", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_StartGame.ForeColor = System.Drawing.Color.White;
-         this.BTN_StartGame.Location = new System.Drawing.Point(176, 59);
+         this.BTN_StartGame.Location = new System.Drawing.Point(160, 37);
          this.BTN_StartGame.Name = "BTN_StartGame";
          this.BTN_StartGame.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-         this.BTN_StartGame.Size = new System.Drawing.Size(110, 58);
+         this.BTN_StartGame.Size = new System.Drawing.Size(144, 78);
          this.BTN_StartGame.TabIndex = 0;
          this.BTN_StartGame.Text = "Commencer\r\nune partie";
          this.BTN_StartGame.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -73,7 +73,7 @@
          this.BTN_QuitGame.BackColor = System.Drawing.Color.Transparent;
          this.BTN_QuitGame.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_QuitGame.ForeColor = System.Drawing.Color.Black;
-         this.BTN_QuitGame.Location = new System.Drawing.Point(196, 360);
+         this.BTN_QuitGame.Location = new System.Drawing.Point(194, 360);
          this.BTN_QuitGame.Name = "BTN_QuitGame";
          this.BTN_QuitGame.Size = new System.Drawing.Size(76, 58);
          this.BTN_QuitGame.TabIndex = 1;
@@ -107,7 +107,7 @@
          this.BTN_APropos.BackColor = System.Drawing.Color.Transparent;
          this.BTN_APropos.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_APropos.ForeColor = System.Drawing.Color.White;
-         this.BTN_APropos.Location = new System.Drawing.Point(334, 310);
+         this.BTN_APropos.Location = new System.Drawing.Point(334, 315);
          this.BTN_APropos.Name = "BTN_APropos";
          this.BTN_APropos.Size = new System.Drawing.Size(93, 29);
          this.BTN_APropos.TabIndex = 3;
@@ -124,7 +124,7 @@
          this.BTN_Stats.BackColor = System.Drawing.Color.Transparent;
          this.BTN_Stats.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_Stats.ForeColor = System.Drawing.Color.White;
-         this.BTN_Stats.Location = new System.Drawing.Point(22, 310);
+         this.BTN_Stats.Location = new System.Drawing.Point(22, 315);
          this.BTN_Stats.Name = "BTN_Stats";
          this.BTN_Stats.Size = new System.Drawing.Size(122, 29);
          this.BTN_Stats.TabIndex = 4;
@@ -139,7 +139,7 @@
          // 
          this.PB_Logo.BackColor = System.Drawing.Color.Transparent;
          this.PB_Logo.Image = global::TriviaPursuit.Properties.Resources.LogoTrivial_Diamond;
-         this.PB_Logo.Location = new System.Drawing.Point(170, 182);
+         this.PB_Logo.Location = new System.Drawing.Point(171, 182);
          this.PB_Logo.Name = "PB_Logo";
          this.PB_Logo.Size = new System.Drawing.Size(122, 91);
          this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,6 +174,10 @@
          this.PB_AddQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_AddQuestion.TabIndex = 7;
          this.PB_AddQuestion.TabStop = false;
+         this.PB_AddQuestion.Click += new System.EventHandler(this.PB_AddQuestion_Click);
+         this.PB_AddQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BTN_AddQuestion_MouseDown);
+         this.PB_AddQuestion.MouseLeave += new System.EventHandler(this.BTN_AddQuestion_MouseLeave);
+         this.PB_AddQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BTN_AddQuestion_MouseMove);
          // 
          // PB_Stats
          // 
@@ -185,6 +189,10 @@
          this.PB_Stats.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_Stats.TabIndex = 10;
          this.PB_Stats.TabStop = false;
+         this.PB_Stats.Click += new System.EventHandler(this.PB_Stats_Click);
+         this.PB_Stats.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BTN_Stats_MouseDown);
+         this.PB_Stats.MouseLeave += new System.EventHandler(this.BTN_Stats_MouseLeave);
+         this.PB_Stats.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BTN_Stats_MouseMove);
          // 
          // PB_QuitGame
          // 
@@ -196,6 +204,10 @@
          this.PB_QuitGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_QuitGame.TabIndex = 9;
          this.PB_QuitGame.TabStop = false;
+         this.PB_QuitGame.Click += new System.EventHandler(this.PB_QuitGame_Click);
+         this.PB_QuitGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BTN_QuitGame_MouseDown);
+         this.PB_QuitGame.MouseLeave += new System.EventHandler(this.BTN_QuitGame_MouseLeave);
+         this.PB_QuitGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BTN_QuitGame_MouseMove);
          // 
          // PB_APropos
          // 
@@ -207,6 +219,10 @@
          this.PB_APropos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_APropos.TabIndex = 8;
          this.PB_APropos.TabStop = false;
+         this.PB_APropos.Click += new System.EventHandler(this.PB_APropos_Click);
+         this.PB_APropos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BTN_APropos_MouseDown);
+         this.PB_APropos.MouseLeave += new System.EventHandler(this.BTN_APropos_MouseLeave);
+         this.PB_APropos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BTN_APropos_MouseMove);
          // 
          // PB_DeleteQuestion
          // 
@@ -218,6 +234,10 @@
          this.PB_DeleteQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_DeleteQuestion.TabIndex = 11;
          this.PB_DeleteQuestion.TabStop = false;
+         this.PB_DeleteQuestion.Click += new System.EventHandler(this.PB_DeleteQuestion_Click);
+         this.PB_DeleteQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BTN_DeleteQuestion_MouseDown);
+         this.PB_DeleteQuestion.MouseLeave += new System.EventHandler(this.BTN_DeleteQuestion_MouseLeave);
+         this.PB_DeleteQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BTN_DeleteQuestion_MouseMove);
          // 
          // Menu
          // 
