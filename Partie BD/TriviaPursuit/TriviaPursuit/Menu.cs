@@ -41,13 +41,13 @@ namespace TriviaPursuit
       private void BTN_APropos_MouseMove(object sender, MouseEventArgs e)
       {
          BTN_APropos.ForeColor = Color.Black;
-         PB_APropos.Visible = true;  
+         PB_APropos.Image = Properties.Resources.info_large_outline;
       }
 
       private void BTN_APropos_MouseLeave(object sender, EventArgs e)
       {
          BTN_APropos.ForeColor = Color.White;
-         PB_APropos.Visible = false; 
+         PB_APropos.Image = Properties.Resources.info_large;
       }
 
       private void BTN_APropos_MouseDown(object sender, MouseEventArgs e)
@@ -70,13 +70,13 @@ namespace TriviaPursuit
       private void BTN_AddQuestion_MouseLeave(object sender, EventArgs e)
       {
          BTN_AddQuestion.ForeColor = Color.Black;
-         PB_AddQuestion.Visible = false; 
+         PB_AddQuestion.Image = Properties.Resources.plus;
       }
 
       private void BTN_AddQuestion_MouseMove(object sender, MouseEventArgs e)
       {
          BTN_AddQuestion.ForeColor = Color.White;
-         PB_AddQuestion.Visible = true;  
+         PB_AddQuestion.Image = Properties.Resources.plus_outline;
       }
 
       private void BTN_QuitGame_MouseDown(object sender, MouseEventArgs e)
@@ -87,13 +87,13 @@ namespace TriviaPursuit
       private void BTN_QuitGame_MouseMove(object sender, MouseEventArgs e)
       {
          BTN_QuitGame.ForeColor = Color.White;
-         PB_QuitGame.Visible = true;  
+         PB_QuitGame.Image = Properties.Resources.export_outline;
       }
 
       private void BTN_QuitGame_MouseLeave(object sender, EventArgs e)
       {
          BTN_QuitGame.ForeColor = Color.Black;
-         PB_QuitGame.Visible = false; 
+         PB_QuitGame.Image = Properties.Resources.export;
       }
 
       private void BTN_Stats_MouseDown(object sender, MouseEventArgs e)
@@ -104,25 +104,25 @@ namespace TriviaPursuit
       private void BTN_Stats_MouseLeave(object sender, EventArgs e)
       {
          BTN_Stats.ForeColor = Color.White;
-         PB_Stats.Visible = false; 
+         PB_Stats.Image = Properties.Resources.chart_line;
       }
 
       private void BTN_Stats_MouseMove(object sender, MouseEventArgs e)
       {
          BTN_Stats.ForeColor = Color.Black;
-         PB_Stats.Visible = true; 
+         PB_Stats.Image = Properties.Resources.chart_line_outline;
       }
 
       private void BTN_DeleteQuestion_MouseMove(object sender, MouseEventArgs e)
       {
          BTN_DeleteQuestion.ForeColor = Color.White;
-         PB_DeleteQuestion.Visible = true;  
+         PB_DeleteQuestion.Image = Properties.Resources.minus_outline;
       }
 
       private void BTN_DeleteQuestion_MouseLeave(object sender, EventArgs e)
       {
          BTN_DeleteQuestion.ForeColor = Color.Black;
-         PB_DeleteQuestion.Visible = false; 
+         PB_DeleteQuestion.Image = Properties.Resources.minus;
       }
 
       private void BTN_DeleteQuestion_MouseDown(object sender, MouseEventArgs e)
@@ -157,7 +157,8 @@ namespace TriviaPursuit
 
       private void PB_Logo_Click(object sender, EventArgs e)
       {
-         System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"ChienQuiJappe.wav");
+         var player = new System.Media.SoundPlayer();
+         player.Stream = Properties.Resources.ChienQuiJappe;
          player.Play();
       }
    }

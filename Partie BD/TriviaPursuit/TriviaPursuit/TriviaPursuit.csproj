@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAjoutDeQuestions.cs">
+    <Compile Include="Resources\FormAjoutDeQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAjoutDeQuestions.Designer.cs">
+    <Compile Include="Resources\FormAjoutDeQuestions.Designer.cs">
       <DependentUpon>FormAjoutDeQuestions.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAPropos.cs">
@@ -94,7 +94,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAjoutDeQuestions.resx">
+    <EmbeddedResource Include="Resources\FormAjoutDeQuestions.resx">
       <DependentUpon>FormAjoutDeQuestions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAPropos.resx">
@@ -161,6 +161,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\export-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChienQuiJappe.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChienQuiJappe.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

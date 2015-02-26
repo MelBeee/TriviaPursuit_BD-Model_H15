@@ -37,15 +37,15 @@
          this.PB_Logo = new System.Windows.Forms.PictureBox();
          this.BTN_DeleteQuestion = new System.Windows.Forms.Label();
          this.PB_AddQuestion = new System.Windows.Forms.PictureBox();
-         this.PB_APropos = new System.Windows.Forms.PictureBox();
-         this.PB_QuitGame = new System.Windows.Forms.PictureBox();
          this.PB_Stats = new System.Windows.Forms.PictureBox();
+         this.PB_QuitGame = new System.Windows.Forms.PictureBox();
+         this.PB_APropos = new System.Windows.Forms.PictureBox();
          this.PB_DeleteQuestion = new System.Windows.Forms.PictureBox();
          ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.PB_AddQuestion)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.PB_APropos)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.PB_QuitGame)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.PB_Stats)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.PB_QuitGame)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.PB_APropos)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.PB_DeleteQuestion)).BeginInit();
          this.SuspendLayout();
          // 
@@ -73,7 +73,7 @@
          this.BTN_QuitGame.BackColor = System.Drawing.Color.Transparent;
          this.BTN_QuitGame.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_QuitGame.ForeColor = System.Drawing.Color.Black;
-         this.BTN_QuitGame.Location = new System.Drawing.Point(193, 318);
+         this.BTN_QuitGame.Location = new System.Drawing.Point(196, 360);
          this.BTN_QuitGame.Name = "BTN_QuitGame";
          this.BTN_QuitGame.Size = new System.Drawing.Size(76, 58);
          this.BTN_QuitGame.TabIndex = 1;
@@ -90,7 +90,7 @@
          this.BTN_AddQuestion.BackColor = System.Drawing.Color.Transparent;
          this.BTN_AddQuestion.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_AddQuestion.ForeColor = System.Drawing.Color.Black;
-         this.BTN_AddQuestion.Location = new System.Drawing.Point(312, 124);
+         this.BTN_AddQuestion.Location = new System.Drawing.Point(315, 93);
          this.BTN_AddQuestion.Name = "BTN_AddQuestion";
          this.BTN_AddQuestion.Size = new System.Drawing.Size(135, 58);
          this.BTN_AddQuestion.TabIndex = 2;
@@ -107,7 +107,7 @@
          this.BTN_APropos.BackColor = System.Drawing.Color.Transparent;
          this.BTN_APropos.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_APropos.ForeColor = System.Drawing.Color.White;
-         this.BTN_APropos.Location = new System.Drawing.Point(333, 278);
+         this.BTN_APropos.Location = new System.Drawing.Point(334, 310);
          this.BTN_APropos.Name = "BTN_APropos";
          this.BTN_APropos.Size = new System.Drawing.Size(93, 29);
          this.BTN_APropos.TabIndex = 3;
@@ -124,7 +124,7 @@
          this.BTN_Stats.BackColor = System.Drawing.Color.Transparent;
          this.BTN_Stats.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_Stats.ForeColor = System.Drawing.Color.White;
-         this.BTN_Stats.Location = new System.Drawing.Point(24, 277);
+         this.BTN_Stats.Location = new System.Drawing.Point(22, 310);
          this.BTN_Stats.Name = "BTN_Stats";
          this.BTN_Stats.Size = new System.Drawing.Size(122, 29);
          this.BTN_Stats.TabIndex = 4;
@@ -153,7 +153,7 @@
          this.BTN_DeleteQuestion.BackColor = System.Drawing.Color.Transparent;
          this.BTN_DeleteQuestion.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_DeleteQuestion.ForeColor = System.Drawing.Color.Black;
-         this.BTN_DeleteQuestion.Location = new System.Drawing.Point(18, 124);
+         this.BTN_DeleteQuestion.Location = new System.Drawing.Point(16, 96);
          this.BTN_DeleteQuestion.Name = "BTN_DeleteQuestion";
          this.BTN_DeleteQuestion.Size = new System.Drawing.Size(135, 58);
          this.BTN_DeleteQuestion.TabIndex = 6;
@@ -167,62 +167,57 @@
          // PB_AddQuestion
          // 
          this.PB_AddQuestion.BackColor = System.Drawing.Color.Transparent;
-         this.PB_AddQuestion.Image = global::TriviaPursuit.Properties.Resources.plus_outline;
-         this.PB_AddQuestion.Location = new System.Drawing.Point(364, 60);
+         this.PB_AddQuestion.Image = global::TriviaPursuit.Properties.Resources.plus;
+         this.PB_AddQuestion.Location = new System.Drawing.Point(351, 154);
          this.PB_AddQuestion.Name = "PB_AddQuestion";
          this.PB_AddQuestion.Size = new System.Drawing.Size(62, 58);
          this.PB_AddQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_AddQuestion.TabIndex = 7;
          this.PB_AddQuestion.TabStop = false;
-         this.PB_AddQuestion.Visible = false;
-         // 
-         // PB_APropos
-         // 
-         this.PB_APropos.BackColor = System.Drawing.Color.Transparent;
-         this.PB_APropos.Image = global::TriviaPursuit.Properties.Resources.info_large_outline;
-         this.PB_APropos.Location = new System.Drawing.Point(364, 320);
-         this.PB_APropos.Name = "PB_APropos";
-         this.PB_APropos.Size = new System.Drawing.Size(62, 58);
-         this.PB_APropos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-         this.PB_APropos.TabIndex = 8;
-         this.PB_APropos.TabStop = false;
-         this.PB_APropos.Visible = false;
-         // 
-         // PB_QuitGame
-         // 
-         this.PB_QuitGame.BackColor = System.Drawing.Color.Transparent;
-         this.PB_QuitGame.Image = global::TriviaPursuit.Properties.Resources.export_outline;
-         this.PB_QuitGame.Location = new System.Drawing.Point(200, 390);
-         this.PB_QuitGame.Name = "PB_QuitGame";
-         this.PB_QuitGame.Size = new System.Drawing.Size(63, 58);
-         this.PB_QuitGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-         this.PB_QuitGame.TabIndex = 9;
-         this.PB_QuitGame.TabStop = false;
-         this.PB_QuitGame.Visible = false;
          // 
          // PB_Stats
          // 
          this.PB_Stats.BackColor = System.Drawing.Color.Transparent;
-         this.PB_Stats.Image = global::TriviaPursuit.Properties.Resources.chart_line_outline;
-         this.PB_Stats.Location = new System.Drawing.Point(52, 320);
+         this.PB_Stats.Image = global::TriviaPursuit.Properties.Resources.chart_line;
+         this.PB_Stats.Location = new System.Drawing.Point(52, 252);
          this.PB_Stats.Name = "PB_Stats";
          this.PB_Stats.Size = new System.Drawing.Size(63, 58);
          this.PB_Stats.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_Stats.TabIndex = 10;
          this.PB_Stats.TabStop = false;
-         this.PB_Stats.Visible = false;
+         // 
+         // PB_QuitGame
+         // 
+         this.PB_QuitGame.BackColor = System.Drawing.Color.Transparent;
+         this.PB_QuitGame.Image = global::TriviaPursuit.Properties.Resources.export;
+         this.PB_QuitGame.Location = new System.Drawing.Point(201, 295);
+         this.PB_QuitGame.Name = "PB_QuitGame";
+         this.PB_QuitGame.Size = new System.Drawing.Size(63, 58);
+         this.PB_QuitGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+         this.PB_QuitGame.TabIndex = 9;
+         this.PB_QuitGame.TabStop = false;
+         // 
+         // PB_APropos
+         // 
+         this.PB_APropos.BackColor = System.Drawing.Color.Transparent;
+         this.PB_APropos.Image = global::TriviaPursuit.Properties.Resources.info_large;
+         this.PB_APropos.Location = new System.Drawing.Point(351, 252);
+         this.PB_APropos.Name = "PB_APropos";
+         this.PB_APropos.Size = new System.Drawing.Size(62, 58);
+         this.PB_APropos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+         this.PB_APropos.TabIndex = 8;
+         this.PB_APropos.TabStop = false;
          // 
          // PB_DeleteQuestion
          // 
          this.PB_DeleteQuestion.BackColor = System.Drawing.Color.Transparent;
-         this.PB_DeleteQuestion.Image = global::TriviaPursuit.Properties.Resources.minus_outline;
-         this.PB_DeleteQuestion.Location = new System.Drawing.Point(52, 60);
+         this.PB_DeleteQuestion.Image = global::TriviaPursuit.Properties.Resources.minus;
+         this.PB_DeleteQuestion.Location = new System.Drawing.Point(52, 154);
          this.PB_DeleteQuestion.Name = "PB_DeleteQuestion";
          this.PB_DeleteQuestion.Size = new System.Drawing.Size(63, 58);
          this.PB_DeleteQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.PB_DeleteQuestion.TabIndex = 11;
          this.PB_DeleteQuestion.TabStop = false;
-         this.PB_DeleteQuestion.Visible = false;
          // 
          // Menu
          // 
@@ -253,9 +248,9 @@
          this.Load += new System.EventHandler(this.Menu_Load);
          ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.PB_AddQuestion)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.PB_APropos)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.PB_QuitGame)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.PB_Stats)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.PB_QuitGame)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.PB_APropos)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.PB_DeleteQuestion)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
@@ -272,9 +267,9 @@
       private System.Windows.Forms.PictureBox PB_Logo;
       private System.Windows.Forms.Label BTN_DeleteQuestion;
       private System.Windows.Forms.PictureBox PB_AddQuestion;
-      private System.Windows.Forms.PictureBox PB_APropos;
-      private System.Windows.Forms.PictureBox PB_QuitGame;
       private System.Windows.Forms.PictureBox PB_Stats;
+      private System.Windows.Forms.PictureBox PB_QuitGame;
+      private System.Windows.Forms.PictureBox PB_APropos;
       private System.Windows.Forms.PictureBox PB_DeleteQuestion;
    }
 }
