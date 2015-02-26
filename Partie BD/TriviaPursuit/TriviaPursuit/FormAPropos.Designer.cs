@@ -33,7 +33,7 @@
          this.label1 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
          this.label3 = new System.Windows.Forms.Label();
-         this.button1 = new System.Windows.Forms.Button();
+         this.BTN_Fermer = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
          this.SuspendLayout();
          // 
@@ -79,15 +79,15 @@
          this.label3.Text = "Fait par Mélissa Boucher et \r\nCharlie Laplante";
          this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
          // 
-         // button1
+         // BTN_Fermer
          // 
-         this.button1.Location = new System.Drawing.Point(107, 304);
-         this.button1.Name = "button1";
-         this.button1.Size = new System.Drawing.Size(75, 23);
-         this.button1.TabIndex = 10;
-         this.button1.Text = "Fermer";
-         this.button1.UseVisualStyleBackColor = true;
-         this.button1.Click += new System.EventHandler(this.button1_Click);
+         this.BTN_Fermer.Location = new System.Drawing.Point(107, 304);
+         this.BTN_Fermer.Name = "BTN_Fermer";
+         this.BTN_Fermer.Size = new System.Drawing.Size(75, 23);
+         this.BTN_Fermer.TabIndex = 10;
+         this.BTN_Fermer.Text = "Fermer";
+         this.BTN_Fermer.UseVisualStyleBackColor = true;
+         this.BTN_Fermer.Click += new System.EventHandler(this.BTN_Fermer_Click);
          // 
          // FormAPropos
          // 
@@ -95,7 +95,7 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(40)))));
          this.ClientSize = new System.Drawing.Size(289, 337);
-         this.Controls.Add(this.button1);
+         this.Controls.Add(this.BTN_Fermer);
          this.Controls.Add(this.label3);
          this.Controls.Add(this.label2);
          this.Controls.Add(this.label1);
@@ -105,7 +105,6 @@
          this.MinimizeBox = false;
          this.Name = "FormAPropos";
          this.Text = "À Propos";
-         this.Load += new System.EventHandler(this.FormAPropos_Load);
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
@@ -118,6 +117,6 @@
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Label label3;
-      private System.Windows.Forms.Button button1;
+      private System.Windows.Forms.Button BTN_Fermer;
    }
 }
