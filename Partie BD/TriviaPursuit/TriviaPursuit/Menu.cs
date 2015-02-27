@@ -50,10 +50,12 @@ namespace TriviaPursuit
       private void BTN_CommencerPartie_MouseMove(object sender, MouseEventArgs e)
       {
          BTN_StartGame.ForeColor = Color.Black;
+         Cursor.Current = Cursors.Hand;
       }
       private void BTN_CommencerPartie_MouseLeave(object sender, EventArgs e)
       {
          BTN_StartGame.ForeColor = Color.White;
+         Cursor.Current = Cursors.Arrow;
       }
       private void BTN_StartGame_Click(object sender, EventArgs e)
       {
@@ -61,7 +63,7 @@ namespace TriviaPursuit
       }
       private void StartGame()
       {
-         FormJeu form = new FormJeu();
+         FormSettingsGame form = new FormSettingsGame();
 
          if (form.ShowDialog() == DialogResult.Abort)
             this.Close();
@@ -78,11 +80,13 @@ namespace TriviaPursuit
       {
          BTN_AddQuestion.ForeColor = Color.White;
          PB_AddQuestion.Image = Properties.Resources.plus_outline;
+         Cursor.Current = Cursors.Hand;
       }
       private void BTN_AddQuestion_MouseLeave(object sender, EventArgs e)
       {
          BTN_AddQuestion.ForeColor = Color.Black;
          PB_AddQuestion.Image = Properties.Resources.plus;
+         Cursor.Current = Cursors.Arrow;
       }
       private void BTN_AddQuestion_Click(object sender, EventArgs e)
       {
@@ -111,11 +115,13 @@ namespace TriviaPursuit
       {
          BTN_DeleteQuestion.ForeColor = Color.White;
          PB_DeleteQuestion.Image = Properties.Resources.minus_outline;
+         Cursor.Current = Cursors.Hand;
       }
       private void BTN_DeleteQuestion_MouseLeave(object sender, EventArgs e)
       {
          BTN_DeleteQuestion.ForeColor = Color.Black;
          PB_DeleteQuestion.Image = Properties.Resources.minus;
+         Cursor.Current = Cursors.Arrow;
       }
       private void BTN_DeleteQuestion_Click(object sender, EventArgs e)
       {
@@ -144,11 +150,13 @@ namespace TriviaPursuit
       {
          BTN_Stats.ForeColor = Color.Black;
          PB_Stats.Image = Properties.Resources.chart_line_outline;
+         Cursor.Current = Cursors.Hand;
       }
       private void BTN_Stats_MouseLeave(object sender, EventArgs e)
       {
          BTN_Stats.ForeColor = Color.White;
          PB_Stats.Image = Properties.Resources.chart_line;
+         Cursor.Current = Cursors.Arrow;
       }
       private void BTN_Stats_Click(object sender, EventArgs e)
       {
@@ -176,11 +184,13 @@ namespace TriviaPursuit
       {
          BTN_QuitGame.ForeColor = Color.White;
          PB_QuitGame.Image = Properties.Resources.export_outline;
+         Cursor.Current = Cursors.Hand;
       }
       private void BTN_QuitGame_MouseLeave(object sender, EventArgs e)
       {
          BTN_QuitGame.ForeColor = Color.Black;
          PB_QuitGame.Image = Properties.Resources.export;
+         Cursor.Current = Cursors.Arrow;
       }
       private void BTN_QuitGame_Click(object sender, EventArgs e)
       {
@@ -206,11 +216,13 @@ namespace TriviaPursuit
       {
          BTN_APropos.ForeColor = Color.Black;
          PB_APropos.Image = Properties.Resources.info_large_outline;
+         Cursor.Current = Cursors.Hand;
       }
       private void BTN_APropos_MouseLeave(object sender, EventArgs e)
       {
          BTN_APropos.ForeColor = Color.White;
          PB_APropos.Image = Properties.Resources.info_large;
+         Cursor.Current = Cursors.Arrow;
       }
       private void BTN_APropos_Click(object sender, EventArgs e)
       {

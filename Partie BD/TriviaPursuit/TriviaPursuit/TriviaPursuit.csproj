@@ -50,6 +50,12 @@
     <Compile Include="FormAjoutQuestion.Designer.cs">
       <DependentUpon>FormAjoutQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSettingsGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettingsGame.Designer.cs">
+      <DependentUpon>FormSettingsGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\FormAjoutDeQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAjoutQuestion.resx">
       <DependentUpon>FormAjoutQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettingsGame.resx">
+      <DependentUpon>FormSettingsGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\FormAjoutDeQuestions.resx">
       <DependentUpon>FormAjoutDeQuestions.cs</DependentUpon>

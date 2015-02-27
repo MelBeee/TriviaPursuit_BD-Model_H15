@@ -16,5 +16,15 @@ namespace TriviaPursuit
       {
          InitializeComponent();
       }
+
+      private void BTN_Surrender_Click(object sender, EventArgs e)
+      {
+
+      }
+
+      private void FormJeu_Load(object sender, EventArgs e)
+      {
+
+      }
    }
 }
