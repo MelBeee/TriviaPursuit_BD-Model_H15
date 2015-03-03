@@ -26,5 +26,12 @@ namespace TriviaPursuit
       {
 
       }
+
+      private void BTN_Rules_Click(object sender, EventArgs e)
+      {
+          FormReglements form = new FormReglements();
+
+          form.Show();
+      }
    }
 }

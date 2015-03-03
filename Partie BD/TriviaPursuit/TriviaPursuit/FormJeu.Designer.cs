@@ -587,6 +587,7 @@
             this.BTN_Rules.TabIndex = 15;
             this.BTN_Rules.Text = "Règlements";
             this.BTN_Rules.UseVisualStyleBackColor = true;
+            this.BTN_Rules.Click += new System.EventHandler(this.BTN_Rules_Click);
             // 
             // FormJeu
             // 
