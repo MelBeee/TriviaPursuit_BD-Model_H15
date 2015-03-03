@@ -43,7 +43,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::TriviaPursuit.Properties.Resources.LogoTrivial_Diamond;
             this.pictureBox1.Location = new System.Drawing.Point(112, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(163, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -88,7 +88,7 @@
             // BTN_Fermer
             // 
             this.BTN_Fermer.Location = new System.Drawing.Point(196, 375);
-            this.BTN_Fermer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTN_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_Fermer.Name = "BTN_Fermer";
             this.BTN_Fermer.Size = new System.Drawing.Size(100, 28);
             this.BTN_Fermer.TabIndex = 10;
@@ -104,6 +104,7 @@
             this.BTN_Rules.TabIndex = 11;
             this.BTN_Rules.Text = "Règlements";
             this.BTN_Rules.UseVisualStyleBackColor = true;
+            this.BTN_Rules.Click += new System.EventHandler(this.BTN_Rules_Click);
             // 
             // FormAPropos
             // 
@@ -119,7 +120,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAPropos";

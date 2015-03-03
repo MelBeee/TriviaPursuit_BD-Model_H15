@@ -16,7 +16,7 @@ namespace TriviaPursuit
       {
          Application.EnableVisualStyles();
          Application.SetCompatibleTextRenderingDefault(false);
-         Application.Run(new FormQuestion());
+         Application.Run(new Menu());
       }
    }
 }
