@@ -30,7 +30,7 @@
       {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSupressionQuestion));
          this.BTN_Annuler = new System.Windows.Forms.Button();
-         this.comboBox1 = new System.Windows.Forms.ComboBox();
+         this.CB_CATEGORIE = new System.Windows.Forms.ComboBox();
          this.label6 = new System.Windows.Forms.Label();
          this.label1 = new System.Windows.Forms.Label();
          this.label2 = new System.Windows.Forms.Label();
@@ -38,14 +38,14 @@
          this.label4 = new System.Windows.Forms.Label();
          this.label5 = new System.Windows.Forms.Label();
          this.groupBox1 = new System.Windows.Forms.GroupBox();
-         this.button3 = new System.Windows.Forms.Button();
-         this.label9 = new System.Windows.Forms.Label();
-         this.button4 = new System.Windows.Forms.Button();
-         this.label10 = new System.Windows.Forms.Label();
-         this.label11 = new System.Windows.Forms.Label();
-         this.label12 = new System.Windows.Forms.Label();
-         this.label13 = new System.Windows.Forms.Label();
-         this.label14 = new System.Windows.Forms.Label();
+         this.BTN_PRECEDENT = new System.Windows.Forms.Button();
+         this.LB_REPONSE = new System.Windows.Forms.Label();
+         this.BTN_SUIVANT = new System.Windows.Forms.Button();
+         this.LB_QUESTION = new System.Windows.Forms.Label();
+         this.LB_CHOIX1 = new System.Windows.Forms.Label();
+         this.LB_ID = new System.Windows.Forms.Label();
+         this.LB_CHOIX2 = new System.Windows.Forms.Label();
+         this.LB_CHOIX3 = new System.Windows.Forms.Label();
          this.label7 = new System.Windows.Forms.Label();
          this.BTN_Supprimer = new System.Windows.Forms.Button();
          this.groupBox1.SuspendLayout();
@@ -62,15 +62,21 @@
          this.BTN_Annuler.UseVisualStyleBackColor = true;
          this.BTN_Annuler.Click += new System.EventHandler(this.button1_Click);
          // 
-         // comboBox1
+         // CB_CATEGORIE
          // 
-         this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-         this.comboBox1.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.comboBox1.FormattingEnabled = true;
-         this.comboBox1.Location = new System.Drawing.Point(114, 10);
-         this.comboBox1.Name = "comboBox1";
-         this.comboBox1.Size = new System.Drawing.Size(159, 28);
-         this.comboBox1.TabIndex = 25;
+         this.CB_CATEGORIE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+         this.CB_CATEGORIE.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.CB_CATEGORIE.FormattingEnabled = true;
+         this.CB_CATEGORIE.Items.AddRange(new object[] {
+            "Jeu vidéo",
+            "Culinaire",
+            "Animaux",
+            "Musique"});
+         this.CB_CATEGORIE.Location = new System.Drawing.Point(114, 10);
+         this.CB_CATEGORIE.Name = "CB_CATEGORIE";
+         this.CB_CATEGORIE.Size = new System.Drawing.Size(159, 28);
+         this.CB_CATEGORIE.TabIndex = 25;
+         this.CB_CATEGORIE.SelectedIndexChanged += new System.EventHandler(this.CB_CATEGORIE_SelectedIndexChanged);
          // 
          // label6
          // 
@@ -134,14 +140,14 @@
          // 
          // groupBox1
          // 
-         this.groupBox1.Controls.Add(this.button3);
-         this.groupBox1.Controls.Add(this.label9);
-         this.groupBox1.Controls.Add(this.button4);
-         this.groupBox1.Controls.Add(this.label10);
-         this.groupBox1.Controls.Add(this.label11);
-         this.groupBox1.Controls.Add(this.label12);
-         this.groupBox1.Controls.Add(this.label13);
-         this.groupBox1.Controls.Add(this.label14);
+         this.groupBox1.Controls.Add(this.BTN_PRECEDENT);
+         this.groupBox1.Controls.Add(this.LB_REPONSE);
+         this.groupBox1.Controls.Add(this.BTN_SUIVANT);
+         this.groupBox1.Controls.Add(this.LB_QUESTION);
+         this.groupBox1.Controls.Add(this.LB_CHOIX1);
+         this.groupBox1.Controls.Add(this.LB_ID);
+         this.groupBox1.Controls.Add(this.LB_CHOIX2);
+         this.groupBox1.Controls.Add(this.LB_CHOIX3);
          this.groupBox1.Controls.Add(this.label5);
          this.groupBox1.Controls.Add(this.label1);
          this.groupBox1.Controls.Add(this.label7);
@@ -155,86 +161,87 @@
          this.groupBox1.TabIndex = 33;
          this.groupBox1.TabStop = false;
          this.groupBox1.Text = "11 résultats";
-         this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
          // 
-         // button3
+         // BTN_PRECEDENT
          // 
-         this.button3.Font = new System.Drawing.Font("Buxton Sketch", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.button3.Location = new System.Drawing.Point(107, 186);
-         this.button3.Name = "button3";
-         this.button3.Size = new System.Drawing.Size(33, 23);
-         this.button3.TabIndex = 36;
-         this.button3.Text = "<<";
-         this.button3.UseVisualStyleBackColor = true;
+         this.BTN_PRECEDENT.Font = new System.Drawing.Font("Buxton Sketch", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.BTN_PRECEDENT.Location = new System.Drawing.Point(107, 186);
+         this.BTN_PRECEDENT.Name = "BTN_PRECEDENT";
+         this.BTN_PRECEDENT.Size = new System.Drawing.Size(33, 23);
+         this.BTN_PRECEDENT.TabIndex = 36;
+         this.BTN_PRECEDENT.Text = "<<";
+         this.BTN_PRECEDENT.UseVisualStyleBackColor = true;
+         this.BTN_PRECEDENT.Click += new System.EventHandler(this.BTN_PRECEDENT_Click);
          // 
-         // label9
+         // LB_REPONSE
          // 
-         this.label9.AutoSize = true;
-         this.label9.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label9.Location = new System.Drawing.Point(77, 84);
-         this.label9.Name = "label9";
-         this.label9.Size = new System.Drawing.Size(63, 20);
-         this.label9.TabIndex = 38;
-         this.label9.Text = "La poule !";
+         this.LB_REPONSE.AutoSize = true;
+         this.LB_REPONSE.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.LB_REPONSE.Location = new System.Drawing.Point(77, 84);
+         this.LB_REPONSE.Name = "LB_REPONSE";
+         this.LB_REPONSE.Size = new System.Drawing.Size(63, 20);
+         this.LB_REPONSE.TabIndex = 38;
+         this.LB_REPONSE.Text = "La poule !";
          // 
-         // button4
+         // BTN_SUIVANT
          // 
-         this.button4.Font = new System.Drawing.Font("Buxton Sketch", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.button4.Location = new System.Drawing.Point(146, 186);
-         this.button4.Name = "button4";
-         this.button4.Size = new System.Drawing.Size(33, 23);
-         this.button4.TabIndex = 35;
-         this.button4.Text = ">>";
-         this.button4.UseVisualStyleBackColor = true;
+         this.BTN_SUIVANT.Font = new System.Drawing.Font("Buxton Sketch", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.BTN_SUIVANT.Location = new System.Drawing.Point(146, 186);
+         this.BTN_SUIVANT.Name = "BTN_SUIVANT";
+         this.BTN_SUIVANT.Size = new System.Drawing.Size(33, 23);
+         this.BTN_SUIVANT.TabIndex = 35;
+         this.BTN_SUIVANT.Text = ">>";
+         this.BTN_SUIVANT.UseVisualStyleBackColor = true;
+         this.BTN_SUIVANT.Click += new System.EventHandler(this.BTN_SUIVANT_Click);
          // 
-         // label10
+         // LB_QUESTION
          // 
-         this.label10.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label10.Location = new System.Drawing.Point(77, 41);
-         this.label10.Name = "label10";
-         this.label10.Size = new System.Drawing.Size(204, 44);
-         this.label10.TabIndex = 33;
-         this.label10.Text = "Poule ou l\'oeuf en premier  ? ";
+         this.LB_QUESTION.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.LB_QUESTION.Location = new System.Drawing.Point(77, 41);
+         this.LB_QUESTION.Name = "LB_QUESTION";
+         this.LB_QUESTION.Size = new System.Drawing.Size(204, 44);
+         this.LB_QUESTION.TabIndex = 33;
+         this.LB_QUESTION.Text = "Poule ou l\'oeuf en premier  ? ";
          // 
-         // label11
+         // LB_CHOIX1
          // 
-         this.label11.AutoSize = true;
-         this.label11.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label11.Location = new System.Drawing.Point(77, 108);
-         this.label11.Name = "label11";
-         this.label11.Size = new System.Drawing.Size(50, 20);
-         this.label11.TabIndex = 37;
-         this.label11.Text = "L\'oeuf !";
+         this.LB_CHOIX1.AutoSize = true;
+         this.LB_CHOIX1.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.LB_CHOIX1.Location = new System.Drawing.Point(77, 108);
+         this.LB_CHOIX1.Name = "LB_CHOIX1";
+         this.LB_CHOIX1.Size = new System.Drawing.Size(50, 20);
+         this.LB_CHOIX1.TabIndex = 37;
+         this.LB_CHOIX1.Text = "L\'oeuf !";
          // 
-         // label12
+         // LB_ID
          // 
-         this.label12.AutoSize = true;
-         this.label12.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label12.Location = new System.Drawing.Point(77, 18);
-         this.label12.Name = "label12";
-         this.label12.Size = new System.Drawing.Size(29, 20);
-         this.label12.TabIndex = 34;
-         this.label12.Text = "102";
+         this.LB_ID.AutoSize = true;
+         this.LB_ID.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.LB_ID.Location = new System.Drawing.Point(77, 18);
+         this.LB_ID.Name = "LB_ID";
+         this.LB_ID.Size = new System.Drawing.Size(29, 20);
+         this.LB_ID.TabIndex = 34;
+         this.LB_ID.Text = "102";
          // 
-         // label13
+         // LB_CHOIX2
          // 
-         this.label13.AutoSize = true;
-         this.label13.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label13.Location = new System.Drawing.Point(77, 133);
-         this.label13.Name = "label13";
-         this.label13.Size = new System.Drawing.Size(104, 20);
-         this.label13.TabIndex = 36;
-         this.label13.Text = "Aucun réponse ! ";
+         this.LB_CHOIX2.AutoSize = true;
+         this.LB_CHOIX2.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.LB_CHOIX2.Location = new System.Drawing.Point(77, 133);
+         this.LB_CHOIX2.Name = "LB_CHOIX2";
+         this.LB_CHOIX2.Size = new System.Drawing.Size(104, 20);
+         this.LB_CHOIX2.TabIndex = 36;
+         this.LB_CHOIX2.Text = "Aucun réponse ! ";
          // 
-         // label14
+         // LB_CHOIX3
          // 
-         this.label14.AutoSize = true;
-         this.label14.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label14.Location = new System.Drawing.Point(77, 157);
-         this.label14.Name = "label14";
-         this.label14.Size = new System.Drawing.Size(116, 20);
-         this.label14.TabIndex = 35;
-         this.label14.Text = "Mystère de la vie ! ";
+         this.LB_CHOIX3.AutoSize = true;
+         this.LB_CHOIX3.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.LB_CHOIX3.Location = new System.Drawing.Point(77, 157);
+         this.LB_CHOIX3.Name = "LB_CHOIX3";
+         this.LB_CHOIX3.Size = new System.Drawing.Size(116, 20);
+         this.LB_CHOIX3.TabIndex = 35;
+         this.LB_CHOIX3.Text = "Mystère de la vie ! ";
          // 
          // label7
          // 
@@ -255,7 +262,6 @@
          this.BTN_Supprimer.TabIndex = 27;
          this.BTN_Supprimer.Text = "Supprimer";
          this.BTN_Supprimer.UseVisualStyleBackColor = true;
-         this.BTN_Supprimer.Click += new System.EventHandler(this.button2_Click);
          // 
          // FormSupressionQuestion
          // 
@@ -266,7 +272,7 @@
          this.Controls.Add(this.groupBox1);
          this.Controls.Add(this.BTN_Supprimer);
          this.Controls.Add(this.BTN_Annuler);
-         this.Controls.Add(this.comboBox1);
+         this.Controls.Add(this.CB_CATEGORIE);
          this.Controls.Add(this.label6);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
          this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -274,6 +280,7 @@
          this.MinimizeBox = false;
          this.Name = "FormSupressionQuestion";
          this.Text = "Suppression de Questions";
+         this.Load += new System.EventHandler(this.FormSupressionQuestion_Load);
          this.groupBox1.ResumeLayout(false);
          this.groupBox1.PerformLayout();
          this.ResumeLayout(false);
@@ -284,7 +291,7 @@
       #endregion
 
       private System.Windows.Forms.Button BTN_Annuler;
-      private System.Windows.Forms.ComboBox comboBox1;
+      private System.Windows.Forms.ComboBox CB_CATEGORIE;
       private System.Windows.Forms.Label label6;
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.Label label2;
@@ -294,13 +301,13 @@
       private System.Windows.Forms.GroupBox groupBox1;
       private System.Windows.Forms.Label label7;
       private System.Windows.Forms.Button BTN_Supprimer;
-      private System.Windows.Forms.Button button3;
-      private System.Windows.Forms.Label label9;
-      private System.Windows.Forms.Button button4;
-      private System.Windows.Forms.Label label10;
-      private System.Windows.Forms.Label label11;
-      private System.Windows.Forms.Label label12;
-      private System.Windows.Forms.Label label13;
-      private System.Windows.Forms.Label label14;
+      private System.Windows.Forms.Button BTN_PRECEDENT;
+      private System.Windows.Forms.Label LB_REPONSE;
+      private System.Windows.Forms.Button BTN_SUIVANT;
+      private System.Windows.Forms.Label LB_QUESTION;
+      private System.Windows.Forms.Label LB_CHOIX1;
+      private System.Windows.Forms.Label LB_ID;
+      private System.Windows.Forms.Label LB_CHOIX2;
+      private System.Windows.Forms.Label LB_CHOIX3;
    }
 }
