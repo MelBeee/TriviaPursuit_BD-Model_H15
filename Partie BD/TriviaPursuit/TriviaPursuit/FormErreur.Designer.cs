@@ -90,6 +90,7 @@
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormErreur";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Erreur";
          this.Load += new System.EventHandler(this.FormErreur_Load);
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

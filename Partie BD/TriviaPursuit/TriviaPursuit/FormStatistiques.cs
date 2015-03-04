@@ -33,5 +33,17 @@ namespace TriviaPursuit
          player.Stream = Properties.Resources.Typing;
          player.Play();
       }
+      //////////////////////////////////////////////////////////////////////////////////////////////
+      //    Gestion des erreurs 
+      //////////////////////////////////////////////////////////////////////////////////////////////
+      private void GestionErreur(OracleException ex)
+      {
+         FormErreur form = new FormErreur(ex);
+
+         if (form.ShowDialog() == DialogResult.Abort)
+         {
+            this.DialogResult = DialogResult.Abort;
+         }
+      }
    }
 }

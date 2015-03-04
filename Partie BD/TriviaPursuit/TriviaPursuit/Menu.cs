@@ -22,6 +22,8 @@ namespace TriviaPursuit
        // variable contenant la connection a la bd 
        OracleConnection oraconnPrincipale = new OracleConnection();
 
+       bool JoueursDelAdd = true; 
+
         //////////////////////////////////////////////////////////////////////////////////////////////
         //    Form loading
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -286,7 +288,8 @@ namespace TriviaPursuit
         }
         private void AddPlayers()
         {
-           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale);
+           JoueursDelAdd = true; 
+           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale, JoueursDelAdd);
 
             form.Text = "Ajout de joueurs";
 
@@ -323,9 +326,10 @@ namespace TriviaPursuit
         }
         private void DeletePlayers()
         {
-           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale);
+           JoueursDelAdd = false;
+           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale, JoueursDelAdd);
 
-            form.Text = "Suppression de joueurs";
+           form.Text = "Suppression de joueurs";
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();

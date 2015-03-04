@@ -1,0 +1,62 @@
+drop table Categories cascade constraints;
+drop table Joueurs cascade constraints;
+drop table QuestionReussie cascade constraints;
+drop table Questions cascade constraints;
+drop table Scores cascade constraints; 
+drop sequence QuestionSEQ;
+
+create sequence QuestionSEQ
+start with 1
+increment by 1; 
+
+CREATE TABLE Categories
+  ( NomCategories NVARCHAR2 (20) NOT NULL
+  ) ;
+ALTER TABLE Categories ADD CONSTRAINT Categories_PK PRIMARY KEY ( NomCategories ) ;
+
+CREATE TABLE Joueurs
+  ( NomJoueur NVARCHAR2 (20) NOT NULL
+  ) ;
+ALTER TABLE Joueurs ADD CONSTRAINT Joueurs_PK PRIMARY KEY ( NomJoueur ) ;
+
+CREATE TABLE QuestionReussie
+  (
+    NomJoueur NVARCHAR2 (20) NOT NULL ,
+    IDQuestion NUMBER (3) NOT NULL
+  ) ;
+ALTER TABLE QuestionReussie ADD CONSTRAINT QuestionReussie_PK PRIMARY KEY ( NomJoueur, IDQuestion ) ;
+
+CREATE TABLE Questions
+  (
+    IDQuestion NUMBER (3) NOT NULL ,
+    Description NVARCHAR2 (120) ,
+    Choix1 NVARCHAR2 (80) ,
+    Choix2 NVARCHAR2 (80) ,
+    Choix3 NVARCHAR2 (80) ,
+    Reponse NVARCHAR2 (80) ,
+    NomCategorie NVARCHAR2 (20) NOT NULL
+  ) ;
+ALTER TABLE Questions ADD CONSTRAINT Questions_PK PRIMARY KEY ( IDQuestion ) ;
+
+CREATE TABLE Scores
+  (
+    NomJoueur NVARCHAR2 (20) NOT NULL ,
+    Categorie NVARCHAR2 (20) NOT NULL
+  ) ;
+ALTER TABLE Scores ADD CONSTRAINT Scores_PK PRIMARY KEY ( NomJoueur, Categorie ) ;
+
+ALTER TABLE QuestionReussie ADD CONSTRAINT QuestionReussie_Joueurs_FK FOREIGN KEY ( NomJoueur ) REFERENCES Joueurs ( NomJoueur ) ;
+
+ALTER TABLE QuestionReussie ADD CONSTRAINT QuestionReussie_Questions_FK FOREIGN KEY ( IDQuestion ) REFERENCES Questions ( IDQuestion ) ;
+
+ALTER TABLE Questions ADD CONSTRAINT Questions_Categorie_FK FOREIGN KEY ( NomCategorie ) REFERENCES Categories ( NomCategories ) ;
+
+ALTER TABLE Scores ADD CONSTRAINT Scores_Categorie_FK FOREIGN KEY ( Categorie ) REFERENCES Categories ( NomCategories ) ;
+
+ALTER TABLE Scores ADD CONSTRAINT Scores_Joueurs_FK FOREIGN KEY ( NomJoueur ) REFERENCES Joueurs ( NomJoueur ) ;
+
+insert into Categories values ('Jeu vidéo');
+insert into Categories values ('Musique');
+insert into Categories values ('Culinaire');
+insert into Categories values ('Animaux');
+commit;

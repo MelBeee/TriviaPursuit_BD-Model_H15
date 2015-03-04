@@ -46,7 +46,7 @@ namespace TriviaPursuit
          switch (ex.Number)
          {
             case 00001:
-               DescriptionErreur = "Erreur de valeur unique.";
+               DescriptionErreur = "Nom d'utilisateur déjà utilisé";
                break;
             case 00904:
                DescriptionErreur = "Nom de colonne invalide ou manquante.";
@@ -94,7 +94,7 @@ namespace TriviaPursuit
                DescriptionErreur = "Le format de date est invalide";
                break;
             case 02290:
-               DescriptionErreur = "Tentative d'execution d'une commande qui viole une constrainte Check";
+               DescriptionErreur = "Tentative d'execution d'une commande qui viole une contrainte Check";
                break;
             case 02292:
                DescriptionErreur = "Tentative de suppression d'une clé lié à une clé étrangère.";

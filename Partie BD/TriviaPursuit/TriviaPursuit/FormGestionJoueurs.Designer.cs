@@ -29,27 +29,29 @@
         private void InitializeComponent()
         {
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionJoueurs));
-         this.textBox1 = new System.Windows.Forms.TextBox();
+         this.TB_NomJoueur = new System.Windows.Forms.TextBox();
          this.BTN_Annuler = new System.Windows.Forms.Button();
          this.label1 = new System.Windows.Forms.Label();
          this.BTN_Appliquer = new System.Windows.Forms.Button();
          this.CB_Joueurs = new System.Windows.Forms.ComboBox();
          this.SuspendLayout();
          // 
-         // textBox1
+         // TB_NomJoueur
          // 
-         this.textBox1.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.textBox1.Location = new System.Drawing.Point(61, 20);
-         this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-         this.textBox1.Name = "textBox1";
-         this.textBox1.Size = new System.Drawing.Size(121, 27);
-         this.textBox1.TabIndex = 0;
+         this.TB_NomJoueur.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.TB_NomJoueur.Location = new System.Drawing.Point(61, 20);
+         this.TB_NomJoueur.Margin = new System.Windows.Forms.Padding(2);
+         this.TB_NomJoueur.MaxLength = 20;
+         this.TB_NomJoueur.Name = "TB_NomJoueur";
+         this.TB_NomJoueur.Size = new System.Drawing.Size(121, 27);
+         this.TB_NomJoueur.TabIndex = 0;
+         this.TB_NomJoueur.TextChanged += new System.EventHandler(this.TB_NomJoueur_TextChanged);
          // 
          // BTN_Annuler
          // 
          this.BTN_Annuler.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_Annuler.Location = new System.Drawing.Point(100, 66);
-         this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(2);
          this.BTN_Annuler.Name = "BTN_Annuler";
          this.BTN_Annuler.Size = new System.Drawing.Size(71, 28);
          this.BTN_Annuler.TabIndex = 1;
@@ -72,12 +74,13 @@
          // 
          this.BTN_Appliquer.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_Appliquer.Location = new System.Drawing.Point(24, 66);
-         this.BTN_Appliquer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.BTN_Appliquer.Margin = new System.Windows.Forms.Padding(2);
          this.BTN_Appliquer.Name = "BTN_Appliquer";
          this.BTN_Appliquer.Size = new System.Drawing.Size(71, 28);
          this.BTN_Appliquer.TabIndex = 3;
          this.BTN_Appliquer.Text = "Appliquer";
          this.BTN_Appliquer.UseVisualStyleBackColor = true;
+         this.BTN_Appliquer.Click += new System.EventHandler(this.BTN_Appliquer_Click);
          // 
          // CB_Joueurs
          // 
@@ -88,6 +91,7 @@
          this.CB_Joueurs.Name = "CB_Joueurs";
          this.CB_Joueurs.Size = new System.Drawing.Size(121, 28);
          this.CB_Joueurs.TabIndex = 4;
+         this.CB_Joueurs.SelectedIndexChanged += new System.EventHandler(this.CB_Joueurs_SelectedIndexChanged);
          // 
          // FormGestionJoueurs
          // 
@@ -99,13 +103,14 @@
          this.Controls.Add(this.BTN_Appliquer);
          this.Controls.Add(this.label1);
          this.Controls.Add(this.BTN_Annuler);
-         this.Controls.Add(this.textBox1);
+         this.Controls.Add(this.TB_NomJoueur);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
          this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-         this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.Margin = new System.Windows.Forms.Padding(2);
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormGestionJoueurs";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Suppression de joueurs";
          this.Load += new System.EventHandler(this.FormGestionJoueurs_Load);
          this.ResumeLayout(false);
@@ -115,7 +120,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TB_NomJoueur;
         private System.Windows.Forms.Button BTN_Annuler;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BTN_Appliquer;
