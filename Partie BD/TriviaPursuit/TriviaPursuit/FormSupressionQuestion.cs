@@ -137,9 +137,9 @@ namespace TriviaPursuit
       }
 
       private void FormSupressionQuestion_Load(object sender, EventArgs e)
-      {
-         Lister();
+      {         
          CB_CATEGORIE.SelectedIndex = 0;
+         Lister();
          BTN_PRECEDENT.Enabled = false;
          BTN_SUIVANT.Enabled = false;
       }
@@ -148,7 +148,6 @@ namespace TriviaPursuit
       {
          try
          {
-
             OracleCommand oraliste = new OracleCommand("GESTIONQUESTIONS", oraconn);
             oraliste.CommandText = "GESTIONQUESTIONS.SUPPRIMERQUESTIONS";
             oraliste.CommandType = CommandType.StoredProcedure;
@@ -158,8 +157,7 @@ namespace TriviaPursuit
             IDQUESTION.Value = LB_ID.Text;
             oraliste.Parameters.Add(IDQUESTION);
 
-            oraliste.ExecuteNonQuery();
-           
+            oraliste.ExecuteNonQuery();           
          }
          catch (OracleException ex)
          {
