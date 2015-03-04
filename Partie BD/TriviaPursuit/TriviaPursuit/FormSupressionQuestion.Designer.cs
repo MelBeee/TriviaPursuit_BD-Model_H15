@@ -37,7 +37,7 @@
          this.label3 = new System.Windows.Forms.Label();
          this.label4 = new System.Windows.Forms.Label();
          this.label5 = new System.Windows.Forms.Label();
-         this.groupBox1 = new System.Windows.Forms.GroupBox();
+         this.GB_Questions = new System.Windows.Forms.GroupBox();
          this.BTN_PRECEDENT = new System.Windows.Forms.Button();
          this.LB_REPONSE = new System.Windows.Forms.Label();
          this.BTN_SUIVANT = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
          this.LB_CHOIX3 = new System.Windows.Forms.Label();
          this.label7 = new System.Windows.Forms.Label();
          this.BTN_Supprimer = new System.Windows.Forms.Button();
-         this.groupBox1.SuspendLayout();
+         this.GB_Questions.SuspendLayout();
          this.SuspendLayout();
          // 
          // BTN_Annuler
@@ -138,29 +138,29 @@
          this.label5.TabIndex = 32;
          this.label5.Text = "Réponse :";
          // 
-         // groupBox1
+         // GB_Questions
          // 
-         this.groupBox1.Controls.Add(this.BTN_PRECEDENT);
-         this.groupBox1.Controls.Add(this.LB_REPONSE);
-         this.groupBox1.Controls.Add(this.BTN_SUIVANT);
-         this.groupBox1.Controls.Add(this.LB_QUESTION);
-         this.groupBox1.Controls.Add(this.LB_CHOIX1);
-         this.groupBox1.Controls.Add(this.LB_ID);
-         this.groupBox1.Controls.Add(this.LB_CHOIX2);
-         this.groupBox1.Controls.Add(this.LB_CHOIX3);
-         this.groupBox1.Controls.Add(this.label5);
-         this.groupBox1.Controls.Add(this.label1);
-         this.groupBox1.Controls.Add(this.label7);
-         this.groupBox1.Controls.Add(this.label2);
-         this.groupBox1.Controls.Add(this.label3);
-         this.groupBox1.Controls.Add(this.label4);
-         this.groupBox1.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.groupBox1.Location = new System.Drawing.Point(12, 45);
-         this.groupBox1.Name = "groupBox1";
-         this.groupBox1.Size = new System.Drawing.Size(287, 217);
-         this.groupBox1.TabIndex = 33;
-         this.groupBox1.TabStop = false;
-         this.groupBox1.Text = "11 résultats";
+         this.GB_Questions.Controls.Add(this.BTN_PRECEDENT);
+         this.GB_Questions.Controls.Add(this.LB_REPONSE);
+         this.GB_Questions.Controls.Add(this.BTN_SUIVANT);
+         this.GB_Questions.Controls.Add(this.LB_QUESTION);
+         this.GB_Questions.Controls.Add(this.LB_CHOIX1);
+         this.GB_Questions.Controls.Add(this.LB_ID);
+         this.GB_Questions.Controls.Add(this.LB_CHOIX2);
+         this.GB_Questions.Controls.Add(this.LB_CHOIX3);
+         this.GB_Questions.Controls.Add(this.label5);
+         this.GB_Questions.Controls.Add(this.label1);
+         this.GB_Questions.Controls.Add(this.label7);
+         this.GB_Questions.Controls.Add(this.label2);
+         this.GB_Questions.Controls.Add(this.label3);
+         this.GB_Questions.Controls.Add(this.label4);
+         this.GB_Questions.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.GB_Questions.Location = new System.Drawing.Point(12, 45);
+         this.GB_Questions.Name = "GB_Questions";
+         this.GB_Questions.Size = new System.Drawing.Size(287, 217);
+         this.GB_Questions.TabIndex = 33;
+         this.GB_Questions.TabStop = false;
+         this.GB_Questions.Text = "11 résultats";
          // 
          // BTN_PRECEDENT
          // 
@@ -270,7 +270,7 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
          this.ClientSize = new System.Drawing.Size(310, 316);
-         this.Controls.Add(this.groupBox1);
+         this.Controls.Add(this.GB_Questions);
          this.Controls.Add(this.BTN_Supprimer);
          this.Controls.Add(this.BTN_Annuler);
          this.Controls.Add(this.CB_CATEGORIE);
@@ -282,8 +282,8 @@
          this.Name = "FormSupressionQuestion";
          this.Text = "Suppression de Questions";
          this.Load += new System.EventHandler(this.FormSupressionQuestion_Load);
-         this.groupBox1.ResumeLayout(false);
-         this.groupBox1.PerformLayout();
+         this.GB_Questions.ResumeLayout(false);
+         this.GB_Questions.PerformLayout();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -299,7 +299,7 @@
       private System.Windows.Forms.Label label3;
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.Label label5;
-      private System.Windows.Forms.GroupBox groupBox1;
+      private System.Windows.Forms.GroupBox GB_Questions;
       private System.Windows.Forms.Label label7;
       private System.Windows.Forms.Button BTN_Supprimer;
       private System.Windows.Forms.Button BTN_PRECEDENT;

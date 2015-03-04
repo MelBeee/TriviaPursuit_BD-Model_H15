@@ -55,6 +55,7 @@ namespace TriviaPursuit
             oraliste.Dispose();
             if (this.BindingContext[monDataSet, "Lister"].Count > 0)
             {
+               GB_Questions.Text = this.BindingContext[monDataSet, "Lister"].Count.ToString() + " questions";
                RemplirLabel();
                BTN_Supprimer.Enabled = true;
             }
