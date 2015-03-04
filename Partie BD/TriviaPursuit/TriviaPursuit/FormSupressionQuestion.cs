@@ -24,6 +24,8 @@ namespace TriviaPursuit
 
       private void Lister()
       {
+         BTN_PRECEDENT.Enabled = false;
+         BTN_SUIVANT.Enabled = false;
          try
          {
             BTN_PRECEDENT.Enabled = false;
@@ -54,11 +56,13 @@ namespace TriviaPursuit
             if (this.BindingContext[monDataSet, "Lister"].Count > 0)
             {
                RemplirLabel();
+               BTN_Supprimer.Enabled = true;
             }
             else
             {
                MessageBox.Show("Il n'y a pas de question dans cette catégorie");
                ViderLabel();
+               BTN_Supprimer.Enabled = false;
             }
             if (this.BindingContext[monDataSet, "Lister"].Count > 1)
             {
@@ -115,28 +119,53 @@ namespace TriviaPursuit
       {
          BTN_PRECEDENT.Enabled = true;
         
-            this.BindingContext[monDataSet, "Lister"].Position += 1;
-            if (this.BindingContext[monDataSet, "Lister"].Position.ToString() == (this.BindingContext[monDataSet, "Lister"].Count - 1).ToString())
-            {
-               BTN_SUIVANT.Enabled = false;
-            }               
+         this.BindingContext[monDataSet, "Lister"].Position += 1;
+         if (this.BindingContext[monDataSet, "Lister"].Position.ToString() == (this.BindingContext[monDataSet, "Lister"].Count - 1).ToString())
+         {
+            BTN_SUIVANT.Enabled = false;
+         }               
       }
 
       private void BTN_PRECEDENT_Click(object sender, EventArgs e)
       {
          BTN_SUIVANT.Enabled = true;       
-            this.BindingContext[monDataSet, "Lister"].Position -= 1;
-            if (this.BindingContext[monDataSet, "Lister"].Position.ToString() == "0")
-            {
-               BTN_PRECEDENT.Enabled = false;
-            }         
+         this.BindingContext[monDataSet, "Lister"].Position -= 1;
+         if (this.BindingContext[monDataSet, "Lister"].Position.ToString() == "0")
+         {
+            BTN_PRECEDENT.Enabled = false;
+         }         
       }
 
       private void FormSupressionQuestion_Load(object sender, EventArgs e)
       {
+         Lister();
          CB_CATEGORIE.SelectedIndex = 0;
          BTN_PRECEDENT.Enabled = false;
          BTN_SUIVANT.Enabled = false;
+      }
+
+      private void BTN_Supprimer_Click(object sender, EventArgs e)
+      {
+         try
+         {
+
+            OracleCommand oraliste = new OracleCommand("GESTIONQUESTIONS", oraconn);
+            oraliste.CommandText = "GESTIONQUESTIONS.SUPPRIMERQUESTIONS";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter IDQUESTION = new OracleParameter("IDQUESTION", OracleDbType.Int32);
+            IDQUESTION.Direction = ParameterDirection.Input;
+            IDQUESTION.Value = LB_ID.Text;
+            oraliste.Parameters.Add(IDQUESTION);
+
+            oraliste.ExecuteNonQuery();
+           
+         }
+         catch (OracleException ex)
+         {
+            GestionErreur(ex);
+         }
+         Lister();      
       }
    }
 }
