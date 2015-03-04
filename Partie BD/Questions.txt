@@ -1,4 +1,7 @@
+__________________________________________
+
 QUESTIONS SUR JEUX VIDEO
+__________________________________________
 1. Dans quel jeu retrouve-t'on un gorille comme personnage principal ? 
 ->	a. Donkey Kong  
 	b. Mario Bros
@@ -69,45 +72,193 @@ QUESTIONS SUR JEUX VIDEO
 18.
 19.
 20.
+__________________________________________
 
 QUESTIONS CULINAIRE
+__________________________________________
 1. Que retrouve-t'on dans un pâté chinois
 ->	a. Steak, Blé d'Inde, Patate
 	b. Veau, Pois, Frites
 	c. Porc, Carotte, Riz
 	d. Poulet, Ananas, Riz
 
-2. 
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
+2. Quels sont les ingrédients d'une crèpe ? 
+->	a. oeuf, farine, lait
+	b. oeuf, vanille, farine
+	c. lait, farine, vanille
+	d. lait, oeuf, vanille
+
+3. Quel est l'alcool principal du Mojito ? 
+->	a. le rhum
+	b. la téquila
+	c. la vodka
+	d. le bourbon
+
+4. Qu'est-ce que les tortues Ninja mangent ? 
+	a. des Burgers
+->	b. de la Pizza
+	c. des Tacos
+	d. de la Lasagne
+
+5. En Inde, quelle viande ne peut on pas manger ? 
+	a. du Poulet
+	b. du Porc
+->	c. du Boeuf
+	d. du Poisson
+
+6. Nommez les ingrédients pour faire du Rice Crispies.
+	a. Guimauve, Beurre, Vanille
+	b. Cereale, Guimauve, Vanille
+->	c. Cereale, Beurre, Guimauve
+	d. Vanille, Cereale, Beurre
+
+7. Trouvez l'intru.
+	a. Spaguetti
+	b. Rotini
+	c. Linguini
+->	d. Marinoli
+
+8. Qu'est-ce qui n'est pas un fruit ? 
+	a. Avocat
+	b. Carambole
+	c. Tomate
+->	d. Topinambour
+
+9. Quelle est la particularié d'une pizza hawaienne ? 
+->	a. Jambon et Ananas
+	b. Mangue et Bacon
+	c. Olive et Noix de coco
+	d. Ail et coeur de palmier
+
+10. Quels ingrédients utilise-t-on dans un gateau ? 
+	a. Oeuf et Bicarbonate
+	b. Poudre à pate, Farine et Eau
+	c. Sel, Huile et Sucre
+->	d. Toutes ses réponses
+
+11. Quelle est la forme d'une chips Doritos
+	a. Carré
+	b. Rond
+	c. Parallélogramme
+->	d. Triangle
+
+12. Lequel ne pousse pas dans un arbre/arbuste ? 
+	a. Cornichon
+	b. Tomate
+	c. Fraise
+->	d. Aucune de ses réponses
+
+13. Avec quoi fait-on de la bière ? 
+->	a. Houblon
+	b. Malte
+	c. Blé
+	d. Trefle
+
+14. Dans quoi retrouve-t-on de la bêta-carotène ? 
+	a. Carotte
+	b. Fenouille
+	c. Mangue
+->	d. Toutes ses réponses
+
+15. Dans quel fast food joue-t-on au Monopoli ? 
+	a. Tim Horton
+	b. Burger King
+	c. Subway
+->	d. McDonald
+
+16. Comment ne peut on pas faire cuire un oeuf ? 
+	a. à la coq
+	b. benedictine
+	c. brouillé
+->	d. grillé
+ 
+17. Lequel est un crustacé ? 
+->	a. Langoustine
+	b. Escargot
+	c. Oursin
+	d. Clam
+ 
+18. Dans quelle ville a été inventé la poutine ? 
+	a. Montreal
+	b. Drummondville
+	c. Warwick
+	d. Granby
+
+19. Pour quel alcool le Québec se démarque-t-il ? 
+	a. Bourbon
+	b. Champagne
+->	c. Cide de glace
+	d. Caribou
+
+20. Combien de bières de micro-brasseries sont brassées au Quebec ? 
+	a. 146
+	b. 590
+	c. 722
+->	d. 984
+__________________________________________
 
 QUESTIONS SUR ANIMAUX
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+__________________________________________
+1. Quelle était la couleur du cheval blanc de Napoléon ? 
+	a. Gris
+	b. Noir
+	c. Brun
+->	d. Blanc
+
+2. Combien de pattes à une araignée ? 
+	a. 10
+->	b. 8
+	c. 12
+	d. 6
+
+3. Quel race de chien tire des traineaux ? 
+	a. Chihuahua
+->	b. Husky	
+	c. Samoyède
+	d. Berger 
+
+4. Quel animal à deux bosses ? 
+	a. Dromadaire
+->	b. Chameau
+	c. Aucune de ses réponses
+	d. Toutes ses réponses
+
+5. Qui est le roi de la jungle ? 
+->	a. Le lion
+	b. La pantère
+	c. Le léopard
+	d. Le tigre
+
+6. Quel est l'animal le plus intelligent du monde ? 
+->	a. le Singe
+	b. le Dauphin
+	c. le Chien
+	d. l'Elephant
+
+7. Quelle est la femelle du cochon ? 
+	a. une Cochonne
+->	b. une Truie
+	c. une Porcine
+	d. un Bacon
+
+8. Quel est l'animal le plus rapide du monde ? 
+	a. le Leopard
+->	b. le Guepard
+	c. la Gazelle
+	d. le Cheval
+
+9. Comment appelle-t-on le petit de la girafe ? 
+	a. Girafais
+->	b. Girafon
+	c. Girafeau
+	d. Girafien
+
+10. La tortue la plus vieille a vécu combien d'année ? 
+	a. 255 ans
+->	b. 182 ans
+	c. 323 ans
+	d. 121 ans
+
 11.
 12.
 13.
@@ -118,8 +269,10 @@ QUESTIONS SUR ANIMAUX
 18.
 19.
 20.
+__________________________________________
 
 QUESTIONS SUR MUSIQUE
+__________________________________________
 1.
 2.
 3.
