@@ -1,6 +1,4 @@
-Dewgong					catch			LVL 34
 Haunter -> Gengar			catch			LVL 25 + Trade
-Kingler					catch			LVL 28
 Rhydon					catch			LVL 42
 Chansey						Safari
 Scyther						Safari
