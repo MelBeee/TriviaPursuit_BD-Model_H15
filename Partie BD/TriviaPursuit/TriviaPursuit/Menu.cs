@@ -366,5 +366,10 @@ namespace TriviaPursuit
             Cursor.Current = Cursors.Hand;
         }
 
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           oraconnPrincipale.Close();
+        }
+
     }
 }

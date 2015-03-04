@@ -138,8 +138,8 @@ namespace TriviaPursuit
 
       private void FormSupressionQuestion_Load(object sender, EventArgs e)
       {
-         Lister();
          CB_CATEGORIE.SelectedIndex = 0;
+         Lister();
          BTN_PRECEDENT.Enabled = false;
          BTN_SUIVANT.Enabled = false;
       }
