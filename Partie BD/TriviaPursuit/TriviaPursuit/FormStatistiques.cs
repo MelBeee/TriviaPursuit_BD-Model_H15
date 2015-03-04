@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace TriviaPursuit
 {
    public partial class FormStatistiques : Form
    {
-      public FormStatistiques()
+      // variable contenant la connection a la bd 
+      OracleConnection oraconn = new OracleConnection();
+
+      public FormStatistiques(OracleConnection oraconnPrincipale)
       {
          InitializeComponent();
+         oraconn = oraconnPrincipale;
       }
 
       private void button1_Click(object sender, EventArgs e)

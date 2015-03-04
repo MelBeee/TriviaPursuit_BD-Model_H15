@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace TriviaPursuit
 {
     public partial class FormQuestion : Form
     {
+       // variable contenant la connection a la bd 
+       OracleConnection oraconn = new OracleConnection();
+
         string Reponse;
 
-        public FormQuestion()
+        public FormQuestion(OracleConnection oraconnPrincipale)
         {
             InitializeComponent();
+            oraconn = oraconnPrincipale;
         }
 
         private void LB_Choix1_MouseLeave(object sender, EventArgs e)

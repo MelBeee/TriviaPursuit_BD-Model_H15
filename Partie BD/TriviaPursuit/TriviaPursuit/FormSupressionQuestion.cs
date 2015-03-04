@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace TriviaPursuit
 {
    public partial class FormSupressionQuestion : Form
    {
-      public FormSupressionQuestion()
+      // variable contenant la connection a la bd 
+      OracleConnection oraconn = new OracleConnection();
+
+      public FormSupressionQuestion(OracleConnection oraconnPrincipale)
       {
          InitializeComponent();
+         oraconn = oraconnPrincipale;
       }
 
       private void groupBox1_Enter(object sender, EventArgs e)

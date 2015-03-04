@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using Oracle.DataAccess.Client;
 
 namespace TriviaPursuit
 {
@@ -16,6 +17,10 @@ namespace TriviaPursuit
         //////////////////////////////////////////////////////////////////////////////////////////////
         //    Déclaration des variables
         //////////////////////////////////////////////////////////////////////////////////////////////
+       // boolean pour stocker si le form est connecté ou non
+       public bool connection = false;
+       // variable contenant la connection a la bd 
+       OracleConnection oraconnPrincipale = new OracleConnection();
 
         //////////////////////////////////////////////////////////////////////////////////////////////
         //    Form loading
@@ -30,14 +35,26 @@ namespace TriviaPursuit
         }
         private void Connexion()
         {
-            try
-            {
+           if(!connection)
+           {
+              string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
+                  "(HOST=205.237.244.251)(PORT=1521)))" +
+                  "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
+              string user = "boucherm";
+              string passwd = "ORACLE1";
+              string chaineconnection = "Data Source = " + Dsource + ";User Id =" + user + "; Password =" + passwd;
 
-            }
-            catch (Exception ex)
-            {
-                GestionErreur(ex);
-            }
+              try
+              {
+                 oraconnPrincipale.ConnectionString = chaineconnection;
+                 oraconnPrincipale.Open();
+                 connection = true;
+              }
+              catch (OracleException ex)
+              {
+                 GestionErreur(ex);
+              }
+           }
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +80,7 @@ namespace TriviaPursuit
         }
         private void StartGame()
         {
-            FormSettingsGame form = new FormSettingsGame();
+           FormSettingsGame form = new FormSettingsGame(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -98,7 +115,7 @@ namespace TriviaPursuit
         }
         private void AddQuestion()
         {
-            FormAjoutQuestion form = new FormAjoutQuestion();
+           FormAjoutQuestion form = new FormAjoutQuestion(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -133,7 +150,7 @@ namespace TriviaPursuit
         }
         private void DeleteQuestion()
         {
-            FormSupressionQuestion form = new FormSupressionQuestion();
+           FormSupressionQuestion form = new FormSupressionQuestion(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -168,7 +185,7 @@ namespace TriviaPursuit
         }
         private void Stats()
         {
-            FormStatistiques form = new FormStatistiques();
+           FormStatistiques form = new FormStatistiques(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -269,7 +286,7 @@ namespace TriviaPursuit
         }
         private void AddPlayers()
         {
-            FormGestionJoueurs form = new FormGestionJoueurs();
+           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale);
 
             form.Text = "Ajout de joueurs";
 
@@ -306,7 +323,7 @@ namespace TriviaPursuit
         }
         private void DeletePlayers()
         {
-            FormGestionJoueurs form = new FormGestionJoueurs();
+           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale);
 
             form.Text = "Suppression de joueurs";
 
@@ -317,9 +334,9 @@ namespace TriviaPursuit
         //////////////////////////////////////////////////////////////////////////////////////////////
         //    Gestion des erreurs 
         //////////////////////////////////////////////////////////////////////////////////////////////
-        private void GestionErreur(Exception ex)
+        private void GestionErreur(OracleException ex)
         {
-            FormErreur form = new FormErreur();
+            FormErreur form = new FormErreur(ex);
 
             if (form.ShowDialog() == DialogResult.Abort)
             {
