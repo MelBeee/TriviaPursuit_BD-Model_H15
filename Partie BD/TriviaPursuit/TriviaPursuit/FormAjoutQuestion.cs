@@ -58,7 +58,7 @@ namespace TriviaPursuit
 
          if (form.ShowDialog() == DialogResult.Abort)
          {
-            this.Close();
+            this.DialogResult = DialogResult.Abort;
          }
       }
 
