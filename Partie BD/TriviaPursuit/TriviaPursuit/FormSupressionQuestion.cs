@@ -55,6 +55,7 @@ namespace TriviaPursuit
             oraliste.Dispose();
             if (this.BindingContext[monDataSet, "Lister"].Count > 0)
             {
+               GB_Questions.Text = this.BindingContext[monDataSet, "Lister"].Count.ToString() + " questions";
                RemplirLabel();
                BTN_Supprimer.Enabled = true;
             }
@@ -137,7 +138,7 @@ namespace TriviaPursuit
       }
 
       private void FormSupressionQuestion_Load(object sender, EventArgs e)
-      {         
+      {
          CB_CATEGORIE.SelectedIndex = 0;
          Lister();
          BTN_PRECEDENT.Enabled = false;
@@ -157,7 +158,7 @@ namespace TriviaPursuit
             IDQUESTION.Value = LB_ID.Text;
             oraliste.Parameters.Add(IDQUESTION);
 
-            oraliste.ExecuteNonQuery();           
+            oraliste.ExecuteNonQuery();
          }
          catch (OracleException ex)
          {

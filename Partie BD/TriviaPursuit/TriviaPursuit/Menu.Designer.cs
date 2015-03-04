@@ -342,6 +342,7 @@
          this.Name = "Menu";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Trivial Diamond";
+         this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
          this.Load += new System.EventHandler(this.Menu_Load);
          ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.PB_AddQuestion)).EndInit();
