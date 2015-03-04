@@ -25,7 +25,7 @@ namespace TriviaPursuit
       private bool VerificationJoueur(string NomJoueur)
       {
          bool Existe = false;
-         string nom;
+         string nombre;
          try
          {
 
@@ -38,17 +38,18 @@ namespace TriviaPursuit
             OrapamNom.Value = NomJoueur;
             VerificationJoueur.Parameters.Add(OrapamNom);           
 
-            OracleParameter JoueurExiste = new OracleParameter("Existe", OracleDbType.Varchar2);
-            JoueurExiste.Direction = ParameterDirection.ReturnValue;
+            OracleParameter JoueurExiste = new OracleParameter("Existe", OracleDbType.Int32);
+            JoueurExiste.Direction = ParameterDirection.Output;
             VerificationJoueur.Parameters.Add(JoueurExiste);
+            
+            VerificationJoueur.ExecuteNonQuery();
 
-
-            nom = VerificationJoueur.ExecuteScalar().ToString();
+            nombre = JoueurExiste.Value.ToString();
            
-            if (nom == "true")
+            if (nombre == "1")
                Existe=true;        
                
-         }
+          }
          catch (OracleException ex)
          {
             GestionErreur(ex);
@@ -58,23 +59,29 @@ namespace TriviaPursuit
         
       }
 
-      private void TesterVide(string Nom, int nombre)
+      private int TesterVide(string Nom, int nombre)
       {
          if (Nom != "")
             if (VerificationJoueur(Nom))
                nombre++;
             else
+            {
                MessageBox.Show("Le nom " + Nom + " n'existe pas.");
+               nombre = 0; 
+            }
+
+
+         return nombre; 
       }
 
       private void BTN_Start_Click(object sender, EventArgs e)
       {
          int nbre = 0;
 
-         TesterVide(TB_P1.Text, nbre);
-         TesterVide(TB_P2.Text, nbre);
-         TesterVide(TB_P3.Text, nbre);
-         TesterVide(TB_P4.Text, nbre);
+         nbre = TesterVide(TB_P1.Text, nbre);
+         nbre = TesterVide(TB_P2.Text, nbre);
+         nbre = TesterVide(TB_P3.Text, nbre);
+         nbre = TesterVide(TB_P4.Text, nbre);
 
          if (nbre >= 2)
          {
@@ -82,6 +89,10 @@ namespace TriviaPursuit
 
             if (form.ShowDialog() == DialogResult.Abort)
                this.Close();
+         }
+         else
+         {
+            MessageBox.Show("Il n'y a pas assez de joueurs pour jouer");
          }
       }
 
