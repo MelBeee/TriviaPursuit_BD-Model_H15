@@ -52,7 +52,7 @@ namespace TriviaPursuit
             oraliste.CommandText = "GESTIONJOUEURS.INSERTIONJOUEUR";
             oraliste.CommandType = CommandType.StoredProcedure;
 
-            OracleParameter orapamNom = new OracleParameter("Username", OracleDbType.Varchar2, 40);
+            OracleParameter orapamNom = new OracleParameter("Username", OracleDbType.Varchar2, 20);
             orapamNom.Direction = ParameterDirection.Input;
             orapamNom.Value = TB_NomJoueur.Text;
             oraliste.Parameters.Add(orapamNom);
@@ -76,7 +76,7 @@ namespace TriviaPursuit
             oraliste.CommandText = "GESTIONJOUEURS.SUPPRESSIONJOUEUR";
             oraliste.CommandType = CommandType.StoredProcedure;
 
-            OracleParameter orapamNum = new OracleParameter("Username", OracleDbType.Varchar2);
+            OracleParameter orapamNum = new OracleParameter("Username", OracleDbType.Varchar2, 20);
             orapamNum.Direction = ParameterDirection.Input;
             orapamNum.Value = CB_Joueurs.SelectedItem.ToString();
             oraliste.Parameters.Add(orapamNum);
