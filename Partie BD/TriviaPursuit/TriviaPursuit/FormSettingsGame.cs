@@ -47,5 +47,10 @@ namespace TriviaPursuit
             this.DialogResult = DialogResult.Abort;
          }
       }
+
+      private void label6_Click(object sender, EventArgs e)
+      {
+
+      }
    }
 }
