@@ -33,14 +33,14 @@
             this.Culinaire_J1 = new System.Windows.Forms.Label();
             this.Animaux_J1 = new System.Windows.Forms.Label();
             this.Musique_J1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GB_J1 = new System.Windows.Forms.GroupBox();
             this.LB_J1_Musique = new System.Windows.Forms.Label();
             this.LB_J1_Animaux = new System.Windows.Forms.Label();
             this.LB_J1_Culinaire = new System.Windows.Forms.Label();
             this.LB_J1_JeuxVideo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTN_Surrender = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GB_J3 = new System.Windows.Forms.GroupBox();
             this.LB_J3_Musique = new System.Windows.Forms.Label();
             this.LB_J3_Animaux = new System.Windows.Forms.Label();
             this.LB_J3_Culinaire = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.Culinaire_J3 = new System.Windows.Forms.Label();
             this.Animaux_J3 = new System.Windows.Forms.Label();
             this.Musique_J3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.GB_J2 = new System.Windows.Forms.GroupBox();
             this.LB_J2_Musique = new System.Windows.Forms.Label();
             this.LB_J2_Animaux = new System.Windows.Forms.Label();
             this.LB_J2_Culinaire = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.Culinaire_J2 = new System.Windows.Forms.Label();
             this.Animaux_J2 = new System.Windows.Forms.Label();
             this.Musique_J2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.GB_J4 = new System.Windows.Forms.GroupBox();
             this.LB_J4_Musique = new System.Windows.Forms.Label();
             this.LB_J4_Animaux = new System.Windows.Forms.Label();
             this.LB_J4_Culinaire = new System.Windows.Forms.Label();
@@ -69,17 +69,17 @@
             this.Musique_J4 = new System.Windows.Forms.Label();
             this.LB_TourAUser = new System.Windows.Forms.Label();
             this.BTN_Rules = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.GB_J1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.GB_J3.SuspendLayout();
+            this.GB_J2.SuspendLayout();
+            this.GB_J4.SuspendLayout();
             this.SuspendLayout();
             // 
             // JeuxVideo_J1
             // 
             this.JeuxVideo_J1.AutoSize = true;
-            this.JeuxVideo_J1.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JeuxVideo_J1.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JeuxVideo_J1.ForeColor = System.Drawing.Color.GhostWhite;
             this.JeuxVideo_J1.Location = new System.Drawing.Point(47, 30);
             this.JeuxVideo_J1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -124,26 +124,26 @@
             this.Musique_J1.TabIndex = 5;
             this.Musique_J1.Text = "Musique";
             // 
-            // groupBox1
+            // GB_J1
             // 
-            this.groupBox1.Controls.Add(this.LB_J1_Musique);
-            this.groupBox1.Controls.Add(this.LB_J1_Animaux);
-            this.groupBox1.Controls.Add(this.LB_J1_Culinaire);
-            this.groupBox1.Controls.Add(this.LB_J1_JeuxVideo);
-            this.groupBox1.Controls.Add(this.JeuxVideo_J1);
-            this.groupBox1.Controls.Add(this.Culinaire_J1);
-            this.groupBox1.Controls.Add(this.Animaux_J1);
-            this.groupBox1.Controls.Add(this.Musique_J1);
-            this.groupBox1.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(181, 141);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Melissa";
+            this.GB_J1.Controls.Add(this.LB_J1_Musique);
+            this.GB_J1.Controls.Add(this.LB_J1_Animaux);
+            this.GB_J1.Controls.Add(this.LB_J1_Culinaire);
+            this.GB_J1.Controls.Add(this.LB_J1_JeuxVideo);
+            this.GB_J1.Controls.Add(this.JeuxVideo_J1);
+            this.GB_J1.Controls.Add(this.Culinaire_J1);
+            this.GB_J1.Controls.Add(this.Animaux_J1);
+            this.GB_J1.Controls.Add(this.Musique_J1);
+            this.GB_J1.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_J1.ForeColor = System.Drawing.Color.White;
+            this.GB_J1.Location = new System.Drawing.Point(16, 15);
+            this.GB_J1.Margin = new System.Windows.Forms.Padding(4);
+            this.GB_J1.Name = "GB_J1";
+            this.GB_J1.Padding = new System.Windows.Forms.Padding(4);
+            this.GB_J1.Size = new System.Drawing.Size(181, 141);
+            this.GB_J1.TabIndex = 8;
+            this.GB_J1.TabStop = false;
+            this.GB_J1.Text = "Melissa";
             // 
             // LB_J1_Musique
             // 
@@ -153,9 +153,9 @@
             this.LB_J1_Musique.Location = new System.Drawing.Point(17, 103);
             this.LB_J1_Musique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J1_Musique.Name = "LB_J1_Musique";
-            this.LB_J1_Musique.Size = new System.Drawing.Size(23, 25);
+            this.LB_J1_Musique.Size = new System.Drawing.Size(22, 25);
             this.LB_J1_Musique.TabIndex = 11;
-            this.LB_J1_Musique.Text = "4";
+            this.LB_J1_Musique.Text = "0";
             // 
             // LB_J1_Animaux
             // 
@@ -177,9 +177,9 @@
             this.LB_J1_Culinaire.Location = new System.Drawing.Point(16, 54);
             this.LB_J1_Culinaire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J1_Culinaire.Name = "LB_J1_Culinaire";
-            this.LB_J1_Culinaire.Size = new System.Drawing.Size(24, 25);
+            this.LB_J1_Culinaire.Size = new System.Drawing.Size(22, 25);
             this.LB_J1_Culinaire.TabIndex = 9;
-            this.LB_J1_Culinaire.Text = "3";
+            this.LB_J1_Culinaire.Text = "0";
             // 
             // LB_J1_JeuxVideo
             // 
@@ -191,13 +191,13 @@
             this.LB_J1_JeuxVideo.Name = "LB_J1_JeuxVideo";
             this.LB_J1_JeuxVideo.Size = new System.Drawing.Size(22, 25);
             this.LB_J1_JeuxVideo.TabIndex = 8;
-            this.LB_J1_JeuxVideo.Text = "5";
+            this.LB_J1_JeuxVideo.Text = "0";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(161, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(457, 312);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,7 +208,7 @@
             // 
             this.BTN_Surrender.Font = new System.Drawing.Font("Buxton Sketch", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_Surrender.Location = new System.Drawing.Point(591, 335);
-            this.BTN_Surrender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTN_Surrender.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_Surrender.Name = "BTN_Surrender";
             this.BTN_Surrender.Size = new System.Drawing.Size(136, 37);
             this.BTN_Surrender.TabIndex = 12;
@@ -216,26 +216,26 @@
             this.BTN_Surrender.UseVisualStyleBackColor = true;
             this.BTN_Surrender.Click += new System.EventHandler(this.BTN_Surrender_Click);
             // 
-            // groupBox2
+            // GB_J3
             // 
-            this.groupBox2.Controls.Add(this.LB_J3_Musique);
-            this.groupBox2.Controls.Add(this.LB_J3_Animaux);
-            this.groupBox2.Controls.Add(this.LB_J3_Culinaire);
-            this.groupBox2.Controls.Add(this.LB_J3_JeuxVideo);
-            this.groupBox2.Controls.Add(this.JeuxVideo_J3);
-            this.groupBox2.Controls.Add(this.Culinaire_J3);
-            this.groupBox2.Controls.Add(this.Animaux_J3);
-            this.groupBox2.Controls.Add(this.Musique_J3);
-            this.groupBox2.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(16, 174);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(181, 141);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Melissa";
+            this.GB_J3.Controls.Add(this.LB_J3_Musique);
+            this.GB_J3.Controls.Add(this.LB_J3_Animaux);
+            this.GB_J3.Controls.Add(this.LB_J3_Culinaire);
+            this.GB_J3.Controls.Add(this.LB_J3_JeuxVideo);
+            this.GB_J3.Controls.Add(this.JeuxVideo_J3);
+            this.GB_J3.Controls.Add(this.Culinaire_J3);
+            this.GB_J3.Controls.Add(this.Animaux_J3);
+            this.GB_J3.Controls.Add(this.Musique_J3);
+            this.GB_J3.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_J3.ForeColor = System.Drawing.Color.White;
+            this.GB_J3.Location = new System.Drawing.Point(16, 174);
+            this.GB_J3.Margin = new System.Windows.Forms.Padding(4);
+            this.GB_J3.Name = "GB_J3";
+            this.GB_J3.Padding = new System.Windows.Forms.Padding(4);
+            this.GB_J3.Size = new System.Drawing.Size(181, 141);
+            this.GB_J3.TabIndex = 12;
+            this.GB_J3.TabStop = false;
+            this.GB_J3.Text = "Melissa";
             // 
             // LB_J3_Musique
             // 
@@ -245,9 +245,9 @@
             this.LB_J3_Musique.Location = new System.Drawing.Point(17, 103);
             this.LB_J3_Musique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J3_Musique.Name = "LB_J3_Musique";
-            this.LB_J3_Musique.Size = new System.Drawing.Size(23, 25);
+            this.LB_J3_Musique.Size = new System.Drawing.Size(22, 25);
             this.LB_J3_Musique.TabIndex = 11;
-            this.LB_J3_Musique.Text = "4";
+            this.LB_J3_Musique.Text = "0";
             // 
             // LB_J3_Animaux
             // 
@@ -269,9 +269,9 @@
             this.LB_J3_Culinaire.Location = new System.Drawing.Point(16, 54);
             this.LB_J3_Culinaire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J3_Culinaire.Name = "LB_J3_Culinaire";
-            this.LB_J3_Culinaire.Size = new System.Drawing.Size(24, 25);
+            this.LB_J3_Culinaire.Size = new System.Drawing.Size(22, 25);
             this.LB_J3_Culinaire.TabIndex = 9;
-            this.LB_J3_Culinaire.Text = "3";
+            this.LB_J3_Culinaire.Text = "0";
             // 
             // LB_J3_JeuxVideo
             // 
@@ -283,12 +283,12 @@
             this.LB_J3_JeuxVideo.Name = "LB_J3_JeuxVideo";
             this.LB_J3_JeuxVideo.Size = new System.Drawing.Size(22, 25);
             this.LB_J3_JeuxVideo.TabIndex = 8;
-            this.LB_J3_JeuxVideo.Text = "5";
+            this.LB_J3_JeuxVideo.Text = "0";
             // 
             // JeuxVideo_J3
             // 
             this.JeuxVideo_J3.AutoSize = true;
-            this.JeuxVideo_J3.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JeuxVideo_J3.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JeuxVideo_J3.ForeColor = System.Drawing.Color.GhostWhite;
             this.JeuxVideo_J3.Location = new System.Drawing.Point(47, 30);
             this.JeuxVideo_J3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -333,26 +333,26 @@
             this.Musique_J3.TabIndex = 5;
             this.Musique_J3.Text = "Musique";
             // 
-            // groupBox3
+            // GB_J2
             // 
-            this.groupBox3.Controls.Add(this.LB_J2_Musique);
-            this.groupBox3.Controls.Add(this.LB_J2_Animaux);
-            this.groupBox3.Controls.Add(this.LB_J2_Culinaire);
-            this.groupBox3.Controls.Add(this.LB_J2_JeuxVideo);
-            this.groupBox3.Controls.Add(this.JeuxVideo_J2);
-            this.groupBox3.Controls.Add(this.Culinaire_J2);
-            this.groupBox3.Controls.Add(this.Animaux_J2);
-            this.groupBox3.Controls.Add(this.Musique_J2);
-            this.groupBox3.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(539, 15);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(181, 141);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Melissa";
+            this.GB_J2.Controls.Add(this.LB_J2_Musique);
+            this.GB_J2.Controls.Add(this.LB_J2_Animaux);
+            this.GB_J2.Controls.Add(this.LB_J2_Culinaire);
+            this.GB_J2.Controls.Add(this.LB_J2_JeuxVideo);
+            this.GB_J2.Controls.Add(this.JeuxVideo_J2);
+            this.GB_J2.Controls.Add(this.Culinaire_J2);
+            this.GB_J2.Controls.Add(this.Animaux_J2);
+            this.GB_J2.Controls.Add(this.Musique_J2);
+            this.GB_J2.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_J2.ForeColor = System.Drawing.Color.White;
+            this.GB_J2.Location = new System.Drawing.Point(539, 15);
+            this.GB_J2.Margin = new System.Windows.Forms.Padding(4);
+            this.GB_J2.Name = "GB_J2";
+            this.GB_J2.Padding = new System.Windows.Forms.Padding(4);
+            this.GB_J2.Size = new System.Drawing.Size(181, 141);
+            this.GB_J2.TabIndex = 13;
+            this.GB_J2.TabStop = false;
+            this.GB_J2.Text = "Melissa";
             // 
             // LB_J2_Musique
             // 
@@ -362,9 +362,9 @@
             this.LB_J2_Musique.Location = new System.Drawing.Point(17, 103);
             this.LB_J2_Musique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J2_Musique.Name = "LB_J2_Musique";
-            this.LB_J2_Musique.Size = new System.Drawing.Size(23, 25);
+            this.LB_J2_Musique.Size = new System.Drawing.Size(22, 25);
             this.LB_J2_Musique.TabIndex = 11;
-            this.LB_J2_Musique.Text = "4";
+            this.LB_J2_Musique.Text = "0";
             // 
             // LB_J2_Animaux
             // 
@@ -386,9 +386,9 @@
             this.LB_J2_Culinaire.Location = new System.Drawing.Point(16, 54);
             this.LB_J2_Culinaire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J2_Culinaire.Name = "LB_J2_Culinaire";
-            this.LB_J2_Culinaire.Size = new System.Drawing.Size(24, 25);
+            this.LB_J2_Culinaire.Size = new System.Drawing.Size(22, 25);
             this.LB_J2_Culinaire.TabIndex = 9;
-            this.LB_J2_Culinaire.Text = "3";
+            this.LB_J2_Culinaire.Text = "0";
             // 
             // LB_J2_JeuxVideo
             // 
@@ -400,12 +400,12 @@
             this.LB_J2_JeuxVideo.Name = "LB_J2_JeuxVideo";
             this.LB_J2_JeuxVideo.Size = new System.Drawing.Size(22, 25);
             this.LB_J2_JeuxVideo.TabIndex = 8;
-            this.LB_J2_JeuxVideo.Text = "5";
+            this.LB_J2_JeuxVideo.Text = "0";
             // 
             // JeuxVideo_J2
             // 
             this.JeuxVideo_J2.AutoSize = true;
-            this.JeuxVideo_J2.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JeuxVideo_J2.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JeuxVideo_J2.ForeColor = System.Drawing.Color.GhostWhite;
             this.JeuxVideo_J2.Location = new System.Drawing.Point(47, 30);
             this.JeuxVideo_J2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -450,26 +450,26 @@
             this.Musique_J2.TabIndex = 5;
             this.Musique_J2.Text = "Musique";
             // 
-            // groupBox4
+            // GB_J4
             // 
-            this.groupBox4.Controls.Add(this.LB_J4_Musique);
-            this.groupBox4.Controls.Add(this.LB_J4_Animaux);
-            this.groupBox4.Controls.Add(this.LB_J4_Culinaire);
-            this.groupBox4.Controls.Add(this.LB_J4_JeuxVideo);
-            this.groupBox4.Controls.Add(this.JeuxVideo_J4);
-            this.groupBox4.Controls.Add(this.Culinaire_J4);
-            this.groupBox4.Controls.Add(this.Animaux_J4);
-            this.groupBox4.Controls.Add(this.Musique_J4);
-            this.groupBox4.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(539, 174);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(181, 141);
-            this.groupBox4.TabIndex = 12;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Melissa";
+            this.GB_J4.Controls.Add(this.LB_J4_Musique);
+            this.GB_J4.Controls.Add(this.LB_J4_Animaux);
+            this.GB_J4.Controls.Add(this.LB_J4_Culinaire);
+            this.GB_J4.Controls.Add(this.LB_J4_JeuxVideo);
+            this.GB_J4.Controls.Add(this.JeuxVideo_J4);
+            this.GB_J4.Controls.Add(this.Culinaire_J4);
+            this.GB_J4.Controls.Add(this.Animaux_J4);
+            this.GB_J4.Controls.Add(this.Musique_J4);
+            this.GB_J4.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_J4.ForeColor = System.Drawing.Color.White;
+            this.GB_J4.Location = new System.Drawing.Point(539, 174);
+            this.GB_J4.Margin = new System.Windows.Forms.Padding(4);
+            this.GB_J4.Name = "GB_J4";
+            this.GB_J4.Padding = new System.Windows.Forms.Padding(4);
+            this.GB_J4.Size = new System.Drawing.Size(181, 141);
+            this.GB_J4.TabIndex = 12;
+            this.GB_J4.TabStop = false;
+            this.GB_J4.Text = "Melissa";
             // 
             // LB_J4_Musique
             // 
@@ -479,9 +479,9 @@
             this.LB_J4_Musique.Location = new System.Drawing.Point(17, 103);
             this.LB_J4_Musique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J4_Musique.Name = "LB_J4_Musique";
-            this.LB_J4_Musique.Size = new System.Drawing.Size(23, 25);
+            this.LB_J4_Musique.Size = new System.Drawing.Size(22, 25);
             this.LB_J4_Musique.TabIndex = 11;
-            this.LB_J4_Musique.Text = "4";
+            this.LB_J4_Musique.Text = "0";
             // 
             // LB_J4_Animaux
             // 
@@ -503,9 +503,9 @@
             this.LB_J4_Culinaire.Location = new System.Drawing.Point(16, 54);
             this.LB_J4_Culinaire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_J4_Culinaire.Name = "LB_J4_Culinaire";
-            this.LB_J4_Culinaire.Size = new System.Drawing.Size(24, 25);
+            this.LB_J4_Culinaire.Size = new System.Drawing.Size(22, 25);
             this.LB_J4_Culinaire.TabIndex = 9;
-            this.LB_J4_Culinaire.Text = "3";
+            this.LB_J4_Culinaire.Text = "0";
             // 
             // LB_J4_JeuxVideo
             // 
@@ -517,12 +517,12 @@
             this.LB_J4_JeuxVideo.Name = "LB_J4_JeuxVideo";
             this.LB_J4_JeuxVideo.Size = new System.Drawing.Size(22, 25);
             this.LB_J4_JeuxVideo.TabIndex = 8;
-            this.LB_J4_JeuxVideo.Text = "5";
+            this.LB_J4_JeuxVideo.Text = "0";
             // 
             // JeuxVideo_J4
             // 
             this.JeuxVideo_J4.AutoSize = true;
-            this.JeuxVideo_J4.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JeuxVideo_J4.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JeuxVideo_J4.ForeColor = System.Drawing.Color.GhostWhite;
             this.JeuxVideo_J4.Location = new System.Drawing.Point(47, 30);
             this.JeuxVideo_J4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -597,28 +597,28 @@
             this.ClientSize = new System.Drawing.Size(734, 378);
             this.Controls.Add(this.BTN_Rules);
             this.Controls.Add(this.LB_TourAUser);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.GB_J4);
+            this.Controls.Add(this.GB_J2);
+            this.Controls.Add(this.GB_J3);
             this.Controls.Add(this.BTN_Surrender);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GB_J1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormJeu";
             this.Text = "FormCategorie";
             this.Load += new System.EventHandler(this.FormJeu_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GB_J1.ResumeLayout(false);
+            this.GB_J1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.GB_J3.ResumeLayout(false);
+            this.GB_J3.PerformLayout();
+            this.GB_J2.ResumeLayout(false);
+            this.GB_J2.PerformLayout();
+            this.GB_J4.ResumeLayout(false);
+            this.GB_J4.PerformLayout();
             this.ResumeLayout(false);
 
       }
@@ -630,13 +630,13 @@
       private System.Windows.Forms.Label Culinaire_J1;
       private System.Windows.Forms.Label Animaux_J1;
       private System.Windows.Forms.Label Musique_J1;
-      private System.Windows.Forms.GroupBox groupBox1;
+      private System.Windows.Forms.GroupBox GB_J1;
       private System.Windows.Forms.Label LB_J1_Musique;
       private System.Windows.Forms.Label LB_J1_Animaux;
       private System.Windows.Forms.Label LB_J1_Culinaire;
       private System.Windows.Forms.Label LB_J1_JeuxVideo;
       private System.Windows.Forms.Button BTN_Surrender;
-      private System.Windows.Forms.GroupBox groupBox2;
+      private System.Windows.Forms.GroupBox GB_J3;
       private System.Windows.Forms.Label LB_J3_Musique;
       private System.Windows.Forms.Label LB_J3_Animaux;
       private System.Windows.Forms.Label LB_J3_Culinaire;
@@ -645,7 +645,7 @@
       private System.Windows.Forms.Label Culinaire_J3;
       private System.Windows.Forms.Label Animaux_J3;
       private System.Windows.Forms.Label Musique_J3;
-      private System.Windows.Forms.GroupBox groupBox3;
+      private System.Windows.Forms.GroupBox GB_J2;
       private System.Windows.Forms.Label LB_J2_Musique;
       private System.Windows.Forms.Label LB_J2_Animaux;
       private System.Windows.Forms.Label LB_J2_Culinaire;
@@ -654,7 +654,7 @@
       private System.Windows.Forms.Label Culinaire_J2;
       private System.Windows.Forms.Label Animaux_J2;
       private System.Windows.Forms.Label Musique_J2;
-      private System.Windows.Forms.GroupBox groupBox4;
+      private System.Windows.Forms.GroupBox GB_J4;
       private System.Windows.Forms.Label LB_J4_Musique;
       private System.Windows.Forms.Label LB_J4_Animaux;
       private System.Windows.Forms.Label LB_J4_Culinaire;
