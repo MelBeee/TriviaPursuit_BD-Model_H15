@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJeu));
             this.JeuxVideo_J1 = new System.Windows.Forms.Label();
             this.Culinaire_J1 = new System.Windows.Forms.Label();
             this.Animaux_J1 = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@
             this.LB_J1_Animaux = new System.Windows.Forms.Label();
             this.LB_J1_Culinaire = new System.Windows.Forms.Label();
             this.LB_J1_JeuxVideo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTN_Surrender = new System.Windows.Forms.Button();
             this.GB_J3 = new System.Windows.Forms.GroupBox();
             this.LB_J3_Musique = new System.Windows.Forms.Label();
@@ -70,7 +68,6 @@
             this.LB_TourAUser = new System.Windows.Forms.Label();
             this.BTN_Rules = new System.Windows.Forms.Button();
             this.GB_J1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.GB_J3.SuspendLayout();
             this.GB_J2.SuspendLayout();
             this.GB_J4.SuspendLayout();
@@ -192,17 +189,6 @@
             this.LB_J1_JeuxVideo.Size = new System.Drawing.Size(22, 25);
             this.LB_J1_JeuxVideo.TabIndex = 8;
             this.LB_J1_JeuxVideo.Text = "0";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(161, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(457, 312);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // BTN_Surrender
             // 
@@ -602,7 +588,6 @@
             this.Controls.Add(this.GB_J3);
             this.Controls.Add(this.BTN_Surrender);
             this.Controls.Add(this.GB_J1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -612,7 +597,6 @@
             this.Load += new System.EventHandler(this.FormJeu_Load);
             this.GB_J1.ResumeLayout(false);
             this.GB_J1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.GB_J3.ResumeLayout(false);
             this.GB_J3.PerformLayout();
             this.GB_J2.ResumeLayout(false);
@@ -625,7 +609,6 @@
 
       #endregion
 
-      private System.Windows.Forms.PictureBox pictureBox1;
       private System.Windows.Forms.Label JeuxVideo_J1;
       private System.Windows.Forms.Label Culinaire_J1;
       private System.Windows.Forms.Label Animaux_J1;
