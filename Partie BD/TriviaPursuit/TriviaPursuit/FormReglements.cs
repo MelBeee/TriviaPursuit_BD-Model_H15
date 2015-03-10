@@ -16,5 +16,10 @@ namespace TriviaPursuit
         {
             InitializeComponent();
         }
+
+        private void BTN_Close_Click(object sender, EventArgs e)
+        {
+           this.Close();
+        }
     }
 }

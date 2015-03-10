@@ -41,7 +41,10 @@ namespace TriviaPursuit
 
         private void BTN_Surrender_Click(object sender, EventArgs e)
         {
+           var resultat =  MessageBox.Show("Êtes vous sur de vouloir quitter ? Vous allez perdre tous statistiques de jeu. ", "Attention !", MessageBoxButtons.YesNo);
 
+           if (resultat == DialogResult.Yes)
+              this.Close();
         }
 
         private void FormJeu_Load(object sender, EventArgs e)
