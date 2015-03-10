@@ -153,6 +153,7 @@
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormReglements";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "FormReglements";
          this.ResumeLayout(false);
          this.PerformLayout();

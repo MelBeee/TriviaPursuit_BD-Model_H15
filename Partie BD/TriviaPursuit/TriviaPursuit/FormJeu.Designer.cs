@@ -68,8 +68,9 @@
          this.Musique_J4 = new System.Windows.Forms.Label();
          this.LB_TourAUser = new System.Windows.Forms.Label();
          this.BTN_Rules = new System.Windows.Forms.Button();
-         this.pictureBox1 = new System.Windows.Forms.PictureBox();
          this.timer1 = new System.Windows.Forms.Timer(this.components);
+         this.pictureBox1 = new System.Windows.Forms.PictureBox();
+         this.label1 = new System.Windows.Forms.Label();
          this.GB_J1.SuspendLayout();
          this.GB_J3.SuspendLayout();
          this.GB_J2.SuspendLayout();
@@ -133,7 +134,7 @@
          this.GB_J1.Controls.Add(this.Musique_J1);
          this.GB_J1.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.GB_J1.ForeColor = System.Drawing.Color.White;
-         this.GB_J1.Location = new System.Drawing.Point(12, 12);
+         this.GB_J1.Location = new System.Drawing.Point(12, 26);
          this.GB_J1.Name = "GB_J1";
          this.GB_J1.Size = new System.Drawing.Size(136, 115);
          this.GB_J1.TabIndex = 8;
@@ -187,7 +188,7 @@
          // BTN_Surrender
          // 
          this.BTN_Surrender.Font = new System.Drawing.Font("Buxton Sketch", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.BTN_Surrender.Location = new System.Drawing.Point(443, 272);
+         this.BTN_Surrender.Location = new System.Drawing.Point(420, 295);
          this.BTN_Surrender.Name = "BTN_Surrender";
          this.BTN_Surrender.Size = new System.Drawing.Size(102, 30);
          this.BTN_Surrender.TabIndex = 12;
@@ -207,7 +208,7 @@
          this.GB_J3.Controls.Add(this.Musique_J3);
          this.GB_J3.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.GB_J3.ForeColor = System.Drawing.Color.White;
-         this.GB_J3.Location = new System.Drawing.Point(12, 141);
+         this.GB_J3.Location = new System.Drawing.Point(12, 155);
          this.GB_J3.Name = "GB_J3";
          this.GB_J3.Size = new System.Drawing.Size(136, 115);
          this.GB_J3.TabIndex = 12;
@@ -314,7 +315,7 @@
          this.GB_J2.Controls.Add(this.Musique_J2);
          this.GB_J2.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.GB_J2.ForeColor = System.Drawing.Color.White;
-         this.GB_J2.Location = new System.Drawing.Point(404, 12);
+         this.GB_J2.Location = new System.Drawing.Point(404, 26);
          this.GB_J2.Name = "GB_J2";
          this.GB_J2.Size = new System.Drawing.Size(136, 115);
          this.GB_J2.TabIndex = 13;
@@ -421,7 +422,7 @@
          this.GB_J4.Controls.Add(this.Musique_J4);
          this.GB_J4.Font = new System.Drawing.Font("Buxton Sketch", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.GB_J4.ForeColor = System.Drawing.Color.White;
-         this.GB_J4.Location = new System.Drawing.Point(404, 141);
+         this.GB_J4.Location = new System.Drawing.Point(404, 155);
          this.GB_J4.Name = "GB_J4";
          this.GB_J4.Size = new System.Drawing.Size(136, 115);
          this.GB_J4.TabIndex = 12;
@@ -519,7 +520,7 @@
          // LB_TourAUser
          // 
          this.LB_TourAUser.Font = new System.Drawing.Font("Buxton Sketch", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.LB_TourAUser.Location = new System.Drawing.Point(130, 275);
+         this.LB_TourAUser.Location = new System.Drawing.Point(129, 4);
          this.LB_TourAUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
          this.LB_TourAUser.Name = "LB_TourAUser";
          this.LB_TourAUser.Size = new System.Drawing.Size(295, 19);
@@ -530,7 +531,7 @@
          // BTN_Rules
          // 
          this.BTN_Rules.Font = new System.Drawing.Font("Buxton Sketch", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.BTN_Rules.Location = new System.Drawing.Point(5, 272);
+         this.BTN_Rules.Location = new System.Drawing.Point(27, 295);
          this.BTN_Rules.Name = "BTN_Rules";
          this.BTN_Rules.Size = new System.Drawing.Size(102, 30);
          this.BTN_Rules.TabIndex = 15;
@@ -538,30 +539,40 @@
          this.BTN_Rules.UseVisualStyleBackColor = true;
          this.BTN_Rules.Click += new System.EventHandler(this.BTN_Rules_Click);
          // 
+         // timer1
+         // 
+         this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+         // 
          // pictureBox1
          // 
-         this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-         this.pictureBox1.Image = global::TriviaPursuit.Properties.Resources.BackGroundMenuTEST;
-         this.pictureBox1.Location = new System.Drawing.Point(166, 24);
+         this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.pictureBox1.Image = global::TriviaPursuit.Properties.Resources.Cercle;
+         this.pictureBox1.Location = new System.Drawing.Point(166, 46);
          this.pictureBox1.Name = "pictureBox1";
-         this.pictureBox1.Size = new System.Drawing.Size(218, 232);
-         this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+         this.pictureBox1.Size = new System.Drawing.Size(220, 220);
+         this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.pictureBox1.TabIndex = 16;
          this.pictureBox1.TabStop = false;
          this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
          // 
-         // timer1
+         // label1
          // 
-         this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+         this.label1.Font = new System.Drawing.Font("Buxton Sketch", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.Location = new System.Drawing.Point(175, 289);
+         this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(202, 48);
+         this.label1.TabIndex = 17;
+         this.label1.Text = "Cliquez sur la roue lorsque vous êtes prêt !";
+         this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
          // 
          // FormJeu
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(73)))), ((int)(((byte)(164)))));
-         this.ClientSize = new System.Drawing.Size(550, 307);
+         this.ClientSize = new System.Drawing.Size(550, 349);
+         this.Controls.Add(this.label1);
          this.Controls.Add(this.pictureBox1);
          this.Controls.Add(this.BTN_Rules);
          this.Controls.Add(this.LB_TourAUser);
@@ -574,6 +585,7 @@
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormJeu";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "FormCategorie";
          this.Load += new System.EventHandler(this.FormJeu_Load);
          this.GB_J1.ResumeLayout(false);
@@ -632,5 +644,6 @@
       private System.Windows.Forms.Button BTN_Rules;
       private System.Windows.Forms.PictureBox pictureBox1;
       private System.Windows.Forms.Timer timer1;
+      private System.Windows.Forms.Label label1;
    }
 }

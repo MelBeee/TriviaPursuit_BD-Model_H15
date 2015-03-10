@@ -88,8 +88,12 @@ namespace TriviaPursuit
                 SetterJoueur(nbre);
                 FormJeu form = new FormJeu(oraconn, TB_P1.Text, TB_P2.Text, TB_P3.Text, TB_P4.Text);
 
+                this.Hide();
                 if (form.ShowDialog() == DialogResult.Abort)
-                    this.Close();
+                   this.DialogResult = DialogResult.Abort;
+                else
+                   this.Close();
+                
             }
             else
             {

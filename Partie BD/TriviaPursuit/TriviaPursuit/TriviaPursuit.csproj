@@ -219,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BackGroundMenuTEST.png" />
+    <None Include="Resources\Cercle.png" />
     <Content Include="Resources\diamond.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

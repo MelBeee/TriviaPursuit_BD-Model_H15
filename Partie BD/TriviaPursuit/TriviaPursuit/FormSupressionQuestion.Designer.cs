@@ -280,6 +280,7 @@
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormSupressionQuestion";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Suppression de Questions";
          this.Load += new System.EventHandler(this.FormSupressionQuestion_Load);
          this.GB_Questions.ResumeLayout(false);

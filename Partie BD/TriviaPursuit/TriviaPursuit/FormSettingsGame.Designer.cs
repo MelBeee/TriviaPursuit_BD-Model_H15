@@ -180,6 +180,7 @@
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormSettingsGame";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Paramètres de la partie";
          this.ResumeLayout(false);
          this.PerformLayout();

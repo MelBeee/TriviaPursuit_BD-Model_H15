@@ -83,6 +83,16 @@ namespace TriviaPursuit.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cercle {
+            get {
+                object obj = ResourceManager.GetObject("Cercle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chart_line {
             get {
                 object obj = ResourceManager.GetObject("chart_line", resourceCulture);

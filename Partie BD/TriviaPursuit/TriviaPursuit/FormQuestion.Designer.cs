@@ -111,7 +111,7 @@
          this.PN_MSGRep.Controls.Add(this.BTN_Continuer);
          this.PN_MSGRep.Controls.Add(this.LB_MSGRep);
          this.PN_MSGRep.Location = new System.Drawing.Point(0, 0);
-         this.PN_MSGRep.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.PN_MSGRep.Margin = new System.Windows.Forms.Padding(2);
          this.PN_MSGRep.Name = "PN_MSGRep";
          this.PN_MSGRep.Size = new System.Drawing.Size(404, 273);
          this.PN_MSGRep.TabIndex = 5;
@@ -120,7 +120,7 @@
          // BTN_Continuer
          // 
          this.BTN_Continuer.Location = new System.Drawing.Point(166, 240);
-         this.BTN_Continuer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.BTN_Continuer.Margin = new System.Windows.Forms.Padding(2);
          this.BTN_Continuer.Name = "BTN_Continuer";
          this.BTN_Continuer.Size = new System.Drawing.Size(71, 21);
          this.BTN_Continuer.TabIndex = 1;
@@ -155,6 +155,7 @@
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormQuestion";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "FormQuestion";
          this.Load += new System.EventHandler(this.FormQuestion_Load);
          this.PN_MSGRep.ResumeLayout(false);

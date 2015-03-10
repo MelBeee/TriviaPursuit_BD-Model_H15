@@ -218,6 +218,7 @@
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormAjoutQuestion";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Ajout de Question";
          this.Load += new System.EventHandler(this.FormAjoutQuestion_Load);
          this.ResumeLayout(false);
