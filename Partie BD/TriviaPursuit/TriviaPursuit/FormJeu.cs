@@ -16,10 +16,12 @@ namespace TriviaPursuit
 {
    
     public partial class FormJeu : Form
-    {
-       public Bitmap Roue;
+    {      
        public Image conteneur;
        public int compteur = 0;
+       public Random NombreAleatoire = new Random();
+       public int NombreDeRotation;
+
         // variable contenant la connection a la bd 
         OracleConnection oraconn = new OracleConnection();
         string Joueur1;
@@ -105,16 +107,26 @@ namespace TriviaPursuit
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-          timer1.Interval = 25;
+          
+          timer1.Interval = 25; 
           timer1.Enabled = true;
+          NombreDeRotation = NombreAleatoire.Next(73, 116);
          
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
-          pictureBox1.Image = RotateImageByAngle(conteneur, 10*compteur);        
-          pictureBox1.Refresh();
-          compteur++;
+        {          
+          if(compteur<= NombreDeRotation)
+          {
+             pictureBox1.Image = RotateImageByAngle(conteneur, 10*compteur);        
+             pictureBox1.Refresh();
+             compteur++;
+          }
+          else
+          {
+             compteur = 0;
+             timer1.Enabled = false;
+          }          
         }
     }
 }
