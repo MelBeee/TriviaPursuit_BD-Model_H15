@@ -218,6 +218,7 @@
     <None Include="Resources\Typing.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BackGroundMenuTEST.png" />
     <Content Include="Resources\diamond.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

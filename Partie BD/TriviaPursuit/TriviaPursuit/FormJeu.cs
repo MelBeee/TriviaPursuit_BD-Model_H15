@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
+
 // gainsboro / indigo
 
 namespace TriviaPursuit
 {
+   
     public partial class FormJeu : Form
     {
+       public Bitmap Roue;
+       public Image conteneur;
+       public int compteur = 0;
         // variable contenant la connection a la bd 
         OracleConnection oraconn = new OracleConnection();
         string Joueur1;
@@ -40,6 +45,7 @@ namespace TriviaPursuit
         private void FormJeu_Load(object sender, EventArgs e)
         {
             LoadGroupBox();
+            conteneur = pictureBox1.Image;
         }
 
         private void LoadGroupBox()
@@ -85,6 +91,30 @@ namespace TriviaPursuit
             {
                 this.DialogResult = DialogResult.Abort;
             }
+        }
+        private static Bitmap RotateImageByAngle(System.Drawing.Image oldBitmap, float angle)
+        {
+           var newBitmap = new Bitmap(oldBitmap.Width, oldBitmap.Height);
+           var graphics = Graphics.FromImage(newBitmap);
+           graphics.TranslateTransform((float)oldBitmap.Width / 2, (float)oldBitmap.Height / 2);
+           graphics.RotateTransform(angle);
+           graphics.TranslateTransform(-(float)oldBitmap.Width / 2, -(float)oldBitmap.Height / 2);
+           graphics.DrawImage(oldBitmap, new Point(0, 0));        
+           return newBitmap;
+        } 
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+          timer1.Interval = 25;
+          timer1.Enabled = true;
+         
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+          pictureBox1.Image = RotateImageByAngle(conteneur, 10*compteur);        
+          pictureBox1.Refresh();
+          compteur++;
         }
     }
 }
