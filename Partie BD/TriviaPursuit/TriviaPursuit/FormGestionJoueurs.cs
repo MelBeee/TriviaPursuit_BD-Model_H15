@@ -31,7 +31,7 @@ namespace TriviaPursuit
             TB_NomJoueur.Visible = true;
             TB_NomJoueur.Enabled = true;
             CB_Joueurs.Visible = false;
-            CB_Joueurs.Enabled = false; 
+            CB_Joueurs.Enabled = false;
          }
          else
          {
@@ -64,7 +64,7 @@ namespace TriviaPursuit
             reussi = false;
             GestionErreur(ex);
          }
-         return reussi; 
+         return reussi;
       }
       private bool Supprimer()
       {
@@ -89,19 +89,23 @@ namespace TriviaPursuit
             GestionErreur(ex);
          }
 
-         return reussi; 
+         return reussi;
       }
       private void RemplirCB()
       {
          CB_Joueurs.Items.Clear();
 
-         string sqlremplir = "select nomjoueur from joueurs";
-
          try
          {
-            OracleCommand orcd = new OracleCommand(sqlremplir, oraconn);
-            orcd.CommandType = CommandType.Text;
-            OracleDataReader oraRead = orcd.ExecuteReader();
+            OracleCommand oraliste = new OracleCommand("GESTIONJOUEURS", oraconn);
+            oraliste.CommandText = "GESTIONJOUEURS.LISTERJOUEURS";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter liste = new OracleParameter("liste", OracleDbType.RefCursor);
+            liste.Direction = ParameterDirection.ReturnValue;
+
+            oraliste.Parameters.Add(liste);
+            OracleDataReader oraRead = oraliste.ExecuteReader();
 
             while (oraRead.Read())
             {
@@ -109,7 +113,7 @@ namespace TriviaPursuit
             }
 
             oraRead.Close();
-            if(CB_Joueurs.Items.Count > 0)
+            if (CB_Joueurs.Items.Count > 0)
                CB_Joueurs.SelectedIndex = 0;
          }
          catch (OracleException ex)
@@ -125,19 +129,19 @@ namespace TriviaPursuit
       {
          if (SupprimerOuAjouter)
          {
-            if(Ajouter())
+            if (Ajouter())
             {
                MessageBox.Show("Insertion reussite");
                TB_NomJoueur.Text = "";
-            }   
+            }
             else
             {
                MessageBox.Show("Insertion non reussite");
-            }    
+            }
          }
          else
          {
-            if(Supprimer())
+            if (Supprimer())
                MessageBox.Show("Suppression reussite");
             else
                MessageBox.Show("Suppression non reussite");
@@ -147,11 +151,11 @@ namespace TriviaPursuit
       }
       private void UpdateControl()
       {
-         BTN_Appliquer.Enabled = false; 
+         BTN_Appliquer.Enabled = false;
          if (SupprimerOuAjouter)
          {
             if (TB_NomJoueur.Text != "")
-               BTN_Appliquer.Enabled = true; 
+               BTN_Appliquer.Enabled = true;
          }
          else
          {
