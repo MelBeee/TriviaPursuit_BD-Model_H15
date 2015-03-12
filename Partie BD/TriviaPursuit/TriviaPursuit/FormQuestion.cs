@@ -18,6 +18,7 @@ namespace TriviaPursuit
       string NomCategorie;
       string NomJoueur;
       string Reponse;
+      int IDQuestion; 
 
       public FormQuestion(OracleConnection oraconnPrincipale, string Categorie, string Joueur)
       {
@@ -90,7 +91,7 @@ namespace TriviaPursuit
 
       private void FormQuestion_Load(object sender, EventArgs e)
       {
-
+         GetQuestionAleatoire();
       }
 
       private void LB_Choix2_Click(object sender, EventArgs e)
@@ -125,11 +126,39 @@ namespace TriviaPursuit
          {
             LB_MSGRep.Text = "Bonne réponse !";
             SonQuestionGagne();
+            AjoutQuestionGagnee();
          }
          else
          {
             LB_MSGRep.Text = "Mauvaise réponse !";
             SonQuestionPerdu();
+         }
+      }
+
+      private void AjoutQuestionGagnee()
+      {
+         try
+         {
+            OracleCommand CMDAJOUT = new OracleCommand("CMDAJOUT", oraconn);
+            CMDAJOUT.CommandType = CommandType.StoredProcedure;
+            CMDAJOUT.CommandText = "GESTIONJOUER.AjoutQuestionReussite";
+
+            OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
+            paramJoueur.Direction = ParameterDirection.Input;
+            paramJoueur.Value = NomJoueur;
+
+            OracleParameter paramQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
+            paramQuestion.Direction = ParameterDirection.Input;
+            paramQuestion.Value = IDQuestion.ToString();
+
+            CMDAJOUT.Parameters.Add(paramJoueur);
+            CMDAJOUT.Parameters.Add(paramQuestion);
+
+            CMDAJOUT.ExecuteNonQuery();
+         }
+         catch (OracleException ex)
+         {
+            GestionErreur(ex);
          }
       }
 
@@ -166,3 +195,11 @@ namespace TriviaPursuit
       }
    }
 }
+
+
+/*
+  select q.idquestion from questions q
+  where q.idquestion not in 
+  (select idquestion from questionreussie where NOMJOUEUR = 'MelBeee') 
+  AND nomcategorie = 'Culinaire';
+  */
