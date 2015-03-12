@@ -21,6 +21,7 @@ namespace TriviaPursuit
       public int compteur = 0;
       public Random NombreAleatoire = new Random();
       public int NombreDeRotation;
+      public string Categorie = "";
 
       // variable contenant la connection a la bd 
       OracleConnection oraconn = new OracleConnection();
@@ -54,7 +55,30 @@ namespace TriviaPursuit
          conteneur = pictureBox1.Image;
          TourDe = Joueur1;
       }
+      private void UpdateControls()
+      {         
+         if(TourDe ==Joueur1)
+         {
+            GB_J1.ForeColor = Color.Yellow;
+            GB_J1.Font = new Font (GB_J1.Font, FontStyle.Bold);
+         }
+         else if(TourDe == Joueur2)
+         {
+            GB_J2.ForeColor = Color.Yellow;
+            GB_J2.Font = new Font(GB_J2.Font, FontStyle.Bold);
+         }
+         else if(TourDe == Joueur3)
+         {
+            GB_J3.ForeColor = Color.Yellow;
+            GB_J3.Font = new Font(GB_J3.Font, FontStyle.Bold);
+         }
+         if(TourDe == Joueur4)
+         {
+            GB_J4.ForeColor = Color.Yellow;
+            GB_J4.Font = new Font(GB_J4.Font, FontStyle.Bold);
+         }
 
+      }
 
       private void ProchainJoueur()
       {
@@ -126,8 +150,38 @@ namespace TriviaPursuit
          {
             NombreDeRotation = NombreAleatoire.Next(73, 108);
          }while(NombreDeRotation == 0 && NombreDeRotation == 79 && NombreDeRotation == 86 && NombreDeRotation == 94 && NombreDeRotation == 101 && NombreDeRotation == 108);
-         
-         
+
+         NombreDeRotation = 88;
+      }
+      private void PopCategorie()
+      {   
+        
+         if(NombreDeRotation >= 73 && NombreDeRotation <= 79)
+         {
+            Categorie = "Animaux";
+         }
+         else if(NombreDeRotation >= 79 && NombreDeRotation <= 86)
+         {
+            Categorie = "Musique";
+         }
+         else if(NombreDeRotation >= 86 && NombreDeRotation <= 94)
+         {
+            Choix.Visible = true;           
+         }
+         else if(NombreDeRotation >= 94 && NombreDeRotation <= 101)
+         {
+            Categorie = "Jeu vidéo";
+         }
+         else if(NombreDeRotation >= 101 && NombreDeRotation <= 108)
+         {
+            Categorie = "Culinaire";
+         }
+         if(Categorie=="")
+         { 
+            FormQuestion question = new FormQuestion(oraconn, Categorie, TourDe);
+            question.Show();
+         }
+        
       }
 
       private void timer1_Tick(object sender, EventArgs e)
@@ -142,7 +196,16 @@ namespace TriviaPursuit
          {
             compteur = 0;
             timer1.Enabled = false;
+            PopCategorie();
+            
          }
+      }
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+         Categorie =Choix.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+         Choix.Visible = false;
+        
       }
    }
 }

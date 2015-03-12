@@ -72,12 +72,20 @@
          this.label1 = new System.Windows.Forms.Label();
          this.pictureBox1 = new System.Windows.Forms.PictureBox();
          this.pictureBox2 = new System.Windows.Forms.PictureBox();
+         this.Choix = new System.Windows.Forms.Panel();
+         this.rb1 = new System.Windows.Forms.RadioButton();
+         this.rb2 = new System.Windows.Forms.RadioButton();
+         this.rb3 = new System.Windows.Forms.RadioButton();
+         this.rb4 = new System.Windows.Forms.RadioButton();
+         this.label2 = new System.Windows.Forms.Label();
+         this.button1 = new System.Windows.Forms.Button();
          this.GB_J1.SuspendLayout();
          this.GB_J3.SuspendLayout();
          this.GB_J2.SuspendLayout();
          this.GB_J4.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+         this.Choix.SuspendLayout();
          this.SuspendLayout();
          // 
          // JeuxVideo_J1
@@ -578,12 +586,95 @@
          this.pictureBox2.TabIndex = 18;
          this.pictureBox2.TabStop = false;
          // 
+         // Choix
+         // 
+         this.Choix.Controls.Add(this.button1);
+         this.Choix.Controls.Add(this.label2);
+         this.Choix.Controls.Add(this.rb4);
+         this.Choix.Controls.Add(this.rb3);
+         this.Choix.Controls.Add(this.rb2);
+         this.Choix.Controls.Add(this.rb1);
+         this.Choix.Location = new System.Drawing.Point(154, 4);
+         this.Choix.Name = "Choix";
+         this.Choix.Size = new System.Drawing.Size(244, 262);
+         this.Choix.TabIndex = 19;
+         this.Choix.Visible = false;
+         // 
+         // rb1
+         // 
+         this.rb1.AutoSize = true;
+         this.rb1.Font = new System.Drawing.Font("Buxton Sketch", 14.25F);
+         this.rb1.Location = new System.Drawing.Point(69, 79);
+         this.rb1.Name = "rb1";
+         this.rb1.Size = new System.Drawing.Size(80, 27);
+         this.rb1.TabIndex = 0;
+         this.rb1.TabStop = true;
+         this.rb1.Text = "Animaux";
+         this.rb1.UseVisualStyleBackColor = true;
+         // 
+         // rb2
+         // 
+         this.rb2.AutoSize = true;
+         this.rb2.Font = new System.Drawing.Font("Buxton Sketch", 14.25F);
+         this.rb2.Location = new System.Drawing.Point(69, 113);
+         this.rb2.Name = "rb2";
+         this.rb2.Size = new System.Drawing.Size(91, 27);
+         this.rb2.TabIndex = 1;
+         this.rb2.TabStop = true;
+         this.rb2.Text = "Jeu vidéo";
+         this.rb2.UseVisualStyleBackColor = true;
+         // 
+         // rb3
+         // 
+         this.rb3.AutoSize = true;
+         this.rb3.Font = new System.Drawing.Font("Buxton Sketch", 14.25F);
+         this.rb3.Location = new System.Drawing.Point(69, 146);
+         this.rb3.Name = "rb3";
+         this.rb3.Size = new System.Drawing.Size(86, 27);
+         this.rb3.TabIndex = 2;
+         this.rb3.TabStop = true;
+         this.rb3.Text = "Culinaire";
+         this.rb3.UseVisualStyleBackColor = true;
+         // 
+         // rb4
+         // 
+         this.rb4.AutoSize = true;
+         this.rb4.Font = new System.Drawing.Font("Buxton Sketch", 14.25F);
+         this.rb4.Location = new System.Drawing.Point(69, 178);
+         this.rb4.Name = "rb4";
+         this.rb4.Size = new System.Drawing.Size(83, 27);
+         this.rb4.TabIndex = 3;
+         this.rb4.TabStop = true;
+         this.rb4.Text = "Musique";
+         this.rb4.UseVisualStyleBackColor = true;
+         // 
+         // label2
+         // 
+         this.label2.AutoSize = true;
+         this.label2.Font = new System.Drawing.Font("Buxton Sketch", 14.25F);
+         this.label2.Location = new System.Drawing.Point(3, 27);
+         this.label2.Name = "label2";
+         this.label2.Size = new System.Drawing.Size(239, 23);
+         this.label2.TabIndex = 4;
+         this.label2.Text = "Quel catégorie voulez-vous jouer?";
+         // 
+         // button1
+         // 
+         this.button1.Location = new System.Drawing.Point(69, 211);
+         this.button1.Name = "button1";
+         this.button1.Size = new System.Drawing.Size(75, 23);
+         this.button1.TabIndex = 5;
+         this.button1.Text = "button1";
+         this.button1.UseVisualStyleBackColor = true;
+         this.button1.Click += new System.EventHandler(this.button1_Click);
+         // 
          // FormJeu
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(73)))), ((int)(((byte)(164)))));
          this.ClientSize = new System.Drawing.Size(550, 349);
+         this.Controls.Add(this.Choix);
          this.Controls.Add(this.pictureBox2);
          this.Controls.Add(this.label1);
          this.Controls.Add(this.pictureBox1);
@@ -611,6 +702,8 @@
          this.GB_J4.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+         this.Choix.ResumeLayout(false);
+         this.Choix.PerformLayout();
          this.ResumeLayout(false);
 
       }
@@ -660,5 +753,12 @@
       private System.Windows.Forms.Timer timer1;
       private System.Windows.Forms.Label label1;
       private System.Windows.Forms.PictureBox pictureBox2;
+      private System.Windows.Forms.Panel Choix;
+      private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.RadioButton rb4;
+      private System.Windows.Forms.RadioButton rb3;
+      private System.Windows.Forms.RadioButton rb2;
+      private System.Windows.Forms.RadioButton rb1;
+      private System.Windows.Forms.Button button1;
    }
 }
