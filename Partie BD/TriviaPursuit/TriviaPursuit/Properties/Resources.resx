@@ -169,4 +169,16 @@
   <data name="Cercle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cercle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="QuestionEchouee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Strong_Punch-Mike_Koenig-574430706.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QuestionReussite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Short_triumphal_fanfare-John_Stracke-815794903.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WheelSpin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Game Show Wheel Spin-SoundBible.com-1305738466.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Fleche" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2qmg0vd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -69,13 +69,15 @@
          this.LB_TourAUser = new System.Windows.Forms.Label();
          this.BTN_Rules = new System.Windows.Forms.Button();
          this.timer1 = new System.Windows.Forms.Timer(this.components);
-         this.pictureBox1 = new System.Windows.Forms.PictureBox();
          this.label1 = new System.Windows.Forms.Label();
+         this.pictureBox1 = new System.Windows.Forms.PictureBox();
+         this.pictureBox2 = new System.Windows.Forms.PictureBox();
          this.GB_J1.SuspendLayout();
          this.GB_J3.SuspendLayout();
          this.GB_J2.SuspendLayout();
          this.GB_J4.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
          this.SuspendLayout();
          // 
          // JeuxVideo_J1
@@ -520,7 +522,7 @@
          // LB_TourAUser
          // 
          this.LB_TourAUser.Font = new System.Drawing.Font("Buxton Sketch", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.LB_TourAUser.Location = new System.Drawing.Point(129, 4);
+         this.LB_TourAUser.Location = new System.Drawing.Point(129, 269);
          this.LB_TourAUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
          this.LB_TourAUser.Name = "LB_TourAUser";
          this.LB_TourAUser.Size = new System.Drawing.Size(295, 19);
@@ -543,22 +545,10 @@
          // 
          this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
          // 
-         // pictureBox1
-         // 
-         this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-         this.pictureBox1.Image = global::TriviaPursuit.Properties.Resources.Cercle;
-         this.pictureBox1.Location = new System.Drawing.Point(166, 46);
-         this.pictureBox1.Name = "pictureBox1";
-         this.pictureBox1.Size = new System.Drawing.Size(220, 220);
-         this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-         this.pictureBox1.TabIndex = 16;
-         this.pictureBox1.TabStop = false;
-         this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-         // 
          // label1
          // 
          this.label1.Font = new System.Drawing.Font("Buxton Sketch", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.Location = new System.Drawing.Point(175, 289);
+         this.label1.Location = new System.Drawing.Point(175, 299);
          this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
          this.label1.Name = "label1";
          this.label1.Size = new System.Drawing.Size(202, 48);
@@ -566,12 +556,35 @@
          this.label1.Text = "Cliquez sur la roue lorsque vous êtes prêt !";
          this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
          // 
+         // pictureBox1
+         // 
+         this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.pictureBox1.Image = global::TriviaPursuit.Properties.Resources.Cercle;
+         this.pictureBox1.Location = new System.Drawing.Point(165, 46);
+         this.pictureBox1.Name = "pictureBox1";
+         this.pictureBox1.Size = new System.Drawing.Size(220, 220);
+         this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+         this.pictureBox1.TabIndex = 16;
+         this.pictureBox1.TabStop = false;
+         this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+         // 
+         // pictureBox2
+         // 
+         this.pictureBox2.Image = global::TriviaPursuit.Properties.Resources.Fleche;
+         this.pictureBox2.Location = new System.Drawing.Point(223, 4);
+         this.pictureBox2.Name = "pictureBox2";
+         this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+         this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+         this.pictureBox2.TabIndex = 18;
+         this.pictureBox2.TabStop = false;
+         // 
          // FormJeu
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(73)))), ((int)(((byte)(164)))));
          this.ClientSize = new System.Drawing.Size(550, 349);
+         this.Controls.Add(this.pictureBox2);
          this.Controls.Add(this.label1);
          this.Controls.Add(this.pictureBox1);
          this.Controls.Add(this.BTN_Rules);
@@ -597,6 +610,7 @@
          this.GB_J4.ResumeLayout(false);
          this.GB_J4.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
          this.ResumeLayout(false);
 
       }
@@ -645,5 +659,6 @@
       private System.Windows.Forms.PictureBox pictureBox1;
       private System.Windows.Forms.Timer timer1;
       private System.Windows.Forms.Label label1;
+      private System.Windows.Forms.PictureBox pictureBox2;
    }
 }
