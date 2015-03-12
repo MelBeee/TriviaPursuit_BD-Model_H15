@@ -121,8 +121,12 @@ namespace TriviaPursuit
 
          timer1.Interval = 25;
          timer1.Enabled = true;
-         NombreDeRotation = NombreAleatoire.Next(73, 116);
-
+         do
+         {
+            NombreDeRotation = NombreAleatoire.Next(73, 108);
+         }while(NombreDeRotation == 0 && NombreDeRotation == 79 && NombreDeRotation == 86 && NombreDeRotation == 94 && NombreDeRotation == 101 && NombreDeRotation == 108);
+         
+         
       }
 
       private void timer1_Tick(object sender, EventArgs e)
