@@ -59,6 +59,7 @@ namespace TriviaPursuit
       private void ProchainJoueur()
       {
          
+
       }
 
       private void LoadGroupBox()
