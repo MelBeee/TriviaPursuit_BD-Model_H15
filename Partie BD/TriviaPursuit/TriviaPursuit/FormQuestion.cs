@@ -18,7 +18,11 @@ namespace TriviaPursuit
       string NomCategorie;
       string NomJoueur;
       string Reponse;
-      int IDQuestion; 
+      int IDQuestion;
+      string Question;
+      string Choix1;
+      string Choix2;
+      string Choix3;
 
       public FormQuestion(OracleConnection oraconnPrincipale, string Categorie, string Joueur)
       {
@@ -29,6 +33,48 @@ namespace TriviaPursuit
       }
 
       private void GetQuestionAleatoire()
+      {
+          try
+          {
+              OracleCommand cmdQAleatoire = new OracleCommand("CMDQuestionAleatoire", oraconn);
+              cmdQAleatoire.CommandType = CommandType.StoredProcedure;
+              cmdQAleatoire.CommandText = "GESTIONJOUER.GetQuestionRandom";
+
+              OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
+              paramJoueur.Direction = ParameterDirection.Input;
+              paramJoueur.Value = NomJoueur;
+
+              OracleParameter paramCategorie = new OracleParameter("Categorie:", OracleDbType.Varchar2, 20);
+              paramCategorie.Direction = ParameterDirection.Input;
+              paramCategorie.Value = NomCategorie;
+
+              OracleParameter paramQuestion = new OracleParameter("Question:", OracleDbType.RefCursor);
+
+              cmdQAleatoire.Parameters.Add(paramJoueur);
+              cmdQAleatoire.Parameters.Add(paramCategorie);
+              cmdQAleatoire.Parameters.Add(paramQuestion);
+
+              OracleDataReader oraRead = cmdQAleatoire.ExecuteReader();
+
+              oraRead.Read();
+              IDQuestion = oraRead.GetInt32(0);
+              Question = oraRead.GetString(1);
+              Choix1 = oraRead.GetString(2);
+              Choix2 = oraRead.GetString(3);
+              Choix3 = oraRead.GetString(4);
+              Reponse = oraRead.GetString(5);
+
+              oraRead.Close();
+
+              SetUpQuestion();
+          }
+          catch (OracleException ex)
+          {
+              GestionErreur(ex);
+          }
+      }
+
+      private void SetUpQuestion()
       {
 
       }
@@ -127,11 +173,15 @@ namespace TriviaPursuit
             LB_MSGRep.Text = "Bonne réponse !";
             SonQuestionGagne();
             AjoutQuestionGagnee();
+            Properties.Settings.Default.RepondreCorrectement = true;
+            Properties.Settings.Default.Save();
          }
          else
          {
             LB_MSGRep.Text = "Mauvaise réponse !";
             SonQuestionPerdu();
+            Properties.Settings.Default.RepondreCorrectement = false;
+            Properties.Settings.Default.Save();
          }
       }
 
@@ -182,24 +232,18 @@ namespace TriviaPursuit
 
       private void SonQuestionGagne()
       {
-         var player = new System.Media.SoundPlayer();
-         player.Stream = Properties.Resources.QuestionReussite;
-         player.Play();
+         //var player = new System.Media.SoundPlayer();
+         //player.Stream = Properties.Resources.QuestionReussite;
+         //player.Play();
       }
 
       private void SonQuestionPerdu()
       {
-         var player = new System.Media.SoundPlayer();
-         player.Stream = Properties.Resources.QuestionEchouee;
-         player.Play();
+         //var player = new System.Media.SoundPlayer();
+         //player.Stream = Properties.Resources.QuestionEchouee;
+         //player.Play();
       }
    }
 }
 
 
-/*
-  select q.idquestion from questions q
-  where q.idquestion not in 
-  (select idquestion from questionreussie where NOMJOUEUR = 'MelBeee') 
-  AND nomcategorie = 'Culinaire';
-  */

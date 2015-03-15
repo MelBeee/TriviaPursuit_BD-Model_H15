@@ -178,7 +178,7 @@ namespace TriviaPursuit
          }
          if(Categorie=="")
          { 
-            FormQuestion question = new FormQuestion(oraconn, Categorie, TourDe);
+            FormQuestion question = new FormQuestion(oraconn, "Jeu vidéo", "Charlie");
             question.Show();
          }
         
