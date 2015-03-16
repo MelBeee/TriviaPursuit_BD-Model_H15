@@ -19,6 +19,7 @@ namespace TriviaPursuit
         public FormSettingsGame(OracleConnection oraconnPrincipale)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterParent;
             oraconn = oraconnPrincipale;
         }
 
@@ -28,7 +29,6 @@ namespace TriviaPursuit
             string nombre;
             try
             {
-
                 OracleCommand VerificationJoueur = new OracleCommand("GESTIONJOUER", oraconn);
                 VerificationJoueur.CommandText = "GESTIONJOUER.RECHERCHEJOUEUR";
                 VerificationJoueur.CommandType = CommandType.StoredProcedure;
@@ -48,7 +48,6 @@ namespace TriviaPursuit
 
                 if (nombre == "1")
                     Existe = true;
-
             }
             catch (OracleException ex)
             {
@@ -56,7 +55,6 @@ namespace TriviaPursuit
 
             }
             return Existe;
-
         }
 
         private int TesterVide(string Nom, int nombre)
