@@ -221,8 +221,8 @@ namespace TriviaPursuit
       }
       private void PopQuestion(String Catego)
       {
-         
-         FormQuestion question = new FormQuestion(oraconn, Catego, TourDe);
+
+         FormQuestion question = new FormQuestion(oraconn, "Jeu vidéo", "Charlie");
          question.StartPosition = FormStartPosition.CenterParent;
          question.ShowDialog();
 
@@ -238,7 +238,7 @@ namespace TriviaPursuit
          oraScore.CommandText = "GESTIONJOUER.ListerScore";
          oraScore.CommandType = CommandType.StoredProcedure;
          // pour une fonction, le paramètre de retour doit être déclaré en premier.
-         OracleParameter paramScorecur= new OracleParameter("Score:", OracleDbType.RefCursor);
+         OracleParameter paramScorecur = new OracleParameter("Score:", OracleDbType.RefCursor);
          paramScorecur.Direction = ParameterDirection.ReturnValue;
 
          // déclaration du paramètre en IN
@@ -251,41 +251,41 @@ namespace TriviaPursuit
 
          OracleDataReader Oraread = oraScore.ExecuteReader();
          int i = 0;
-         int[] List = new int[4]; 
-         while(Oraread.Read())
+         int[] List = new int[4];
+         while (Oraread.Read())
          {
-            List[i]= Oraread.GetInt32(0);
+            List[i] = Oraread.GetInt32(0);
             i++;
-         } 
-  
-         if(TourDe == Joueur1)
-            {
-               LB_J1_Animaux.Text = List[0].ToString() ;
-               LB_J1_Culinaire.Text = List[1].ToString();
-               LB_J1_JeuxVideo.Text = List[2].ToString();
-               LB_J1_Musique.Text = List[3].ToString();
-            }
-            else if (TourDe == Joueur2)
-            {
-               LB_J2_Animaux.Text = List[0].ToString();
-               LB_J2_Culinaire.Text = List[1].ToString();
-               LB_J2_JeuxVideo.Text = List[2].ToString();
-               LB_J2_Musique.Text = List[3].ToString();
-            }  
-            else if(TourDe == Joueur3)
-            {
-               LB_J3_Animaux.Text = List[0].ToString();
-               LB_J3_Culinaire.Text = List[1].ToString();
-               LB_J3_JeuxVideo.Text = List[2].ToString();
-               LB_J3_Musique.Text = List[3].ToString();
-            }
-            else if(TourDe == Joueur4)
-            {
-               LB_J4_Animaux.Text = List[0].ToString();
-               LB_J4_Culinaire.Text = List[1].ToString();
-               LB_J4_JeuxVideo.Text = List[2].ToString();
-               LB_J4_Musique.Text = List[3].ToString();
-            }       
+         }
+
+         if (TourDe == Joueur1)
+         {
+            LB_J1_Animaux.Text = List[0].ToString();
+            LB_J1_Culinaire.Text = List[1].ToString();
+            LB_J1_JeuxVideo.Text = List[2].ToString();
+            LB_J1_Musique.Text = List[3].ToString();
+         }
+         else if (TourDe == Joueur2)
+         {
+            LB_J2_Animaux.Text = List[0].ToString();
+            LB_J2_Culinaire.Text = List[1].ToString();
+            LB_J2_JeuxVideo.Text = List[2].ToString();
+            LB_J2_Musique.Text = List[3].ToString();
+         }
+         else if (TourDe == Joueur3)
+         {
+            LB_J3_Animaux.Text = List[0].ToString();
+            LB_J3_Culinaire.Text = List[1].ToString();
+            LB_J3_JeuxVideo.Text = List[2].ToString();
+            LB_J3_Musique.Text = List[3].ToString();
+         }
+         else if (TourDe == Joueur4)
+         {
+            LB_J4_Animaux.Text = List[0].ToString();
+            LB_J4_Culinaire.Text = List[1].ToString();
+            LB_J4_JeuxVideo.Text = List[2].ToString();
+            LB_J4_Musique.Text = List[3].ToString();
+         }
       }
 
       private void timer1_Tick(object sender, EventArgs e)
@@ -307,10 +307,10 @@ namespace TriviaPursuit
       private void button1_Click(object sender, EventArgs e)
       {
          Choix.Visible = false;
-         
+
          Categorie = Choix.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
          PopQuestion(Categorie);
-         
+
       }
    }
 }
