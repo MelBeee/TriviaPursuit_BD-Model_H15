@@ -240,6 +240,7 @@ namespace TriviaPursuit
             LB_MSGRep.Text = "Bonne réponse !";
             SonQuestionGagne();
             AjoutQuestionGagnee();
+            AjoutCategorie();
             Properties.Settings.Default.RepondreCorrectement = true;
             Properties.Settings.Default.Save();
          }
@@ -249,6 +250,33 @@ namespace TriviaPursuit
             SonQuestionPerdu();
             Properties.Settings.Default.RepondreCorrectement = false;
             Properties.Settings.Default.Save();
+         }
+      }
+
+      private void AjoutCategorie()
+      {
+         try
+         {
+            OracleCommand CMDAJOUT = new OracleCommand("CMDAJOUT", oraconn);
+            CMDAJOUT.CommandType = CommandType.StoredProcedure;
+            CMDAJOUT.CommandText = "GESTIONJOUER.UpdateCategorie";
+
+            OracleParameter paramCategorie = new OracleParameter("IDQuestion:", OracleDbType.Varchar2, 20);
+            paramCategorie.Direction = ParameterDirection.Input;
+            paramCategorie.Value = NomCategorie;
+
+            OracleParameter paramJoueur = new OracleParameter("pnomcat:", OracleDbType.Varchar2, 20);
+            paramJoueur.Direction = ParameterDirection.Input;
+            paramJoueur.Value = NomJoueur;
+
+            CMDAJOUT.Parameters.Add(paramCategorie);
+            CMDAJOUT.Parameters.Add(paramJoueur);
+
+            CMDAJOUT.ExecuteNonQuery();
+         }
+         catch (OracleException ex)
+         {
+            GestionErreur(ex);
          }
       }
 
