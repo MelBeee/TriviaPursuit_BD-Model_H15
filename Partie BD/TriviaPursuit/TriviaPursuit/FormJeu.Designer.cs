@@ -595,9 +595,9 @@
          this.Choix.Controls.Add(this.rb3);
          this.Choix.Controls.Add(this.rb2);
          this.Choix.Controls.Add(this.rb1);
-         this.Choix.Location = new System.Drawing.Point(154, 5);
+         this.Choix.Location = new System.Drawing.Point(154, -3);
          this.Choix.Name = "Choix";
-         this.Choix.Size = new System.Drawing.Size(244, 262);
+         this.Choix.Size = new System.Drawing.Size(244, 270);
          this.Choix.TabIndex = 19;
          this.Choix.Visible = false;
          // 

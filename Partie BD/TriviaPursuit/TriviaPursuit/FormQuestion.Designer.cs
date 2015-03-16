@@ -111,7 +111,7 @@
          this.PN_MSGRep.Controls.Add(this.BTN_Continuer);
          this.PN_MSGRep.Controls.Add(this.LB_MSGRep);
          this.PN_MSGRep.Location = new System.Drawing.Point(0, 0);
-         this.PN_MSGRep.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.PN_MSGRep.Margin = new System.Windows.Forms.Padding(2);
          this.PN_MSGRep.Name = "PN_MSGRep";
          this.PN_MSGRep.Size = new System.Drawing.Size(404, 273);
          this.PN_MSGRep.TabIndex = 5;
@@ -120,7 +120,7 @@
          // BTN_Continuer
          // 
          this.BTN_Continuer.Location = new System.Drawing.Point(166, 240);
-         this.BTN_Continuer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.BTN_Continuer.Margin = new System.Windows.Forms.Padding(2);
          this.BTN_Continuer.Name = "BTN_Continuer";
          this.BTN_Continuer.Size = new System.Drawing.Size(71, 21);
          this.BTN_Continuer.TabIndex = 1;
@@ -130,6 +130,9 @@
          // 
          // LB_MSGRep
          // 
+         this.LB_MSGRep.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
          this.LB_MSGRep.Font = new System.Drawing.Font("Buxton Sketch", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.LB_MSGRep.Location = new System.Drawing.Point(9, 7);
          this.LB_MSGRep.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

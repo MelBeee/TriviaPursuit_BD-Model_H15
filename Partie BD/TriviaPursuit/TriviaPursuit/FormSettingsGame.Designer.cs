@@ -176,7 +176,7 @@
          this.Controls.Add(this.TB_P3);
          this.Controls.Add(this.TB_P2);
          this.Controls.Add(this.TB_P1);
-         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
          this.MaximizeBox = false;
          this.MinimizeBox = false;
          this.Name = "FormSettingsGame";

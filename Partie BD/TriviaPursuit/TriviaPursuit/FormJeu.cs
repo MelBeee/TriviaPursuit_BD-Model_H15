@@ -60,6 +60,16 @@ namespace TriviaPursuit
         private void UpdateControls()
         {
             LB_TourAUser.Text = "C'est au tour de " + TourDe + " !";
+
+            GB_J1.ForeColor = Color.White;
+            GB_J1.Font = new Font(GB_J1.Font, FontStyle.Bold);
+            GB_J2.ForeColor = Color.White;
+            GB_J2.Font = new Font(GB_J2.Font, FontStyle.Bold);
+            GB_J3.ForeColor = Color.White;
+            GB_J3.Font = new Font(GB_J3.Font, FontStyle.Bold);
+            GB_J4.ForeColor = Color.White;
+            GB_J4.Font = new Font(GB_J4.Font, FontStyle.Bold);
+
             if (TourDe == Joueur1)
             {
                 GB_J1.ForeColor = Color.Yellow;
@@ -80,13 +90,26 @@ namespace TriviaPursuit
                 GB_J4.ForeColor = Color.Yellow;
                 GB_J4.Font = new Font(GB_J4.Font, FontStyle.Bold);
             }
-
         }
 
         private void ProchainJoueur()
         {
-
-
+           if(TourDe == Joueur1)
+           {
+              TourDe = Joueur2;
+           }
+           else if(TourDe == Joueur2 && Joueur3 != "") 
+           {
+              TourDe = Joueur3;
+           }
+           else if (TourDe == Joueur3 && Joueur4 != "")
+           {
+              TourDe = Joueur4;
+           }
+           else if (TourDe == Joueur4 || TourDe == Joueur3 || TourDe == Joueur2)
+           {
+              TourDe = Joueur1;
+           }
         }
 
         private void LoadGroupBox()
@@ -117,7 +140,6 @@ namespace TriviaPursuit
         private void BTN_Rules_Click(object sender, EventArgs e)
         {
             FormReglements form = new FormReglements();
-
             form.Show();
         }
 
@@ -146,15 +168,18 @@ namespace TriviaPursuit
 
         private void PB_Roulette_Click(object sender, EventArgs e)
         {
-
             timer1.Interval = 25;
             timer1.Enabled = true;
             do
             {
                 NombreDeRotation = NombreAleatoire.Next(73, 108);
-            } while (NombreDeRotation == 0 && NombreDeRotation == 79 && NombreDeRotation == 86 && NombreDeRotation == 94 && NombreDeRotation == 101 && NombreDeRotation == 108);
+            } while (NombreDeRotation == 0   && 
+                     NombreDeRotation == 79  &&  
+                     NombreDeRotation == 86  && 
+                     NombreDeRotation == 94  &&
+                     NombreDeRotation == 101 &&
+                     NombreDeRotation == 108);
 
-            NombreDeRotation = 88;
             JouerSonRoulette();
         }
 
@@ -171,26 +196,40 @@ namespace TriviaPursuit
             if (NombreDeRotation >= 73 && NombreDeRotation <= 79)
             {
                 Categorie = "Animaux";
+                PopQuestion(Categorie);
             }
             else if (NombreDeRotation >= 79 && NombreDeRotation <= 86)
             {
                 Categorie = "Musique";
+                PopQuestion(Categorie);
             }
             else if (NombreDeRotation >= 86 && NombreDeRotation <= 94)
-            {
-                Choix.Visible = true;
+            {               
+                Choix.Visible = true;   
             }
             else if (NombreDeRotation >= 94 && NombreDeRotation <= 101)
             {
                 Categorie = "Jeu vidéo";
+                PopQuestion(Categorie);
             }
             else if (NombreDeRotation >= 101 && NombreDeRotation <= 108)
             {
                 Categorie = "Culinaire";
-            }          
-                FormQuestion question = new FormQuestion(oraconn, Categorie, TourDe);
-                question.Show();            
+                PopQuestion(Categorie);
+            }
+            
+        }
+        private void PopQuestion(String Catego)
+        {
+           System.Threading.Thread.Sleep(1000);
+           FormQuestion question = new FormQuestion(oraconn, Catego, TourDe);
+           question.StartPosition = FormStartPosition.CenterParent;
+           question.ShowDialog();
 
+           if (Properties.Settings.Default.RepondreCorrectement == false)
+              ProchainJoueur();
+
+           UpdateControls();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -205,16 +244,15 @@ namespace TriviaPursuit
             {
                 compteur = 0;
                 timer1.Enabled = false;
-                PopCategorie();
-
+                PopCategorie();                
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Categorie = Choix.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             Choix.Visible = false;
-
+            Categorie = Choix.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            PopQuestion(Categorie);
         }
     }
 }
