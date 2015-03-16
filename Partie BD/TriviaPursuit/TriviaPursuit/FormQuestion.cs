@@ -18,6 +18,7 @@ namespace TriviaPursuit
       string NomCategorie;
       string NomJoueur;
       string Reponse;
+      string ReponseDonnee;
       int IDQuestion;
       string Question;
       string Choix1;
@@ -36,9 +37,12 @@ namespace TriviaPursuit
       {
           try
           {
-              OracleCommand cmdQAleatoire = new OracleCommand("CMDQuestionAleatoire", oraconn);
+              OracleCommand cmdQAleatoire = new OracleCommand("GESTIONJOUER", oraconn);
               cmdQAleatoire.CommandType = CommandType.StoredProcedure;
-              cmdQAleatoire.CommandText = "GESTIONJOUER.GetQuestionRandom";
+              cmdQAleatoire.CommandText = "GESTIONJOUER.GetQuestionAleatoire";
+
+              OracleParameter paramQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
+              paramQuestion.Direction = ParameterDirection.ReturnValue;
 
               OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
               paramJoueur.Direction = ParameterDirection.Input;
@@ -48,23 +52,38 @@ namespace TriviaPursuit
               paramCategorie.Direction = ParameterDirection.Input;
               paramCategorie.Value = NomCategorie;
 
-              OracleParameter paramQuestion = new OracleParameter("Question:", OracleDbType.RefCursor);
-
+              cmdQAleatoire.Parameters.Add(paramQuestion);
               cmdQAleatoire.Parameters.Add(paramJoueur);
               cmdQAleatoire.Parameters.Add(paramCategorie);
-              cmdQAleatoire.Parameters.Add(paramQuestion);
 
-              OracleDataReader oraRead = cmdQAleatoire.ExecuteReader();
+              cmdQAleatoire.ExecuteScalar();
+              IDQuestion = Int32.Parse(paramQuestion.Value.ToString());
 
-              oraRead.Read();
-              IDQuestion = oraRead.GetInt32(0);
-              Question = oraRead.GetString(1);
-              Choix1 = oraRead.GetString(2);
-              Choix2 = oraRead.GetString(3);
-              Choix3 = oraRead.GetString(4);
-              Reponse = oraRead.GetString(5);
+              /////////////////////////////////////////////////////////////
 
-              oraRead.Close();
+              OracleCommand oraliste = new OracleCommand("GESTIONJOUER", oraconn);
+              oraliste.CommandText = "GESTIONJOUER.LISTERQuestion";
+              oraliste.CommandType = CommandType.StoredProcedure;
+              // pour une fonction, le paramètre de retour doit être déclaré en premier.
+               OracleParameter paramQuestionCur = new OracleParameter("Question:", OracleDbType.RefCursor);
+               paramQuestionCur.Direction = ParameterDirection.ReturnValue;
+              
+              // déclaration du paramètre en IN
+              OracleParameter paramIDQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
+              paramIDQuestion.Value = IDQuestion;
+              paramIDQuestion.Direction = ParameterDirection.Input;
+
+              oraliste.Parameters.Add(paramQuestionCur);
+              oraliste.Parameters.Add(paramIDQuestion);
+
+              OracleDataReader Oraread = oraliste.ExecuteReader();
+
+              Oraread.Read();
+              Choix1 = Oraread.GetString(0);
+              Choix2 = Oraread.GetString(1);
+              Choix3 = Oraread.GetString(2);
+              Question = Oraread.GetString(3);
+              Reponse = Oraread.GetString(4);
 
               SetUpQuestion();
           }
@@ -76,7 +95,56 @@ namespace TriviaPursuit
 
       private void SetUpQuestion()
       {
+          int chiffrerandom;
+          Random chiffre = new Random();
+          chiffrerandom = chiffre.Next(6);
+          LB_Description.Text = Question;
 
+          switch(chiffrerandom)
+          {
+              case 0:
+                  LB_Choix1.Text = Choix1;
+                  LB_Choix2.Text = Choix2;
+                  LB_Choix3.Text = Choix3;
+                  LB_Choix4.Text = Reponse;
+                  break;
+              case 1:
+                  LB_Choix1.Text = Choix2;
+                  LB_Choix2.Text = Choix3;
+                  LB_Choix3.Text = Reponse;
+                  LB_Choix4.Text = Choix1;
+                  break;
+              case 2:
+                  LB_Choix1.Text = Choix3;
+                  LB_Choix2.Text = Reponse;
+                  LB_Choix3.Text = Choix1;
+                  LB_Choix4.Text = Choix2;
+                  break;
+              case 3:
+                  LB_Choix1.Text = Reponse;
+                  LB_Choix2.Text = Choix1;
+                  LB_Choix3.Text = Choix2;
+                  LB_Choix4.Text = Choix3;
+                  break;
+              case 4:
+                  LB_Choix1.Text = Choix1;
+                  LB_Choix2.Text = Reponse;
+                  LB_Choix3.Text = Choix3;
+                  LB_Choix4.Text = Choix2;
+                  break;
+              case 5:
+                  LB_Choix1.Text = Reponse;
+                  LB_Choix2.Text = Choix3;
+                  LB_Choix3.Text = Choix2;
+                  LB_Choix4.Text = Choix1;
+                  break;
+              default:
+                  LB_Choix1.Text = Choix1;
+                  LB_Choix2.Text = Choix2;
+                  LB_Choix3.Text = Choix3;
+                  LB_Choix4.Text = Reponse;
+                  break;
+          }
       }
 
       private void LB_Choix1_MouseLeave(object sender, EventArgs e)
@@ -142,33 +210,32 @@ namespace TriviaPursuit
 
       private void LB_Choix2_Click(object sender, EventArgs e)
       {
-         Reponse = LB_Choix2.Text;
+          ReponseDonnee = LB_Choix2.Text;
          AnalyseReponse();
       }
 
       private void LB_Choix3_Click(object sender, EventArgs e)
       {
-         Reponse = LB_Choix3.Text;
+          ReponseDonnee = LB_Choix3.Text;
          AnalyseReponse();
       }
 
       private void LB_Choix4_Click(object sender, EventArgs e)
       {
-         Reponse = LB_Choix4.Text;
+          ReponseDonnee = LB_Choix4.Text;
          AnalyseReponse();
       }
 
       private void LB_Choix1_Click(object sender, EventArgs e)
       {
-         Reponse = LB_Choix1.Text;
+          ReponseDonnee = LB_Choix1.Text;
          AnalyseReponse();
       }
 
       private void AnalyseReponse()
       {
-         bool bonnerep = true;
          PN_MSGRep.Visible = true;
-         if (bonnerep)
+         if (ReponseDonnee == Reponse)
          {
             LB_MSGRep.Text = "Bonne réponse !";
             SonQuestionGagne();
@@ -232,16 +299,16 @@ namespace TriviaPursuit
 
       private void SonQuestionGagne()
       {
-         //var player = new System.Media.SoundPlayer();
-         //player.Stream = Properties.Resources.QuestionReussite;
-         //player.Play();
+          var player = new System.Media.SoundPlayer();
+          player.Stream = Properties.Resources.QuestionReussite;
+          player.Play();
       }
 
       private void SonQuestionPerdu()
       {
-         //var player = new System.Media.SoundPlayer();
-         //player.Stream = Properties.Resources.QuestionEchouee;
-         //player.Play();
+          var player = new System.Media.SoundPlayer();
+          player.Stream = Properties.Resources.QuestionEchouee;
+          player.Play();
       }
    }
 }
