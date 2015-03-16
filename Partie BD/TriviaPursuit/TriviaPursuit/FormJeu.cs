@@ -187,12 +187,9 @@ namespace TriviaPursuit
             else if (NombreDeRotation >= 101 && NombreDeRotation <= 108)
             {
                 Categorie = "Culinaire";
-            }
-            if (Categorie == "")
-            {
-                FormQuestion question = new FormQuestion(oraconn, "Jeu vidéo", "Charlie");
-                question.Show();
-            }
+            }          
+                FormQuestion question = new FormQuestion(oraconn, Categorie, TourDe);
+                question.Show();            
 
         }
 
