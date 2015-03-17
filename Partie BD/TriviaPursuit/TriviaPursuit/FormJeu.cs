@@ -229,10 +229,15 @@ namespace TriviaPursuit
 
             Score();
             if (Properties.Settings.Default.Win)
+            {
                 FinDePartie();
-            else if (!Properties.Settings.Default.RepondreCorrectement)
+            }
+            
+           if (!Properties.Settings.Default.RepondreCorrectement)
+            {
                 ProchainJoueur();
                 UpdateControls();
+            }
         }
 
         private void FinDePartie()
