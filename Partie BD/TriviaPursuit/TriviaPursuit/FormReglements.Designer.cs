@@ -154,7 +154,7 @@
          this.MinimizeBox = false;
          this.Name = "FormReglements";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-         this.Text = "FormReglements";
+         this.Text = "Règlements";
          this.ResumeLayout(false);
          this.PerformLayout();
 
