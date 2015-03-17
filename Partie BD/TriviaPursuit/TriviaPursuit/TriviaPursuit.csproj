@@ -218,6 +218,7 @@
     <None Include="Resources\Typing.wav" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\rainbow-colors-ideas-6.gif" />
     <None Include="Resources\Strong_Punch-Mike_Koenig-574430706.wav" />
     <None Include="Resources\Short_triumphal_fanfare-John_Stracke-815794903.wav" />
     <None Include="Resources\Game Show Wheel Spin-SoundBible.com-1305738466.wav" />
