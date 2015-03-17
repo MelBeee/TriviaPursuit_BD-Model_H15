@@ -23,6 +23,7 @@ namespace TriviaPursuit
         public Random NombreAleatoire = new Random();
         public int NombreDeRotation;
         public string Categorie = "";
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
         // variable contenant la connection a la bd 
         OracleConnection oraconn = new OracleConnection();
@@ -186,7 +187,6 @@ namespace TriviaPursuit
 
         private void JouerSonRoulette()
         {
-            var player = new System.Media.SoundPlayer();
             player.Stream = Properties.Resources.WheelSpin;
             player.Play();
         }
@@ -222,7 +222,7 @@ namespace TriviaPursuit
         }
         private void PopQuestion(String Catego)
         {
-
+            player.Stop();
             FormQuestion question = new FormQuestion(oraconn, Catego, TourDe);
             question.StartPosition = FormStartPosition.CenterParent;
             question.ShowDialog();

@@ -17,12 +17,12 @@ namespace TriviaPursuit
         //////////////////////////////////////////////////////////////////////////////////////////////
         //    Déclaration des variables
         //////////////////////////////////////////////////////////////////////////////////////////////
-       // boolean pour stocker si le form est connecté ou non
-       public bool connection = false;
-       // variable contenant la connection a la bd 
-       OracleConnection oraconnPrincipale = new OracleConnection();
+        // boolean pour stocker si le form est connecté ou non
+        public bool connection = false;
+        // variable contenant la connection a la bd 
+        OracleConnection oraconnPrincipale = new OracleConnection();
 
-       bool JoueursDelAdd = true; 
+        bool JoueursDelAdd = true;
 
         //////////////////////////////////////////////////////////////////////////////////////////////
         //    Form loading
@@ -37,26 +37,26 @@ namespace TriviaPursuit
         }
         private void Connexion()
         {
-           if(!connection)
-           {
-              string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
-                  "(HOST=205.237.244.251)(PORT=1521)))" +
-                  "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
-              string user = "laplante";
-              string passwd = "ORACLE1";
-              string chaineconnection = "Data Source = " + Dsource + ";User Id =" + user + "; Password =" + passwd;
+            if (!connection)
+            {
+                string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
+                    "(HOST=205.237.244.251)(PORT=1521)))" +
+                    "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
+                string user = "laplante";
+                string passwd = "ORACLE1";
+                string chaineconnection = "Data Source = " + Dsource + ";User Id =" + user + "; Password =" + passwd;
 
-              try
-              {
-                 oraconnPrincipale.ConnectionString = chaineconnection;
-                 oraconnPrincipale.Open();
-                 connection = true;
-              }
-              catch (OracleException ex)
-              {
-                 GestionErreur(ex);
-              }
-           }
+                try
+                {
+                    oraconnPrincipale.ConnectionString = chaineconnection;
+                    oraconnPrincipale.Open();
+                    connection = true;
+                }
+                catch (OracleException ex)
+                {
+                    GestionErreur(ex);
+                }
+            }
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,10 +82,30 @@ namespace TriviaPursuit
         }
         private void StartGame()
         {
-           FormSettingsGame form = new FormSettingsGame(oraconnPrincipale);
+            ReinitialisationDePartie();
+
+            FormSettingsGame form = new FormSettingsGame(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
+        }
+
+        private void ReinitialisationDePartie()
+        {
+            try
+            {
+                OracleCommand cmdInit = new OracleCommand("GESTIONJOUER", oraconnPrincipale);
+                cmdInit.CommandType = CommandType.StoredProcedure;
+                cmdInit.CommandText = "GESTIONJOUER.REINITIALISATIONPARTI";
+
+
+                cmdInit.ExecuteNonQuery();
+
+            }
+            catch (OracleException ex)
+            {
+                GestionErreur(ex);
+            }
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -117,7 +137,7 @@ namespace TriviaPursuit
         }
         private void AddQuestion()
         {
-           FormAjoutQuestion form = new FormAjoutQuestion(oraconnPrincipale);
+            FormAjoutQuestion form = new FormAjoutQuestion(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -152,7 +172,7 @@ namespace TriviaPursuit
         }
         private void DeleteQuestion()
         {
-           FormSupressionQuestion form = new FormSupressionQuestion(oraconnPrincipale);
+            FormSupressionQuestion form = new FormSupressionQuestion(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -187,7 +207,7 @@ namespace TriviaPursuit
         }
         private void Stats()
         {
-           FormStatistiques form = new FormStatistiques(oraconnPrincipale);
+            FormStatistiques form = new FormStatistiques(oraconnPrincipale);
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -288,8 +308,8 @@ namespace TriviaPursuit
         }
         private void AddPlayers()
         {
-           JoueursDelAdd = true; 
-           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale, JoueursDelAdd);
+            JoueursDelAdd = true;
+            FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale, JoueursDelAdd);
 
             form.Text = "Ajout de joueurs";
 
@@ -326,10 +346,10 @@ namespace TriviaPursuit
         }
         private void DeletePlayers()
         {
-           JoueursDelAdd = false;
-           FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale, JoueursDelAdd);
+            JoueursDelAdd = false;
+            FormGestionJoueurs form = new FormGestionJoueurs(oraconnPrincipale, JoueursDelAdd);
 
-           form.Text = "Suppression de joueurs";
+            form.Text = "Suppression de joueurs";
 
             if (form.ShowDialog() == DialogResult.Abort)
                 this.Close();
@@ -368,7 +388,7 @@ namespace TriviaPursuit
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-           oraconnPrincipale.Close();
+            oraconnPrincipale.Close();
         }
 
     }
