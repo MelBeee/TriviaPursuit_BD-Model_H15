@@ -34,5 +34,17 @@ namespace TriviaPursuit.Properties {
                 this["RepondreCorrectement"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Win {
+            get {
+                return ((bool)(this["Win"]));
+            }
+            set {
+                this["Win"] = value;
+            }
+        }
     }
 }

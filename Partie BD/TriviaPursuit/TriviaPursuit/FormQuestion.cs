@@ -11,334 +11,377 @@ using Oracle.DataAccess.Client;
 
 namespace TriviaPursuit
 {
-   public partial class FormQuestion : Form
-   {
-      // variable contenant la connection a la bd 
-      OracleConnection oraconn = new OracleConnection();
-      string NomCategorie;
-      string NomJoueur;
-      string Reponse;
-      string ReponseDonnee;
-      int IDQuestion;
-      string Question;
-      string Choix1;
-      string Choix2;
-      string Choix3;
+    public partial class FormQuestion : Form
+    {
+        // variable contenant la connection a la bd 
+        OracleConnection oraconn = new OracleConnection();
+        string NomCategorie;
+        string NomJoueur;
+        string Reponse;
+        string ReponseDonnee;
+        int IDQuestion;
+        string Question;
+        string Choix1;
+        string Choix2;
+        string Choix3;
 
-      public FormQuestion(OracleConnection oraconnPrincipale, string Categorie, string Joueur)
-      {
-         InitializeComponent();
-         oraconn = oraconnPrincipale;
-         NomCategorie = Categorie;
-         NomJoueur = Joueur; 
-      }
+        public FormQuestion(OracleConnection oraconnPrincipale, string Categorie, string Joueur)
+        {
+            InitializeComponent();
+            oraconn = oraconnPrincipale;
+            NomCategorie = Categorie;
+            NomJoueur = Joueur;
+        }
 
-      private void GetQuestionAleatoire()
-      {
-          try
-          {
-              OracleCommand cmdQAleatoire = new OracleCommand("GESTIONJOUER", oraconn);
-              cmdQAleatoire.CommandType = CommandType.StoredProcedure;
-              cmdQAleatoire.CommandText = "GESTIONJOUER.GetQuestionAleatoire";
+        private void GetQuestionAleatoire()
+        {
+            try
+            {
+                OracleCommand cmdQAleatoire = new OracleCommand("GESTIONJOUER", oraconn);
+                cmdQAleatoire.CommandType = CommandType.StoredProcedure;
+                cmdQAleatoire.CommandText = "GESTIONJOUER.GetQuestionAleatoire";
 
-              OracleParameter paramQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
-              paramQuestion.Direction = ParameterDirection.ReturnValue;
+                OracleParameter paramQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
+                paramQuestion.Direction = ParameterDirection.ReturnValue;
 
-              OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
-              paramJoueur.Direction = ParameterDirection.Input;
-              paramJoueur.Value = NomJoueur;
+                OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
+                paramJoueur.Direction = ParameterDirection.Input;
+                paramJoueur.Value = NomJoueur;
 
-              OracleParameter paramCategorie = new OracleParameter("Categorie:", OracleDbType.Varchar2, 20);
-              paramCategorie.Direction = ParameterDirection.Input;
-              paramCategorie.Value = NomCategorie;
+                OracleParameter paramCategorie = new OracleParameter("Categorie:", OracleDbType.Varchar2, 20);
+                paramCategorie.Direction = ParameterDirection.Input;
+                paramCategorie.Value = NomCategorie;
 
-              cmdQAleatoire.Parameters.Add(paramQuestion);
-              cmdQAleatoire.Parameters.Add(paramJoueur);
-              cmdQAleatoire.Parameters.Add(paramCategorie);
+                cmdQAleatoire.Parameters.Add(paramQuestion);
+                cmdQAleatoire.Parameters.Add(paramJoueur);
+                cmdQAleatoire.Parameters.Add(paramCategorie);
 
-              cmdQAleatoire.ExecuteScalar();
-              IDQuestion = Int32.Parse(paramQuestion.Value.ToString());
+                cmdQAleatoire.ExecuteScalar();
+                IDQuestion = Int32.Parse(paramQuestion.Value.ToString());
 
-              /////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////
 
-              OracleCommand oraliste = new OracleCommand("GESTIONJOUER", oraconn);
-              oraliste.CommandText = "GESTIONJOUER.LISTERQuestion";
-              oraliste.CommandType = CommandType.StoredProcedure;
-              // pour une fonction, le paramètre de retour doit être déclaré en premier.
-               OracleParameter paramQuestionCur = new OracleParameter("Question:", OracleDbType.RefCursor);
-               paramQuestionCur.Direction = ParameterDirection.ReturnValue;
-              
-              // déclaration du paramètre en IN
-              OracleParameter paramIDQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
-              paramIDQuestion.Value = IDQuestion;
-              paramIDQuestion.Direction = ParameterDirection.Input;
+                OracleCommand oraliste = new OracleCommand("GESTIONJOUER", oraconn);
+                oraliste.CommandText = "GESTIONJOUER.LISTERQuestion";
+                oraliste.CommandType = CommandType.StoredProcedure;
+                // pour une fonction, le paramètre de retour doit être déclaré en premier.
+                OracleParameter paramQuestionCur = new OracleParameter("Question:", OracleDbType.RefCursor);
+                paramQuestionCur.Direction = ParameterDirection.ReturnValue;
 
-              oraliste.Parameters.Add(paramQuestionCur);
-              oraliste.Parameters.Add(paramIDQuestion);
+                // déclaration du paramètre en IN
+                OracleParameter paramIDQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
+                paramIDQuestion.Value = IDQuestion;
+                paramIDQuestion.Direction = ParameterDirection.Input;
 
-              OracleDataReader Oraread = oraliste.ExecuteReader();
+                oraliste.Parameters.Add(paramQuestionCur);
+                oraliste.Parameters.Add(paramIDQuestion);
 
-              Oraread.Read();
-              Choix1 = Oraread.GetString(0);
-              Choix2 = Oraread.GetString(1);
-              Choix3 = Oraread.GetString(2);
-              Question = Oraread.GetString(3);
-              Reponse = Oraread.GetString(4);
+                OracleDataReader Oraread = oraliste.ExecuteReader();
 
-              SetUpQuestion();
-          }
-          catch (OracleException ex)
-          {
-              GestionErreur(ex);
-          }
-      }
+                Oraread.Read();
+                Choix1 = Oraread.GetString(0);
+                Choix2 = Oraread.GetString(1);
+                Choix3 = Oraread.GetString(2);
+                Question = Oraread.GetString(3);
+                Reponse = Oraread.GetString(4);
 
-      private void SetUpQuestion()
-      {
-          int chiffrerandom;
-          Random chiffre = new Random();
-          chiffrerandom = chiffre.Next(6);
-          LB_Description.Text = Question;
+                SetUpQuestion();
+            }
+            catch (OracleException ex)
+            {
+                GestionErreur(ex);
+            }
+        }
 
-          switch(chiffrerandom)
-          {
-              case 0:
-                  LB_Choix1.Text = Choix1;
-                  LB_Choix2.Text = Choix2;
-                  LB_Choix3.Text = Choix3;
-                  LB_Choix4.Text = Reponse;
-                  break;
-              case 1:
-                  LB_Choix1.Text = Choix2;
-                  LB_Choix2.Text = Choix3;
-                  LB_Choix3.Text = Reponse;
-                  LB_Choix4.Text = Choix1;
-                  break;
-              case 2:
-                  LB_Choix1.Text = Choix3;
-                  LB_Choix2.Text = Reponse;
-                  LB_Choix3.Text = Choix1;
-                  LB_Choix4.Text = Choix2;
-                  break;
-              case 3:
-                  LB_Choix1.Text = Reponse;
-                  LB_Choix2.Text = Choix1;
-                  LB_Choix3.Text = Choix2;
-                  LB_Choix4.Text = Choix3;
-                  break;
-              case 4:
-                  LB_Choix1.Text = Choix1;
-                  LB_Choix2.Text = Reponse;
-                  LB_Choix3.Text = Choix3;
-                  LB_Choix4.Text = Choix2;
-                  break;
-              case 5:
-                  LB_Choix1.Text = Reponse;
-                  LB_Choix2.Text = Choix3;
-                  LB_Choix3.Text = Choix2;
-                  LB_Choix4.Text = Choix1;
-                  break;
-              default:
-                  LB_Choix1.Text = Choix1;
-                  LB_Choix2.Text = Choix2;
-                  LB_Choix3.Text = Choix3;
-                  LB_Choix4.Text = Reponse;
-                  break;
-          }
-      }
+        private void SetUpQuestion()
+        {
+            int chiffrerandom;
+            Random chiffre = new Random();
+            chiffrerandom = chiffre.Next(6);
+            LB_Description.Text = Question;
 
-      private void LB_Choix1_MouseLeave(object sender, EventArgs e)
-      {
-         LB_Choix1.ForeColor = Color.Black;
-         LB_Choix1.BackColor = Color.PaleGoldenrod;
-         Cursor.Current = Cursors.Arrow;
-      }
+            switch (chiffrerandom)
+            {
+                case 0:
+                    LB_Choix1.Text = Choix1;
+                    LB_Choix2.Text = Choix2;
+                    LB_Choix3.Text = Choix3;
+                    LB_Choix4.Text = Reponse;
+                    break;
+                case 1:
+                    LB_Choix1.Text = Choix2;
+                    LB_Choix2.Text = Choix3;
+                    LB_Choix3.Text = Reponse;
+                    LB_Choix4.Text = Choix1;
+                    break;
+                case 2:
+                    LB_Choix1.Text = Choix3;
+                    LB_Choix2.Text = Reponse;
+                    LB_Choix3.Text = Choix1;
+                    LB_Choix4.Text = Choix2;
+                    break;
+                case 3:
+                    LB_Choix1.Text = Reponse;
+                    LB_Choix2.Text = Choix1;
+                    LB_Choix3.Text = Choix2;
+                    LB_Choix4.Text = Choix3;
+                    break;
+                case 4:
+                    LB_Choix1.Text = Choix1;
+                    LB_Choix2.Text = Reponse;
+                    LB_Choix3.Text = Choix3;
+                    LB_Choix4.Text = Choix2;
+                    break;
+                case 5:
+                    LB_Choix1.Text = Reponse;
+                    LB_Choix2.Text = Choix3;
+                    LB_Choix3.Text = Choix2;
+                    LB_Choix4.Text = Choix1;
+                    break;
+                default:
+                    LB_Choix1.Text = Choix1;
+                    LB_Choix2.Text = Choix2;
+                    LB_Choix3.Text = Choix3;
+                    LB_Choix4.Text = Reponse;
+                    break;
+            }
+        }
 
-      private void LB_Choix1_MouseMove(object sender, MouseEventArgs e)
-      {
-         LB_Choix1.ForeColor = Color.PaleGoldenrod;
-         LB_Choix1.BackColor = Color.Black;
-         Cursor.Current = Cursors.Hand;
-      }
+        private void LB_Choix1_MouseLeave(object sender, EventArgs e)
+        {
+            LB_Choix1.ForeColor = Color.Black;
+            LB_Choix1.BackColor = Color.PaleGoldenrod;
+            Cursor.Current = Cursors.Arrow;
+        }
 
-      private void LB_Choix2_MouseLeave(object sender, EventArgs e)
-      {
-         LB_Choix2.ForeColor = Color.Black;
-         LB_Choix2.BackColor = Color.PaleGoldenrod;
-         Cursor.Current = Cursors.Arrow;
-      }
+        private void LB_Choix1_MouseMove(object sender, MouseEventArgs e)
+        {
+            LB_Choix1.ForeColor = Color.PaleGoldenrod;
+            LB_Choix1.BackColor = Color.Black;
+            Cursor.Current = Cursors.Hand;
+        }
 
-      private void LB_Choix2_MouseMove(object sender, MouseEventArgs e)
-      {
-         LB_Choix2.ForeColor = Color.PaleGoldenrod;
-         LB_Choix2.BackColor = Color.Black;
-         Cursor.Current = Cursors.Hand;
-      }
+        private void LB_Choix2_MouseLeave(object sender, EventArgs e)
+        {
+            LB_Choix2.ForeColor = Color.Black;
+            LB_Choix2.BackColor = Color.PaleGoldenrod;
+            Cursor.Current = Cursors.Arrow;
+        }
 
-      private void LB_Choix3_MouseLeave(object sender, EventArgs e)
-      {
-         LB_Choix3.ForeColor = Color.Black;
-         LB_Choix3.BackColor = Color.PaleGoldenrod;
-         Cursor.Current = Cursors.Arrow;
-      }
+        private void LB_Choix2_MouseMove(object sender, MouseEventArgs e)
+        {
+            LB_Choix2.ForeColor = Color.PaleGoldenrod;
+            LB_Choix2.BackColor = Color.Black;
+            Cursor.Current = Cursors.Hand;
+        }
 
-      private void LB_Choix3_MouseMove(object sender, MouseEventArgs e)
-      {
-         LB_Choix3.ForeColor = Color.PaleGoldenrod;
-         LB_Choix3.BackColor = Color.Black;
-         Cursor.Current = Cursors.Hand;
-      }
+        private void LB_Choix3_MouseLeave(object sender, EventArgs e)
+        {
+            LB_Choix3.ForeColor = Color.Black;
+            LB_Choix3.BackColor = Color.PaleGoldenrod;
+            Cursor.Current = Cursors.Arrow;
+        }
 
-      private void LB_Choix4_MouseLeave(object sender, EventArgs e)
-      {
-         LB_Choix4.ForeColor = Color.Black;
-         LB_Choix4.BackColor = Color.PaleGoldenrod;
-         Cursor.Current = Cursors.Arrow;
-      }
+        private void LB_Choix3_MouseMove(object sender, MouseEventArgs e)
+        {
+            LB_Choix3.ForeColor = Color.PaleGoldenrod;
+            LB_Choix3.BackColor = Color.Black;
+            Cursor.Current = Cursors.Hand;
+        }
 
-      private void LB_Choix4_MouseMove(object sender, MouseEventArgs e)
-      {
-         LB_Choix4.ForeColor = Color.PaleGoldenrod;
-         LB_Choix4.BackColor = Color.Black;
-         Cursor.Current = Cursors.Hand;
-      }
+        private void LB_Choix4_MouseLeave(object sender, EventArgs e)
+        {
+            LB_Choix4.ForeColor = Color.Black;
+            LB_Choix4.BackColor = Color.PaleGoldenrod;
+            Cursor.Current = Cursors.Arrow;
+        }
 
-      private void FormQuestion_Load(object sender, EventArgs e)
-      {
-         GetQuestionAleatoire();
-      }
+        private void LB_Choix4_MouseMove(object sender, MouseEventArgs e)
+        {
+            LB_Choix4.ForeColor = Color.PaleGoldenrod;
+            LB_Choix4.BackColor = Color.Black;
+            Cursor.Current = Cursors.Hand;
+        }
 
-      private void LB_Choix2_Click(object sender, EventArgs e)
-      {
-          ReponseDonnee = LB_Choix2.Text;
-         AnalyseReponse();
-      }
+        private void FormQuestion_Load(object sender, EventArgs e)
+        {
+            GetQuestionAleatoire();
+        }
 
-      private void LB_Choix3_Click(object sender, EventArgs e)
-      {
-          ReponseDonnee = LB_Choix3.Text;
-         AnalyseReponse();
-      }
+        private void LB_Choix2_Click(object sender, EventArgs e)
+        {
+            ReponseDonnee = LB_Choix2.Text;
+            AnalyseReponse();
+        }
 
-      private void LB_Choix4_Click(object sender, EventArgs e)
-      {
-          ReponseDonnee = LB_Choix4.Text;
-         AnalyseReponse();
-      }
+        private void LB_Choix3_Click(object sender, EventArgs e)
+        {
+            ReponseDonnee = LB_Choix3.Text;
+            AnalyseReponse();
+        }
 
-      private void LB_Choix1_Click(object sender, EventArgs e)
-      {
-          ReponseDonnee = LB_Choix1.Text;
-         AnalyseReponse();
-      }
+        private void LB_Choix4_Click(object sender, EventArgs e)
+        {
+            ReponseDonnee = LB_Choix4.Text;
+            AnalyseReponse();
+        }
 
-      private void AnalyseReponse()
-      {
-         PN_MSGRep.Visible = true;
-         if (ReponseDonnee == Reponse)
-         {
-            LB_MSGRep.Text = "Bonne réponse !";
-            SonQuestionGagne();
-            AjoutQuestionGagnee();
-            AjoutCategorie();
-            Properties.Settings.Default.RepondreCorrectement = true;
-            Properties.Settings.Default.Save();
-         }
-         else
-         {
-            LB_MSGRep.Text = "Mauvaise réponse !";
-            SonQuestionPerdu();
-            Properties.Settings.Default.RepondreCorrectement = false;
-            Properties.Settings.Default.Save();
-         }
-      }
+        private void LB_Choix1_Click(object sender, EventArgs e)
+        {
+            ReponseDonnee = LB_Choix1.Text;
+            AnalyseReponse();
+        }
 
-      private void AjoutCategorie()
-      {
-         try
-         {
-            OracleCommand CMDAJOUT = new OracleCommand("CMDAJOUT", oraconn);
-            CMDAJOUT.CommandType = CommandType.StoredProcedure;
-            CMDAJOUT.CommandText = "GESTIONJOUER.UpdateCategorie";
+        private void AnalyseReponse()
+        {
+            PN_MSGRep.Visible = true;
+            if (ReponseDonnee == Reponse)
+            {
+                LB_MSGRep.Text = "Bonne réponse !";
+                SonQuestionGagne();
+                AjoutQuestionGagnee();
+                AjoutCategorie();
+                Properties.Settings.Default.RepondreCorrectement = true;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                LB_MSGRep.Text = "Mauvaise réponse !";
+                SonQuestionPerdu();
+                Properties.Settings.Default.RepondreCorrectement = false;
+                Properties.Settings.Default.Save();
+            }
+        }
 
-            OracleParameter paramCategorie = new OracleParameter("IDQuestion:", OracleDbType.Varchar2, 20);
-            paramCategorie.Direction = ParameterDirection.Input;
-            paramCategorie.Value = NomCategorie;
+        private void AjoutCategorie()
+        {
+            try
+            {
+                OracleCommand CMDAJOUT = new OracleCommand("CMDAJOUT", oraconn);
+                CMDAJOUT.CommandType = CommandType.StoredProcedure;
+                CMDAJOUT.CommandText = "GESTIONJOUER.UpdateCategorie";
 
-            OracleParameter paramJoueur = new OracleParameter("pnomcat:", OracleDbType.Varchar2, 20);
-            paramJoueur.Direction = ParameterDirection.Input;
-            paramJoueur.Value = NomJoueur;
+                OracleParameter paramCategorie = new OracleParameter("IDQuestion:", OracleDbType.Varchar2, 20);
+                paramCategorie.Direction = ParameterDirection.Input;
+                paramCategorie.Value = NomCategorie;
 
-            CMDAJOUT.Parameters.Add(paramCategorie);
-            CMDAJOUT.Parameters.Add(paramJoueur);
+                OracleParameter paramJoueur = new OracleParameter("pnomcat:", OracleDbType.Varchar2, 20);
+                paramJoueur.Direction = ParameterDirection.Input;
+                paramJoueur.Value = NomJoueur;
 
-            CMDAJOUT.ExecuteNonQuery();
-         }
-         catch (OracleException ex)
-         {
-            GestionErreur(ex);
-         }
-      }
+                CMDAJOUT.Parameters.Add(paramCategorie);
+                CMDAJOUT.Parameters.Add(paramJoueur);
 
-      private void AjoutQuestionGagnee()
-      {
-         try
-         {
-            OracleCommand CMDAJOUT = new OracleCommand("CMDAJOUT", oraconn);
-            CMDAJOUT.CommandType = CommandType.StoredProcedure;
-            CMDAJOUT.CommandText = "GESTIONJOUER.AjoutQuestionReussite";
+                CMDAJOUT.ExecuteNonQuery();
+            }
+            catch (OracleException ex)
+            {
+                GestionErreur(ex);
+            }
+        }
 
-            OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
-            paramJoueur.Direction = ParameterDirection.Input;
-            paramJoueur.Value = NomJoueur;
+        private void AjoutQuestionGagnee()
+        {
+            try
+            {
+                OracleCommand CMDAJOUT = new OracleCommand("CMDAJOUT", oraconn);
+                CMDAJOUT.CommandType = CommandType.StoredProcedure;
+                CMDAJOUT.CommandText = "GESTIONJOUER.AjoutQuestionReussite";
 
-            OracleParameter paramQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
-            paramQuestion.Direction = ParameterDirection.Input;
-            paramQuestion.Value = IDQuestion.ToString();
+                OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
+                paramJoueur.Direction = ParameterDirection.Input;
+                paramJoueur.Value = NomJoueur;
 
-            CMDAJOUT.Parameters.Add(paramJoueur);
-            CMDAJOUT.Parameters.Add(paramQuestion);
+                OracleParameter paramQuestion = new OracleParameter("IDQuestion:", OracleDbType.Int32);
+                paramQuestion.Direction = ParameterDirection.Input;
+                paramQuestion.Value = IDQuestion.ToString();
 
-            CMDAJOUT.ExecuteNonQuery();
-         }
-         catch (OracleException ex)
-         {
-            GestionErreur(ex);
-         }
-      }
+                CMDAJOUT.Parameters.Add(paramJoueur);
+                CMDAJOUT.Parameters.Add(paramQuestion);
 
-      private void BTN_Continuer_Click(object sender, EventArgs e)
-      {
-         this.Close();
-      }
+                CMDAJOUT.ExecuteNonQuery();
+            }
+            catch (OracleException ex)
+            {
+                GestionErreur(ex);
+            }
+        }
 
-      //////////////////////////////////////////////////////////////////////////////////////////////
-      //    Gestion des erreurs 
-      //////////////////////////////////////////////////////////////////////////////////////////////
-      private void GestionErreur(OracleException ex)
-      {
-         FormErreur form = new FormErreur(ex);
+        private void BTN_Continuer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-         if (form.ShowDialog() == DialogResult.Abort)
-         {
-            this.DialogResult = DialogResult.Abort;
-         }
-      }
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //    Gestion des erreurs 
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        private void GestionErreur(OracleException ex)
+        {
+            FormErreur form = new FormErreur(ex);
 
-      private void SonQuestionGagne()
-      {
-          var player = new System.Media.SoundPlayer();
-          player.Stream = Properties.Resources.QuestionReussite;
-          player.Play();
-      }
+            if (form.ShowDialog() == DialogResult.Abort)
+            {
+                this.DialogResult = DialogResult.Abort;
+            }
+        }
 
-      private void SonQuestionPerdu()
-      {
-          var player = new System.Media.SoundPlayer();
-          player.Stream = Properties.Resources.QuestionEchouee;
-          player.Play();
-      }
-   }
+        private void SonQuestionGagne()
+        {
+            var player = new System.Media.SoundPlayer();
+            player.Stream = Properties.Resources.QuestionReussite;
+            player.Play();
+        }
+
+        private void SonQuestionPerdu()
+        {
+            var player = new System.Media.SoundPlayer();
+            player.Stream = Properties.Resources.QuestionEchouee;
+            player.Play();
+        }
+
+        private void VerifierGagner()
+        {
+            int nbre;
+            try
+            {
+                OracleCommand cmdQAleatoire = new OracleCommand("GESTIONJOUER", oraconn);
+                cmdQAleatoire.CommandType = CommandType.StoredProcedure;
+                cmdQAleatoire.CommandText = "GESTIONJOUER.Gagner";
+
+                OracleParameter paramCategorie = new OracleParameter("NbreCategorie:", OracleDbType.Int32);
+                paramCategorie.Direction = ParameterDirection.ReturnValue;
+
+                OracleParameter paramJoueur = new OracleParameter("NomJoueur:", OracleDbType.Varchar2, 20);
+                paramJoueur.Direction = ParameterDirection.Input;
+                paramJoueur.Value = NomJoueur;
+
+                cmdQAleatoire.Parameters.Add(paramCategorie);
+                cmdQAleatoire.Parameters.Add(paramJoueur);
+   
+                cmdQAleatoire.ExecuteScalar();
+
+                nbre = Int32.Parse(paramCategorie.Value.ToString());
+
+
+                Properties.Settings.Default.Win = false; 
+                if(nbre == 4)
+                {
+                    Properties.Settings.Default.Win = true; 
+                }
+                Properties.Settings.Default.Save();
+            }
+            catch (OracleException ex)
+            {
+                GestionErreur(ex);
+            }
+        }
+
+        private void FormQuestion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            VerifierGagner();
+        }
+
+    }
 }
 
 
