@@ -617,6 +617,7 @@
          this.rb4.TabStop = true;
          this.rb4.Text = "Musique";
          this.rb4.UseVisualStyleBackColor = true;
+         this.rb4.CheckedChanged += new System.EventHandler(this.rb1_CheckedChanged);
          // 
          // rb3
          // 
@@ -629,6 +630,7 @@
          this.rb3.TabStop = true;
          this.rb3.Text = "Culinaire";
          this.rb3.UseVisualStyleBackColor = true;
+         this.rb3.CheckedChanged += new System.EventHandler(this.rb1_CheckedChanged);
          // 
          // rb2
          // 
@@ -641,6 +643,7 @@
          this.rb2.TabStop = true;
          this.rb2.Text = "Jeu vidéo";
          this.rb2.UseVisualStyleBackColor = true;
+         this.rb2.CheckedChanged += new System.EventHandler(this.rb1_CheckedChanged);
          // 
          // rb1
          // 
@@ -653,6 +656,7 @@
          this.rb1.TabStop = true;
          this.rb1.Text = "Animaux";
          this.rb1.UseVisualStyleBackColor = true;
+         this.rb1.CheckedChanged += new System.EventHandler(this.rb1_CheckedChanged);
          // 
          // pictureBox2
          // 
@@ -688,7 +692,7 @@
          this.PN_Win.Controls.Add(this.label3);
          this.PN_Win.Controls.Add(this.LB_Gagnant);
          this.PN_Win.Location = new System.Drawing.Point(0, 0);
-         this.PN_Win.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.PN_Win.Margin = new System.Windows.Forms.Padding(2);
          this.PN_Win.Name = "PN_Win";
          this.PN_Win.Size = new System.Drawing.Size(550, 357);
          this.PN_Win.TabIndex = 6;
@@ -698,7 +702,7 @@
          // 
          this.BTN_RevenirMenu.Font = new System.Drawing.Font("Buxton Sketch", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.BTN_RevenirMenu.Location = new System.Drawing.Point(220, 306);
-         this.BTN_RevenirMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+         this.BTN_RevenirMenu.Margin = new System.Windows.Forms.Padding(2);
          this.BTN_RevenirMenu.Name = "BTN_RevenirMenu";
          this.BTN_RevenirMenu.Size = new System.Drawing.Size(112, 33);
          this.BTN_RevenirMenu.TabIndex = 5;
